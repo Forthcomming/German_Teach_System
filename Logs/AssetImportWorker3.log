@@ -1,0 +1,2303 @@
+Using pre-set license
+Built from '2022.3/china_unity/release' branch; Version is '2022.3.14f1c1 (25540d4d24fc) revision 2446349'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'zh' Physical Memory: 32477 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\2022.3.14f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/Unity/bishe
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+61602
+Successfully changed project path to: D:/Unity/bishe
+D:/Unity/bishe
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [27088] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 187552937 [EditorId] 187552937 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [27088] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 187552937 [EditorId] 187552937 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 42.18 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 2.43 ms.
+Initialize engine version: 2022.3.14f1c1 (25540d4d24fc)
+[Subsystems] Discovering subsystems at path D:/Unity/2022.3.14f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/bishe/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4060 Ti (ID=0x2805)
+    Vendor:   NVIDIA
+    VRAM:     16109 MB
+    Driver:   32.0.15.6094
+Initialize mono
+Mono path[0] = 'D:/Unity/2022.3.14f1c1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2022.3.14f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/2022.3.14f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2022.3.14f1c1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/Unity/2022.3.14f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008383 seconds.
+- Loaded All Assemblies, in  0.256 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 280 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.489 seconds
+Domain Reload Profiling: 741ms
+	BeginReloadAssembly (80ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (94ms)
+		LoadAssemblies (77ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (91ms)
+			TypeCache.Refresh (90ms)
+				TypeCache.ScanAssembly (82ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (490ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (451ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (351ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (64ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.606 seconds
+Refreshing native plugins compatible for Editor in 18.55 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.616 seconds
+Domain Reload Profiling: 1214ms
+	BeginReloadAssembly (120ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (20ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (410ms)
+		LoadAssemblies (300ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (179ms)
+			TypeCache.Refresh (142ms)
+				TypeCache.ScanAssembly (128ms)
+			ScanForSourceGeneratedMonoScriptInfo (27ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (616ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (498ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (356ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 20.95 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6795 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 118 unused Assets / (3.0 MB). Loaded Objects now: 7236.
+Memory consumption went from 314.8 MB to 311.9 MB.
+Total: 4.399800 ms (FindLiveObjects: 0.436200 ms CreateObjectMapping: 0.224600 ms MarkObjects: 3.112800 ms  DeleteObjects: 0.625700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.474 seconds
+Refreshing native plugins compatible for Editor in 20.71 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.339 seconds
+Domain Reload Profiling: 1805ms
+	BeginReloadAssembly (163ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (278ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (44ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (23ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1339ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (483ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (335ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 20.18 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6443 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 125 unused Assets / (2.6 MB). Loaded Objects now: 7197.
+Memory consumption went from 260.3 MB to 257.7 MB.
+Total: 4.040600 ms (FindLiveObjects: 0.436600 ms CreateObjectMapping: 0.227600 ms MarkObjects: 2.869300 ms  DeleteObjects: 0.506300 ms)
+
+Prepare: number of updated asset objects reloaded= 21
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.518 seconds
+Refreshing native plugins compatible for Editor in 19.17 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.390 seconds
+Domain Reload Profiling: 1900ms
+	BeginReloadAssembly (181ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (262ms)
+		LoadAssemblies (311ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (43ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1390ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (500ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (349ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 19.46 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7229.
+Memory consumption went from 270.3 MB to 265.4 MB.
+Total: 5.160600 ms (FindLiveObjects: 0.472500 ms CreateObjectMapping: 0.247200 ms MarkObjects: 3.204000 ms  DeleteObjects: 1.236100 ms)
+
+Prepare: number of updated asset objects reloaded= 34
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.481 seconds
+Refreshing native plugins compatible for Editor in 19.92 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.315 seconds
+Domain Reload Profiling: 1788ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (276ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (26ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1316ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (448ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (58ms)
+			ProcessInitializeOnLoadAttributes (311ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 20.90 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.17 ms.
+Unloading 6443 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 125 unused Assets / (2.6 MB). Loaded Objects now: 7190.
+Memory consumption went from 261.9 MB to 259.3 MB.
+Total: 4.362200 ms (FindLiveObjects: 0.497100 ms CreateObjectMapping: 0.282900 ms MarkObjects: 3.044400 ms  DeleteObjects: 0.536800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.456 seconds
+Refreshing native plugins compatible for Editor in 19.48 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.309 seconds
+Domain Reload Profiling: 1758ms
+	BeginReloadAssembly (157ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (235ms)
+		LoadAssemblies (270ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (40ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (21ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1310ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (473ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (329ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 22.43 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.16 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7243.
+Memory consumption went from 274.3 MB to 269.3 MB.
+Total: 4.258000 ms (FindLiveObjects: 0.432400 ms CreateObjectMapping: 0.239600 ms MarkObjects: 2.447400 ms  DeleteObjects: 1.137900 ms)
+
+Prepare: number of updated asset objects reloaded= 34
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.478 seconds
+Refreshing native plugins compatible for Editor in 20.10 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.310 seconds
+Domain Reload Profiling: 1779ms
+	BeginReloadAssembly (154ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (276ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (27ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1311ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (473ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (330ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 28.03 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.18 ms.
+Unloading 6443 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 125 unused Assets / (2.6 MB). Loaded Objects now: 7204.
+Memory consumption went from 265.5 MB to 262.9 MB.
+Total: 4.864600 ms (FindLiveObjects: 0.785100 ms CreateObjectMapping: 0.158700 ms MarkObjects: 3.387100 ms  DeleteObjects: 0.532800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.506 seconds
+Refreshing native plugins compatible for Editor in 19.89 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.401 seconds
+Domain Reload Profiling: 1898ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (258ms)
+		LoadAssemblies (294ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (49ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (3ms)
+			ScanForSourceGeneratedMonoScriptInfo (26ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1401ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (510ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (350ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 22.84 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.16 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7257.
+Memory consumption went from 277.9 MB to 272.9 MB.
+Total: 4.534000 ms (FindLiveObjects: 0.423100 ms CreateObjectMapping: 0.236400 ms MarkObjects: 2.585100 ms  DeleteObjects: 1.288900 ms)
+
+Prepare: number of updated asset objects reloaded= 34
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.477 seconds
+Refreshing native plugins compatible for Editor in 25.22 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.451 seconds
+Domain Reload Profiling: 1919ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (250ms)
+		LoadAssemblies (280ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (45ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1451ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (508ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (351ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 18.65 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.13 ms.
+Unloading 6443 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 125 unused Assets / (2.6 MB). Loaded Objects now: 7218.
+Memory consumption went from 269.4 MB to 266.8 MB.
+Total: 4.281700 ms (FindLiveObjects: 0.433500 ms CreateObjectMapping: 0.221100 ms MarkObjects: 3.101700 ms  DeleteObjects: 0.524800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.473 seconds
+Refreshing native plugins compatible for Editor in 21.53 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.408 seconds
+Domain Reload Profiling: 1872ms
+	BeginReloadAssembly (160ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (245ms)
+		LoadAssemblies (276ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (45ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (24ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1408ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (504ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (344ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 22.36 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.18 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7271.
+Memory consumption went from 281.8 MB to 276.8 MB.
+Total: 5.392800 ms (FindLiveObjects: 0.499200 ms CreateObjectMapping: 0.120500 ms MarkObjects: 3.187300 ms  DeleteObjects: 1.585100 ms)
+
+Prepare: number of updated asset objects reloaded= 34
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 87730.212781 seconds.
+  path: Assets/Cafe Interior/Prefabs/Bar.prefab
+  artifactKey: Guid(dca95ce1cb4eae44884ce0f49362a933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Bar.prefab using Guid(dca95ce1cb4eae44884ce0f49362a933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9320fea035fa116a499ad3bbbf7ceab') in 0.295603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 32
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cafe Interior/Prefabs/Floor.prefab
+  artifactKey: Guid(8f288b60ee8d0fe4099be90cf052f1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Floor.prefab using Guid(8f288b60ee8d0fe4099be90cf052f1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e16cb708306f2695b7ba8245da8dbb05') in 0.075610 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Cafe Interior/Prefabs/Door 3.prefab
+  artifactKey: Guid(50e33d77849f2144fa7ade9a362ac1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Door 3.prefab using Guid(50e33d77849f2144fa7ade9a362ac1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca69eb5268da9099078cde462dadd4f2') in 0.030083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Bottle 2.prefab
+  artifactKey: Guid(fb5f64ba0231a3740af18db7c8c8a407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Bottle 2.prefab using Guid(fb5f64ba0231a3740af18db7c8c8a407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eb3b06a061357915b0ac4c5cbb0211b') in 0.022142 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Prefabs/Beer.prefab
+  artifactKey: Guid(3cd45b793ad84b3449fec5b2f9c77a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Beer.prefab using Guid(3cd45b793ad84b3449fec5b2f9c77a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b05d0a7168bec82b96dddd2508ab92a1') in 0.030528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Prefabs/Dish 1.prefab
+  artifactKey: Guid(7361924cb01ae9a41aff888b71413cf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Dish 1.prefab using Guid(7361924cb01ae9a41aff888b71413cf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59977937a453e2e1f5adc428c5899d35') in 0.020861 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cafe Interior/Prefabs/Bottle 1.prefab
+  artifactKey: Guid(c26e23d76dd39984c985b474fc84d81b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Bottle 1.prefab using Guid(c26e23d76dd39984c985b474fc84d81b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f045177136851c4a172db72a2b4d11f1') in 0.020931 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Prefabs/Pictures 1.prefab
+  artifactKey: Guid(4c790ed0d4de8a6428f8bdd8fd9501cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Pictures 1.prefab using Guid(4c790ed0d4de8a6428f8bdd8fd9501cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '266907bc3a2a08a2d97e8d9835373914') in 0.020940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Prefabs/Door 2.prefab
+  artifactKey: Guid(86c2985a1ae126b40bab547b009b9aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Door 2.prefab using Guid(86c2985a1ae126b40bab547b009b9aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4abf085714bce93b2047a6af8320cdb3') in 0.030207 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Cafe Interior/Prefabs/Stool.prefab
+  artifactKey: Guid(cba17089cf7c86548ad85ab622971185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Stool.prefab using Guid(cba17089cf7c86548ad85ab622971185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4097bdf8c4f7afd8ccc6b9337c0c570f') in 0.024921 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Prefabs/Cake.prefab
+  artifactKey: Guid(ea4101f9863e7704a840a2e00611d6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Cake.prefab using Guid(ea4101f9863e7704a840a2e00611d6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f75e45110f65432c26d748d64a282fc0') in 0.033091 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Prefabs/Coffee 1.prefab
+  artifactKey: Guid(6a56a0e755ef7a744bb082910aca416e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Coffee 1.prefab using Guid(6a56a0e755ef7a744bb082910aca416e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6bb104ac7053c4daed2d9d50941381') in 0.022233 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Prefabs/Milk.prefab
+  artifactKey: Guid(cdbd16d57a8222245b8dc16478d2ee94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Milk.prefab using Guid(cdbd16d57a8222245b8dc16478d2ee94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b3a698e171cd70cdd0284bb5b3bb8d1') in 0.025167 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Cabinet.prefab
+  artifactKey: Guid(97b3fbe7ec0c68447a5744e6f2e174e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Cabinet.prefab using Guid(97b3fbe7ec0c68447a5744e6f2e174e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da23de11107a729a0b0e971dbb640218') in 0.030597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Prefabs/TV.prefab
+  artifactKey: Guid(b813cc31c92ba544fafd7862c3df4ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/TV.prefab using Guid(b813cc31c92ba544fafd7862c3df4ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a0eb7dd83fe7dfbbaf5d749d447ba1') in 0.021418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Prefabs/Exterior.prefab
+  artifactKey: Guid(b2b3429093ce0e34fa2edbc001ba3b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Exterior.prefab using Guid(b2b3429093ce0e34fa2edbc001ba3b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9abe1d28769293e7d2a4706116a404c') in 0.051918 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Cafe Interior/Prefabs/Bottle 3.prefab
+  artifactKey: Guid(258bec9a17df8e6419c847f3c0adc1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Bottle 3.prefab using Guid(258bec9a17df8e6419c847f3c0adc1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fd4587e87ef1884628ef1c09d66e92c') in 0.021653 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Prefabs/Ceiling.prefab
+  artifactKey: Guid(6ffb3ea95e2e7a1468a22ebc5492309f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Ceiling.prefab using Guid(6ffb3ea95e2e7a1468a22ebc5492309f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '472809416663cea64c8ba0d135e677b6') in 0.014238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Prefabs/Cakes.prefab
+  artifactKey: Guid(de74a94302f7d924cb34959f00231577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Cakes.prefab using Guid(de74a94302f7d924cb34959f00231577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2271d53c666f222541dc98b1c7b8b55f') in 0.020499 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Cookies.prefab
+  artifactKey: Guid(a54a460cc36e79e41bb23c066a454651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Cookies.prefab using Guid(a54a460cc36e79e41bb23c066a454651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36bb3df374952f422f233a4c48f7b825') in 0.040039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Jar.prefab
+  artifactKey: Guid(d2924a584fc917f40b2606f803b03195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Jar.prefab using Guid(d2924a584fc917f40b2606f803b03195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f86f960b9f15d150563ff6328c4586d') in 0.031492 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Water bottle.prefab
+  artifactKey: Guid(87c519cc83ecfee47bcd1061d2553b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Water bottle.prefab using Guid(87c519cc83ecfee47bcd1061d2553b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f763c779b943eaa6633f04ce6c63d350') in 0.022163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Prefabs/Table.prefab
+  artifactKey: Guid(316185fedfad4f84091b333bb4a52f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Table.prefab using Guid(316185fedfad4f84091b333bb4a52f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167c5dbcc2c722ffc0b65a79a2eba09c') in 0.042900 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Prefabs/Focus light.prefab
+  artifactKey: Guid(568df859ead2a00419c003678d9681ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Focus light.prefab using Guid(568df859ead2a00419c003678d9681ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '544e317a6ceb0434d0c297a31fd49246') in 0.022264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Prefabs/Beer Tap.prefab
+  artifactKey: Guid(b53b79c3f9aa1a44a9f9ecac8aac1fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Beer Tap.prefab using Guid(b53b79c3f9aa1a44a9f9ecac8aac1fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0906ffb10866b806eed5dbb9baf625f') in 0.013506 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Glass 4.prefab
+  artifactKey: Guid(bf78ac6973e0bce4689f7b6c194fd999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Glass 4.prefab using Guid(bf78ac6973e0bce4689f7b6c194fd999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1142ee4d9706e30401ea2cd6d2fc7084') in 0.012385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Prefabs/Wall 1.prefab
+  artifactKey: Guid(34b6f2b359ef03c4ea7a63ce09c059a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Wall 1.prefab using Guid(34b6f2b359ef03c4ea7a63ce09c059a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66464a645daf91a89d46a6dc8af59201') in 0.092463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Prefabs/Wall 4.prefab
+  artifactKey: Guid(ba33281376f5f20458f500956d1a6211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Wall 4.prefab using Guid(ba33281376f5f20458f500956d1a6211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e17fa9fa99ea8237e1bbf81a9fabdf80') in 0.100202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Prefabs/Glass 3.prefab
+  artifactKey: Guid(5e4c3ec29e078454b82ef4ead2e7da0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Glass 3.prefab using Guid(5e4c3ec29e078454b82ef4ead2e7da0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15c12f495498173affac2c8c329a017c') in 0.014673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Cafe Interior/Prefabs/Cafe picture.prefab
+  artifactKey: Guid(8ac8c5ff56f423f4e86aa62b3fce512c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Cafe picture.prefab using Guid(8ac8c5ff56f423f4e86aa62b3fce512c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4268914d1bd2384b4a0f2a21334c4969') in 0.022020 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Prefabs/Chair 3.prefab
+  artifactKey: Guid(0b9772f8c0907414d95e6a554d7cc96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Chair 3.prefab using Guid(0b9772f8c0907414d95e6a554d7cc96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320324580e5a87a62f8794419965a243') in 0.028385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Prefabs/Sugar.prefab
+  artifactKey: Guid(30c2cb87d6b712c46b588f6c265940b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Prefabs/Sugar.prefab using Guid(30c2cb87d6b712c46b588f6c265940b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd74310b4f2cfc6614f0cdbff4f14f026') in 0.030911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 55.111226 seconds.
+  path: Assets/Cafe Interior/Models/Materials/beer 2.mat
+  artifactKey: Guid(42854897a1e003b4d957a750b135de0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/beer 2.mat using Guid(42854897a1e003b4d957a750b135de0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e4fd53b6deac3adcec35c0d97273384') in 0.031214 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Models/Materials/ceiling.mat
+  artifactKey: Guid(e4d424e3c6a9a71448963f0a70d066e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/ceiling.mat using Guid(e4d424e3c6a9a71448963f0a70d066e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51c7acc292a7279f919120b534f7aab9') in 0.006249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Cafe Interior/Models/Materials/metal 1.mat
+  artifactKey: Guid(e624004b09b51c141acb8089db74fb9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/metal 1.mat using Guid(e624004b09b51c141acb8089db74fb9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a30431f20a51d9f28c1d303233f9963') in 0.014264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Models/Materials/wood 4.mat
+  artifactKey: Guid(6b49fd2c455ce084295ab0b0cbe9f0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/wood 4.mat using Guid(6b49fd2c455ce084295ab0b0cbe9f0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '084bb7d53841fc62114b98b41dd91258') in 0.013486 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Materials/Jar metallic.mat
+  artifactKey: Guid(424427e7b517e29449fcee0b55f86d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/Jar metallic.mat using Guid(424427e7b517e29449fcee0b55f86d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '204bd15c52ed5e32a97a223d23e6257c') in 0.006715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Models/Materials/lamp light.mat
+  artifactKey: Guid(21b75aed000c69e42bdf7d4bacc78745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/lamp light.mat using Guid(21b75aed000c69e42bdf7d4bacc78745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68814742bee0adabaae5d259f0f86f32') in 0.007671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Cafe Interior/Models/Materials/tv.mat
+  artifactKey: Guid(c20d671b3ad1542468ddab7b191a8adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/tv.mat using Guid(c20d671b3ad1542468ddab7b191a8adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55eb388383576a7ad826fa777cb5e2d5') in 0.013374 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/Newspaper.mat
+  artifactKey: Guid(ed52a28005fd9f049b57d5430fec876c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/Newspaper.mat using Guid(ed52a28005fd9f049b57d5430fec876c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edb5d3189e8f69ba6b718322459f8a40') in 0.013678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/poster toilets.mat
+  artifactKey: Guid(6b1dad60115a79644a1de5c3c0abcb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/poster toilets.mat using Guid(6b1dad60115a79644a1de5c3c0abcb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa4ea0ca709e8784d3da7f9bf237f54a') in 0.017379 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Materials/cup - plates.mat
+  artifactKey: Guid(918aa8d295aca7f42a9c1c2139e9481d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/cup - plates.mat using Guid(918aa8d295aca7f42a9c1c2139e9481d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59077603b7debb7c43e5a839676e37a8') in 0.016299 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Cafe Interior/Models/Materials/coffee.mat
+  artifactKey: Guid(f51a482cd99fbe044b07a1718c76ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/coffee.mat using Guid(f51a482cd99fbe044b07a1718c76ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9c36a44fde9d0dcc8459f1c1f626e03') in 0.013411 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Cafe Interior/Models/Materials/plastic bottle water.mat
+  artifactKey: Guid(b58e867ad18372c4c9429bc121a4279b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/plastic bottle water.mat using Guid(b58e867ad18372c4c9429bc121a4279b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '920f0e2456c00b213c600c0e7b5ec4d2') in 0.007611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Materials/glass.mat
+  artifactKey: Guid(648f1899ab69caa46b7fc970b5dde71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/glass.mat using Guid(648f1899ab69caa46b7fc970b5dde71c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0db778a723cd997571a4d4c7efa66e0') in 0.007206 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Models/Materials/lamp glass.mat
+  artifactKey: Guid(a6d0e1c34bce93a45888a07836428ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/lamp glass.mat using Guid(a6d0e1c34bce93a45888a07836428ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2894debfa3af85cbbd98dd8675d4b05c') in 0.006087 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Materials/bottle 4.mat
+  artifactKey: Guid(4340d63add76102438c2a6011e876e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/bottle 4.mat using Guid(4340d63add76102438c2a6011e876e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a98b63eea99ff902c663d05c1a1b449a') in 0.013311 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Models/Materials/lamp.mat
+  artifactKey: Guid(383f28f9af5d09d4b9179b4839234dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/lamp.mat using Guid(383f28f9af5d09d4b9179b4839234dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7baa6b3278389e4d5373dbbc9b6daac1') in 0.017741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Cafe Interior/Models/Materials/cafe picture.mat
+  artifactKey: Guid(52caee2d4e0418942a2d5b7234beef74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/cafe picture.mat using Guid(52caee2d4e0418942a2d5b7234beef74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351b0b6fcbb0bdcd798e3eac6ce37c6a') in 0.015363 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/glass 3.mat
+  artifactKey: Guid(69f8ce5927f6f7f4d9332fd8ca46ea50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/glass 3.mat using Guid(69f8ce5927f6f7f4d9332fd8ca46ea50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d4324cc021bb2903ca45a9964d9698c') in 0.007764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Materials/shelf material 2.mat
+  artifactKey: Guid(89e6cd7a2cc0eb343a3e4ad0cd58e30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/shelf material 2.mat using Guid(89e6cd7a2cc0eb343a3e4ad0cd58e30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc9370f45eeb3be08f6e5c26d347952e') in 0.007559 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Materials/houses.mat
+  artifactKey: Guid(0b0a13e9e908f5a4fb3d33fcc28055b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/houses.mat using Guid(0b0a13e9e908f5a4fb3d33fcc28055b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c5dad1141038e377622bb43c51dcec3') in 0.021201 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Cafe Interior/Models/Materials/napkin holder.mat
+  artifactKey: Guid(aba6200adc912ae4cb7ae23ff897b613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/napkin holder.mat using Guid(aba6200adc912ae4cb7ae23ff897b613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e1b5eefa00855df2237095e9e244453') in 0.022898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Cafe Interior/Models/Materials/cash register.mat
+  artifactKey: Guid(f5136313621e81649a2133e92e1a230f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/cash register.mat using Guid(f5136313621e81649a2133e92e1a230f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a81346229bfe9e6b454ae525a9f4851') in 0.015160 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/cake.mat
+  artifactKey: Guid(982a1ed77bba0f84c8bda1594bb1e201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/cake.mat using Guid(982a1ed77bba0f84c8bda1594bb1e201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f07e354e4bfcd23f4366606916c5694e') in 0.023266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Materials/wall 2.mat
+  artifactKey: Guid(262a2a1d0a53b1a4099c82cea15d57d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/wall 2.mat using Guid(262a2a1d0a53b1a4099c82cea15d57d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a9df3d4ec4e4a5c431a0625c1f2a26f') in 0.025659 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cafe Interior/Models/Materials/water.mat
+  artifactKey: Guid(99d9fcdf7a48e784fa3463c8a24c43e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/water.mat using Guid(99d9fcdf7a48e784fa3463c8a24c43e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe59bbcd059fae2150614e75b88c157') in 0.013101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Materials/gold vase.mat
+  artifactKey: Guid(0c5b1926e36e6ef49a95b2ba132dbd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/gold vase.mat using Guid(0c5b1926e36e6ef49a95b2ba132dbd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08996653a25ac2250470bc94d6c626b7') in 0.016642 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/metallic utensils.mat
+  artifactKey: Guid(d2c90557b005bd44b8d7364532f88f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/metallic utensils.mat using Guid(d2c90557b005bd44b8d7364532f88f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c34539f2f7681d88f292e1aa867a763') in 0.006993 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Materials/Wood 3.mat
+  artifactKey: Guid(a46e69591547e884087e3024014c1aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/Wood 3.mat using Guid(a46e69591547e884087e3024014c1aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1817a978e25ade5c03b45f49fce654ef') in 0.014852 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Materials/tray.mat
+  artifactKey: Guid(a1a0ec314eb2564498add5965ec37f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/tray.mat using Guid(a1a0ec314eb2564498add5965ec37f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faab1499e8c102ca92e4e4e8a0436327') in 0.006979 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Materials/cake3.mat
+  artifactKey: Guid(9dd03f6b7c9edbf4380ccff4ffdb89ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Materials/cake3.mat using Guid(9dd03f6b7c9edbf4380ccff4ffdb89ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6353a92c65cb0a635453550bf03d1e6') in 0.023678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.485 seconds
+Refreshing native plugins compatible for Editor in 27.12 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.587 seconds
+Domain Reload Profiling: 2063ms
+	BeginReloadAssembly (165ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (242ms)
+		LoadAssemblies (298ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1588ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (675ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (113ms)
+			ProcessInitializeOnLoadAttributes (441ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 23.30 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7356.
+Memory consumption went from 284.4 MB to 279.4 MB.
+Total: 6.740000 ms (FindLiveObjects: 0.831400 ms CreateObjectMapping: 0.480300 ms MarkObjects: 3.828900 ms  DeleteObjects: 1.598500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.477 seconds
+Refreshing native plugins compatible for Editor in 19.78 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.404 seconds
+Domain Reload Profiling: 1873ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (273ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (45ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (23ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1405ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (494ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (334ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 24.88 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.18 ms.
+Unloading 6549 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7364.
+Memory consumption went from 286.3 MB to 281.3 MB.
+Total: 5.318800 ms (FindLiveObjects: 0.476300 ms CreateObjectMapping: 0.235800 ms MarkObjects: 3.281900 ms  DeleteObjects: 1.324100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.452 seconds
+Refreshing native plugins compatible for Editor in 19.41 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.530 seconds
+Domain Reload Profiling: 1973ms
+	BeginReloadAssembly (153ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (228ms)
+		LoadAssemblies (280ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1531ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (556ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (386ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 22.85 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.20 ms.
+Unloading 6549 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7371.
+Memory consumption went from 288.3 MB to 283.3 MB.
+Total: 4.852500 ms (FindLiveObjects: 0.481700 ms CreateObjectMapping: 0.131500 ms MarkObjects: 2.822400 ms  DeleteObjects: 1.416000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.508 seconds
+Refreshing native plugins compatible for Editor in 21.98 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.495 seconds
+Domain Reload Profiling: 1994ms
+	BeginReloadAssembly (170ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (265ms)
+		LoadAssemblies (295ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (28ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1496ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (543ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (378ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 23.62 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (5.0 MB). Loaded Objects now: 7377.
+Memory consumption went from 290.2 MB to 285.2 MB.
+Total: 5.574600 ms (FindLiveObjects: 0.461800 ms CreateObjectMapping: 0.235800 ms MarkObjects: 3.366400 ms  DeleteObjects: 1.510000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.515 seconds
+Refreshing native plugins compatible for Editor in 21.99 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.487 seconds
+Domain Reload Profiling: 1992ms
+	BeginReloadAssembly (170ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (265ms)
+		LoadAssemblies (296ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (47ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1487ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (542ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (377ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 23.56 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.14 ms.
+Unloading 6549 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7385.
+Memory consumption went from 292.1 MB to 287.1 MB.
+Total: 6.310600 ms (FindLiveObjects: 0.620700 ms CreateObjectMapping: 0.353500 ms MarkObjects: 3.934400 ms  DeleteObjects: 1.400700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.505 seconds
+Refreshing native plugins compatible for Editor in 18.74 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.652 seconds
+Domain Reload Profiling: 2148ms
+	BeginReloadAssembly (179ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (307ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1652ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (652ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (461ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 24.57 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.14 ms.
+Unloading 6549 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7392.
+Memory consumption went from 294.1 MB to 289.1 MB.
+Total: 6.209600 ms (FindLiveObjects: 0.657900 ms CreateObjectMapping: 0.271000 ms MarkObjects: 3.682100 ms  DeleteObjects: 1.597700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.444 seconds
+Refreshing native plugins compatible for Editor in 19.76 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.489 seconds
+Domain Reload Profiling: 1925ms
+	BeginReloadAssembly (152ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (221ms)
+		LoadAssemblies (277ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1489ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (557ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (382ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 21.64 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.16 ms.
+Unloading 6549 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7399.
+Memory consumption went from 296.0 MB to 291.0 MB.
+Total: 4.929700 ms (FindLiveObjects: 0.476900 ms CreateObjectMapping: 0.229000 ms MarkObjects: 2.927500 ms  DeleteObjects: 1.295500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 

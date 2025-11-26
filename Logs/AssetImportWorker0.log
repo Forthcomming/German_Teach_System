@@ -15,7 +15,7 @@ D:/Unity/bishe
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62755
+61602
 Successfully changed project path to: D:/Unity/bishe
 D:/Unity/bishe
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity/bishe
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [28560] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 1120361542 [EditorId] 1120361542 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [20544] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 3532114155 [EditorId] 3532114155 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [28560] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 1120361542 [EditorId] 1120361542 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20544] Host "[IP] 192.168.10.62 [Port] 0 [Flags] 2 [Guid] 3532114155 [EditorId] 3532114155 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ESEM3S1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 244.31 ms, found 18 plugins.
+Refreshing native plugins compatible for Editor in 41.47 ms, found 18 plugins.
 Preloading 2 native plugins for Editor in 2.88 ms.
 Initialize engine version: 2022.3.14f1c1 (25540d4d24fc)
 [Subsystems] Discovering subsystems at path D:/Unity/2022.3.14f1c1/Editor/Data/Resources/UnitySubsystems
@@ -70,55 +70,47 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2022.3.14f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2022.3.14f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/2022.3.14f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56960
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56268
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2022.3.14f1c1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity/2022.3.14f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008311 seconds.
-- Loaded All Assemblies, in  0.259 seconds
+Registered in 0.010684 seconds.
+- Loaded All Assemblies, in  0.326 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Win32Exception: Êìç‰ΩúÊàêÂäüÂÆåÊàê„ÄÇ
-  at System.Diagnostics.Process.Kill () [0x00018] in <6bb7fefcaacb438db8964dbe54b13572>:0 
-  at (wrapper remoting-invoke-with-check) System.Diagnostics.Process.Kill()
-  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x0014a] in <b4646b6c325c4792949e379172cef288>:0 
-  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00039] in <b4646b6c325c4792949e379172cef288>:0 
-  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00081] in <b4646b6c325c4792949e379172cef288>:0 
-  at UnityEditor.Android.TargetExtension.OnLoad () [0x000ad] in <b4646b6c325c4792949e379172cef288>:0 
-  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x0009d] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
-
+Android Extension - Scanning For ADB Devices 418 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.497 seconds
-Domain Reload Profiling: 754ms
-	BeginReloadAssembly (78ms)
+- Finished resetting the current domain, in  0.662 seconds
+Domain Reload Profiling: 984ms
+	BeginReloadAssembly (98ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (23ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (100ms)
-		LoadAssemblies (76ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (120ms)
+		LoadAssemblies (95ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (98ms)
-			TypeCache.Refresh (97ms)
-				TypeCache.ScanAssembly (88ms)
+		AnalyzeDomain (117ms)
+			TypeCache.Refresh (116ms)
+				TypeCache.ScanAssembly (105ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (497ms)
+	FinalizeReload (662ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (460ms)
+		SetupLoadedEditorAssemblies (621ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (361ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (509ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (64ms)
-			ProcessInitializeOnLoadMethodAttributes (31ms)
+			ProcessInitializeOnLoadAttributes (72ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -126,8 +118,8 @@ Domain Reload Profiling: 754ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.955 seconds
-Refreshing native plugins compatible for Editor in 12.11 ms, found 18 plugins.
+- Loaded All Assemblies, in  0.694 seconds
+Refreshing native plugins compatible for Editor in 277.08 ms, found 18 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -152,47 +144,47 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.637 seconds
-Domain Reload Profiling: 1588ms
-	BeginReloadAssembly (115ms)
+- Finished resetting the current domain, in  0.907 seconds
+Domain Reload Profiling: 1591ms
+	BeginReloadAssembly (138ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (19ms)
+		CreateAndSetChildDomain (21ms)
 	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (33ms)
-	LoadAllAssembliesAndSetupDomain (770ms)
-		LoadAssemblies (665ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (457ms)
+		LoadAssemblies (323ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (170ms)
-			TypeCache.Refresh (138ms)
-				TypeCache.ScanAssembly (126ms)
-			ScanForSourceGeneratedMonoScriptInfo (23ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (638ms)
+		AnalyzeDomain (217ms)
+			TypeCache.Refresh (176ms)
+				TypeCache.ScanAssembly (160ms)
+			ScanForSourceGeneratedMonoScriptInfo (28ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (907ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (520ms)
+		SetupLoadedEditorAssemblies (698ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (35ms)
+			InitializePlatformSupportModulesInManaged (27ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (63ms)
-			ProcessInitializeOnLoadAttributes (353ms)
-			ProcessInitializeOnLoadMethodAttributes (60ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (451ms)
+			ProcessInitializeOnLoadMethodAttributes (128ms)
+			AfterProcessingInitializeOnLoad (13ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 12.51 ms, found 17 plugins.
-Preloading 2 native plugins for Editor in 0.10 ms.
-Unloading 6666 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 109 unused Assets / (2.6 MB). Loaded Objects now: 7100.
-Memory consumption went from 290.1 MB to 287.5 MB.
-Total: 4.866000 ms (FindLiveObjects: 0.722000 ms CreateObjectMapping: 0.418500 ms MarkObjects: 3.131000 ms  DeleteObjects: 0.593800 ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 191.65 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.32 ms.
+Unloading 6795 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 118 unused Assets / (3.0 MB). Loaded Objects now: 7221.
+Memory consumption went from 305.6 MB to 302.6 MB.
+Total: 5.729400 ms (FindLiveObjects: 0.946400 ms CreateObjectMapping: 0.113900 ms MarkObjects: 3.721000 ms  DeleteObjects: 0.947100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -210,41 +202,665 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 8367.065847 seconds.
-  path: Assets/AIChatTookit
-  artifactKey: Guid(566db837cc97830428fac5028b104763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AIChatTookit using Guid(566db837cc97830428fac5028b104763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30487724ea826481ce02b77e02356cd7') in 0.001731 seconds
-Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+  Time since last request: 85597.210759 seconds.
+  path: Assets/Help.pdf
+  artifactKey: Guid(f2869759a9f243c4b9b42a12782c39cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Help.pdf using Guid(f2869759a9f243c4b9b42a12782c39cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82507983286a92c68c54f1a41d504187') in 0.021046 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 0.976914 seconds.
-  path: Assets/AIChatTookit/Tool
-  artifactKey: Guid(416bf8328482cc3408906b0b5e9b59e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AIChatTookit/Tool using Guid(416bf8328482cc3408906b0b5e9b59e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b89875b300a3472578d9c7ecee188336') in 0.000419 seconds
+  Time since last request: 12.477494 seconds.
+  path: Assets/unity3d.txt
+  artifactKey: Guid(edd3550039f2e3444b61aa4773448b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/unity3d.txt using Guid(edd3550039f2e3444b61aa4773448b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4c94a521e55a7c9d3eaa78566b11796') in 0.001026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 10.811141 seconds.
+  path: Assets/Cafe Interior
+  artifactKey: Guid(fd970f7f5b2f265458e126d7a8cd4260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior using Guid(fd970f7f5b2f265458e126d7a8cd4260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e3a60a41ef0d2e94477b5095368d29') in 0.000515 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.567279 seconds.
-  path: Assets/AIChatTookit/Plugin
-  artifactKey: Guid(863b0c154e9f1cf408acf377eaeb7cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AIChatTookit/Plugin using Guid(863b0c154e9f1cf408acf377eaeb7cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362244a4c437df9c70b2b8d69f392880') in 0.000394 seconds
+  Time since last request: 0.081660 seconds.
+  path: Assets/Cafe Interior/New Terrain.asset
+  artifactKey: Guid(9319ce1723f7c34438404b7018171209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/New Terrain.asset using Guid(9319ce1723f7c34438404b7018171209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d722467795f316053afb8b763e5819') in 0.069013 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.670054 seconds.
+  path: Assets/Cafe Interior/Demo.unity
+  artifactKey: Guid(b88c3c90671f6da41b08726d78ba8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Demo.unity using Guid(b88c3c90671f6da41b08726d78ba8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccff4df8213753e2d0879703c42b88fe') in 0.000587 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.158471 seconds.
-  path: Assets/AIChatTookit/Plugin/fastJSON
-  artifactKey: Guid(a205e3581fa47ea43bd217d21b14511f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AIChatTookit/Plugin/fastJSON using Guid(a205e3581fa47ea43bd217d21b14511f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296f15b73840e1a80591f0cb4c48ef25') in 0.000473 seconds
+  Time since last request: 20.535873 seconds.
+  path: Assets/Cafe Interior/Scene
+  artifactKey: Guid(a384a6b72e5624740907d26723956ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Scene using Guid(a384a6b72e5624740907d26723956ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ac1c199c5e5715bb77069c1f4a19505') in 0.000551 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.948115 seconds.
+  path: Assets/Cafe Interior/Scene/Demo.unity
+  artifactKey: Guid(6d2d624a4e134104db5bf023794d10f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Scene/Demo.unity using Guid(6d2d624a4e134104db5bf023794d10f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad27a57dce1c969f5b62b8bb51161eb2') in 0.000790 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.528355 seconds.
+  path: Assets/Cafe Interior/Readme.txt
+  artifactKey: Guid(f75e6251127a3fd41b8c96d1845afc1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Readme.txt using Guid(f75e6251127a3fd41b8c96d1845afc1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77aa8b172e6b76ce1523812b73d6528b') in 0.000940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 11.659122 seconds.
+  path: Assets/Cafe Interior/Textures
+  artifactKey: Guid(a5ca42a075d66794ca3886673f70ec25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures using Guid(a5ca42a075d66794ca3886673f70ec25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c442369f95d350923738b93ead2f65c6') in 0.000570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.063270 seconds.
+  path: Assets/Cafe Interior/Textures/Air conditioner.png
+  artifactKey: Guid(42b84b49edd5cfd409b7cef669f6a3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/Air conditioner.png using Guid(42b84b49edd5cfd409b7cef669f6a3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9c2fa56167f911deb5b1e2bc82f005a') in 0.049076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Textures/cake2.png
+  artifactKey: Guid(916eb8e1c51486949833562eb1d4a3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cake2.png using Guid(916eb8e1c51486949833562eb1d4a3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '025374baa651657880bd9583c7aa561a') in 0.046566 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.001091 seconds.
+  path: Assets/Cafe Interior/Textures/beer N.png
+  artifactKey: Guid(6c4b9ab8b10e37e48a22e7ffe1e9f6a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/beer N.png using Guid(6c4b9ab8b10e37e48a22e7ffe1e9f6a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9ec2405c214fb40e2c6ca91906f41b3') in 0.055168 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Textures/poster toilets.png
+  artifactKey: Guid(3d5cefb2333089743a0bd9a0a64b23e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/poster toilets.png using Guid(3d5cefb2333089743a0bd9a0a64b23e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd1c06e02f68cbe2ad13bc340f34228') in 0.030328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Textures/cafe picture.png
+  artifactKey: Guid(7ac7be63a048284458feebd4dc077238) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cafe picture.png using Guid(7ac7be63a048284458feebd4dc077238) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35e777884bcbf9011b7696f789c5c9f7') in 0.041557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Textures/chairs color.png
+  artifactKey: Guid(096b2894e6729bd49a8b077077e6c814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/chairs color.png using Guid(096b2894e6729bd49a8b077077e6c814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b47d6bf561c2276be22a4d89c622564') in 0.052572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/Cafe Interior/Textures/gold vase.png
+  artifactKey: Guid(d8b31ecc6140d3c469f4e0d5fe9500be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/gold vase.png using Guid(d8b31ecc6140d3c469f4e0d5fe9500be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad68ceeffe81f7314cadb0779b3deed') in 0.082881 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.001422 seconds.
+  path: Assets/Cafe Interior/Textures/coffee.png
+  artifactKey: Guid(0bfdc3d127211fb41873c95a9bca116a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/coffee.png using Guid(0bfdc3d127211fb41873c95a9bca116a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44ce9b25c7d135c0b73001545fd5426e') in 0.047338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Textures/houses N.png
+  artifactKey: Guid(2e6b45121b14d6c43b2640afd0e3a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/houses N.png using Guid(2e6b45121b14d6c43b2640afd0e3a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aec662b12523ed51d06ee8cc8aff492') in 0.034293 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000717 seconds.
+  path: Assets/Cafe Interior/Textures/wood 1.png
+  artifactKey: Guid(8fa966fceaf6d344dbcf84cf016d0874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/wood 1.png using Guid(8fa966fceaf6d344dbcf84cf016d0874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af2ba6f364e251d3161218e3835119e2') in 0.027835 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Textures/bottle 4.png
+  artifactKey: Guid(ca0b0a88ceb4b1647a82ccdacf1adaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/bottle 4.png using Guid(ca0b0a88ceb4b1647a82ccdacf1adaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb268474c939bae01a387e81252d2e3a') in 0.038136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Cafe Interior/Textures/houses.png
+  artifactKey: Guid(b781e46fa19aa3a45a2a693e95477519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/houses.png using Guid(b781e46fa19aa3a45a2a693e95477519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c5d3cb612062c114bfae8ac19916ca8') in 0.045959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000927 seconds.
+  path: Assets/Cafe Interior/Textures/refrigerator.png
+  artifactKey: Guid(e4c3a6e1376398d418cab995091a861e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/refrigerator.png using Guid(e4c3a6e1376398d418cab995091a861e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c31d597b4019cce584a988bc20a0dc2') in 0.173397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.003163 seconds.
+  path: Assets/Cafe Interior/Textures/ground.png
+  artifactKey: Guid(35b7fbd29116db841929f2956b4a750e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/ground.png using Guid(35b7fbd29116db841929f2956b4a750e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e769d3a68dd6487181a6f802639f6db8') in 0.037055 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/Cafe Interior/Textures/cash register.png
+  artifactKey: Guid(413c75e45a54c8f44b7e8aeffd218af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cash register.png using Guid(413c75e45a54c8f44b7e8aeffd218af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d5afac1ddeeff63a2a9daf72e7df7b') in 0.026627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Textures/cake N.png
+  artifactKey: Guid(db22fdc1bbfa2e74d859144e2937b75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cake N.png using Guid(db22fdc1bbfa2e74d859144e2937b75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8131dc2f008b1699b26d00e103c7743') in 0.041670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Cafe Interior/Textures/sugar.png
+  artifactKey: Guid(69903185f20ced6489ef7c6e155bed3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/sugar.png using Guid(69903185f20ced6489ef7c6e155bed3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '243076cdf1ce9cf7e2a3fce24207b3eb') in 0.026968 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cafe Interior/Textures/wood 3.png
+  artifactKey: Guid(2690b4a2ced88674aac2365ee2d04cdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/wood 3.png using Guid(2690b4a2ced88674aac2365ee2d04cdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9668375acbb91d05107678313efd99d2') in 0.034112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Cafe Interior/Textures/cake.png
+  artifactKey: Guid(e23eb7b206bf38a4e8b63ab7d05a4204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cake.png using Guid(e23eb7b206bf38a4e8b63ab7d05a4204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e153763fbb34d32e80096a241ec6e5c8') in 0.029949 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Cafe Interior/Textures/chairs color 2.png
+  artifactKey: Guid(bed723845d80ceb4d8ae6b8738fe2104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/chairs color 2.png using Guid(bed723845d80ceb4d8ae6b8738fe2104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4f7f46cb474b50a0b5b89ebfdd2438') in 0.030409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Cafe Interior/Textures/water.png
+  artifactKey: Guid(af09e9507ef1524488c308371340f3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/water.png using Guid(af09e9507ef1524488c308371340f3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '063d916841f6c891db69f84f7719a338') in 0.027287 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Textures/metal 1.png
+  artifactKey: Guid(b036ba01395a6bd44aed67f7bc9efa05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/metal 1.png using Guid(b036ba01395a6bd44aed67f7bc9efa05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f69c7b831ccc54fd4248876bf2e9029') in 0.031132 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Textures/tv.png
+  artifactKey: Guid(9cb76b0df71bb834a91e63b741e24e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/tv.png using Guid(9cb76b0df71bb834a91e63b741e24e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e92e76038c35a3b2c6133ab0d111a5d1') in 0.028820 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Textures/can drink.png
+  artifactKey: Guid(145f3ad92f6a9324b9029cffcf16b2fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/can drink.png using Guid(145f3ad92f6a9324b9029cffcf16b2fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06904339994ffb11dafed6f6082de9c') in 0.029988 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Cafe Interior/Textures/napkin holder.png
+  artifactKey: Guid(56f1b829e84436649a758a77ac2e601b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/napkin holder.png using Guid(56f1b829e84436649a758a77ac2e601b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc55c0cef3bf69d390bf14014f4003e0') in 0.057695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Cafe Interior/Textures/wood 4.png
+  artifactKey: Guid(66f50426ed59da74ca78dd647cd1343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/wood 4.png using Guid(66f50426ed59da74ca78dd647cd1343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aaa17840c5b441dc8da60181c0b3081') in 0.025968 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Textures/napkin holder N.png
+  artifactKey: Guid(0cdab838ed88f264fb19423e0d8cb545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/napkin holder N.png using Guid(0cdab838ed88f264fb19423e0d8cb545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4f69251a1a593c21326db4b599b7dc1') in 0.025491 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Textures/pictures 1.png
+  artifactKey: Guid(03422f5c6f87bd74692bc70019fffec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/pictures 1.png using Guid(03422f5c6f87bd74692bc70019fffec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b02e86b3b35b862b6dda28299ead3c') in 0.022194 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Textures/focus light.png
+  artifactKey: Guid(cb82e448c7c532d4188c11610e457af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/focus light.png using Guid(cb82e448c7c532d4188c11610e457af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2a55ec134d9b40a322bbab09d34c53') in 0.024082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Cafe Interior/Textures/bottle 1.png
+  artifactKey: Guid(da4980487688c2a478a813f916f27d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/bottle 1.png using Guid(da4980487688c2a478a813f916f27d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c9b997d0e857044d495bd3dd7c3c619') in 0.022583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Textures/floor N.png
+  artifactKey: Guid(49c163663f5bf2347b0fc258d10a7cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/floor N.png using Guid(49c163663f5bf2347b0fc258d10a7cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bdd0e0f55ee7f09c185e90f84de3092') in 0.088617 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Cafe Interior/Textures/wall 2.png
+  artifactKey: Guid(c73c39935204ce145afc8f30636170da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/wall 2.png using Guid(c73c39935204ce145afc8f30636170da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922b76cac375b9c1c85979ce031bc4c4') in 0.029755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Textures/metal 1 N.png
+  artifactKey: Guid(903d2d8896bf5254eaffa966d8ee2138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/metal 1 N.png using Guid(903d2d8896bf5254eaffa966d8ee2138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5775aead21ee07f48d34e4bf95f69f1f') in 0.025082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Cafe Interior/Textures/cup - plates.png
+  artifactKey: Guid(707cf570a76aefa4c935988ae0248e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cup - plates.png using Guid(707cf570a76aefa4c935988ae0248e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b65ff8866486442cd89daf7559696002') in 0.024790 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Cafe Interior/Textures/ground N.png
+  artifactKey: Guid(44504c4ba53b50542ae3204424fb74b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/ground N.png using Guid(44504c4ba53b50542ae3204424fb74b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b6c43822b1a56f024e4a85734586c1a') in 0.032781 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Textures/cake3 N.png
+  artifactKey: Guid(17492a26cb70a6c41942a76817f30e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Textures/cake3 N.png using Guid(17492a26cb70a6c41942a76817f30e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a11544bb5219691ae25bc081d60d20d') in 0.041363 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 9.022455 seconds.
+  path: Assets/Scenes/chatsceneofficialui/ReflectionProbe-0.exr
+  artifactKey: Guid(cd1d58e4a14521345a7446d78bd85d9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/chatsceneofficialui/ReflectionProbe-0.exr using Guid(cd1d58e4a14521345a7446d78bd85d9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '606c0fc5dadbcefc1f825d7a6b52214e') in 0.159101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 375.406385 seconds.
+  path: Assets/Cafe Interior/Models/Bar.FBX
+  artifactKey: Guid(f6c8596a7aae5464a843f7fb436ce1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Bar.FBX using Guid(f6c8596a7aae5464a843f7fb436ce1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6adb5947fc754e8389271fb46377ce2e') in 0.147458 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cafe Interior/Models/Tray.FBX
+  artifactKey: Guid(62e8a2da9fe80fb429e3a65bee22419f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Tray.FBX using Guid(62e8a2da9fe80fb429e3a65bee22419f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19ddf48d8925be7027953c327d38e7e7') in 0.017633 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Cafe Interior/Models/Wall 2.FBX
+  artifactKey: Guid(06bcb1f7019db7b488831e635a67b8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Wall 2.FBX using Guid(06bcb1f7019db7b488831e635a67b8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcd3dfdb725121244dc231091d7c5fa6') in 0.093850 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Bottle 1.FBX
+  artifactKey: Guid(792c8c1ab7462ba40a66174b9953f25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Bottle 1.FBX using Guid(792c8c1ab7462ba40a66174b9953f25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfca04be4632f544cc45b66e997ee5f1') in 0.024342 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Showcase.FBX
+  artifactKey: Guid(fef6b9a6a136e00438fdbf7018fe5964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Showcase.FBX using Guid(fef6b9a6a136e00438fdbf7018fe5964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30cc02903f046354f86289ccb453d130') in 0.043644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Chair 4.FBX
+  artifactKey: Guid(dd0cb281d3da44b4d80c4ab9ce3a2d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Chair 4.FBX using Guid(dd0cb281d3da44b4d80c4ab9ce3a2d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7747adef529b7cf2d05049754ffa66a1') in 0.024823 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cafe Interior/Models/Bottle 5.FBX
+  artifactKey: Guid(cbbd952d90798b14cb8aaabff7795751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Bottle 5.FBX using Guid(cbbd952d90798b14cb8aaabff7795751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13ced9564a142184dac594cd356f600') in 0.021803 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Cafe Interior/Models/Blackboard.FBX
+  artifactKey: Guid(57e0c67b95502854ab10899f8f018376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Blackboard.FBX using Guid(57e0c67b95502854ab10899f8f018376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe444502dc88363335e1c57d2f23de81') in 0.023344 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cafe Interior/Models/Door 1.FBX
+  artifactKey: Guid(d86c9146177e5f1429cb2640e83545f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Door 1.FBX using Guid(d86c9146177e5f1429cb2640e83545f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08f55ab4ca6ccb71821e313ecaccd9b2') in 0.049348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Models/Sugar.FBX
+  artifactKey: Guid(c4e8d183c3b30be46aabee5104d29e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Sugar.FBX using Guid(c4e8d183c3b30be46aabee5104d29e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd243585edfcace614f9287440fa271') in 0.034842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Cafe picture.FBX
+  artifactKey: Guid(590043b7f55fc864986bc9630a0ab57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Cafe picture.FBX using Guid(590043b7f55fc864986bc9630a0ab57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5d75bb26ab017850a851c3c60c0161') in 0.045474 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Cafe Interior/Models/Milk.FBX
+  artifactKey: Guid(19d0daa178c7e134589ea0147c7690a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Milk.FBX using Guid(19d0daa178c7e134589ea0147c7690a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd32e7bec6519afe5f6661f21a2caec8e') in 0.030079 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Cafe Interior/Models/Bottle 3.FBX
+  artifactKey: Guid(5f1511fdcc605754cbb28d8a80de3533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Bottle 3.FBX using Guid(5f1511fdcc605754cbb28d8a80de3533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '394cd4bb0b5c59594eb3df2d813a5147') in 0.024114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Cafe Interior/Models/TV.FBX
+  artifactKey: Guid(8e4d622e80829a34eb806559ca58b4e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/TV.FBX using Guid(8e4d622e80829a34eb806559ca58b4e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf5fa51625822632e72c06507e20a03') in 0.023274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Spoon.FBX
+  artifactKey: Guid(147195210118e94458a29cf89e63074f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Spoon.FBX using Guid(147195210118e94458a29cf89e63074f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3291578d1ed6639ac0187068d20606b5') in 0.016698 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Chair 1.FBX
+  artifactKey: Guid(cca6d8b3e67db57438210aae04d66497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Chair 1.FBX using Guid(cca6d8b3e67db57438210aae04d66497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47090dac0ccca1f33ee1f77f565db23d') in 0.019135 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Ceiling lamp 2.FBX
+  artifactKey: Guid(475d6620a3e0f364dbe91632275f0a73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Ceiling lamp 2.FBX using Guid(475d6620a3e0f364dbe91632275f0a73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09ffc9faa14e37957c922d5ad868a3a7') in 0.025115 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Menu.FBX
+  artifactKey: Guid(1b80a30639423194d91a841c93297666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Menu.FBX using Guid(1b80a30639423194d91a841c93297666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f63b6ef9b0bfd0d40c4392fa90e2aa') in 0.045100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cafe Interior/Models/Bottle 2.FBX
+  artifactKey: Guid(0a83c73c4481d6349a1da4cf6be27cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Bottle 2.FBX using Guid(0a83c73c4481d6349a1da4cf6be27cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90cbe14ebad15976f1fbceb2009b9187') in 0.026824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Cafe Interior/Models/Blackboard 3.FBX
+  artifactKey: Guid(89aaa2c564d1baf418772a2301d1993c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Blackboard 3.FBX using Guid(89aaa2c564d1baf418772a2301d1993c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c45615c7c5c7802738d5af3c86b5c6f3') in 0.025523 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Cafe Interior/Models/Glass 2.FBX
+  artifactKey: Guid(0444eb5a56953f245ba3d909cb4849f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Glass 2.FBX using Guid(0444eb5a56953f245ba3d909cb4849f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0820393fb24d056181f6cc1f2d24240') in 0.014738 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Glass 4.FBX
+  artifactKey: Guid(13e40dbd4024d694eac189e67a113692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Glass 4.FBX using Guid(13e40dbd4024d694eac189e67a113692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e75ef9a74dcaa09bb506bddd880240f') in 0.016516 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Models/Water bottle.FBX
+  artifactKey: Guid(400ba347fbb7f794480dcba9a25b50b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Water bottle.FBX using Guid(400ba347fbb7f794480dcba9a25b50b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af8a8f084d21004aca2b14fcb7b8e5f4') in 0.023554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Shelf.FBX
+  artifactKey: Guid(84b768b975b7dc1489182cdbb2c730f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Shelf.FBX using Guid(84b768b975b7dc1489182cdbb2c730f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd274139fea698ee6be8d81693647e0') in 0.025781 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cafe Interior/Models/Wall 4.FBX
+  artifactKey: Guid(ecfa2ee5d449f914ea534ee2ea14db43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Wall 4.FBX using Guid(ecfa2ee5d449f914ea534ee2ea14db43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6404fcbaf4b25f2de583804d0fb7cff4') in 0.092657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cafe Interior/Models/Chair 3.FBX
+  artifactKey: Guid(cb81d3e5162151243a6eaf7fa123e4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Chair 3.FBX using Guid(cb81d3e5162151243a6eaf7fa123e4e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e4e2edb35c15fcadeaf9f693d3afbe') in 0.021423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cafe Interior/Models/Door 3.FBX
+  artifactKey: Guid(8d6b3f083bfc99643aad9b5c5ea4b8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Door 3.FBX using Guid(8d6b3f083bfc99643aad9b5c5ea4b8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49c566fdd6654a7aee65a6c7a21a86d8') in 0.044198 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Door 2.FBX
+  artifactKey: Guid(e30e91b6b7a973c4180d4ba77d7ffb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Door 2.FBX using Guid(e30e91b6b7a973c4180d4ba77d7ffb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8217d90762622a14e948fadc058b737') in 0.043922 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cafe Interior/Models/Napkin holder.FBX
+  artifactKey: Guid(2758e51b72dff9c48a50ff535d05f1a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Napkin holder.FBX using Guid(2758e51b72dff9c48a50ff535d05f1a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adfabaffd5d0a52fe0194c86ae273b52') in 0.032583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Models/Stool.FBX
+  artifactKey: Guid(407ffc52d9c11244ca5312063508c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Stool.FBX using Guid(407ffc52d9c11244ca5312063508c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b96bf7247b405471627f5b45a461bf6') in 0.028234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cafe Interior/Models/Glass 3.FBX
+  artifactKey: Guid(5530f0d0f4883a34089ae8a61ee0878a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Glass 3.FBX using Guid(5530f0d0f4883a34089ae8a61ee0878a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57936900a1b71c8a3048ed7a2d69fcd0') in 0.016020 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cafe Interior/Models/Coffee 1.FBX
+  artifactKey: Guid(7d436af5b6f3da841afbdc654f09fe34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Coffee 1.FBX using Guid(7d436af5b6f3da841afbdc654f09fe34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a179794cce01718dcfdafcd0b3d4588') in 0.022192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cafe Interior/Models/Chair 2.FBX
+  artifactKey: Guid(400d5f3e43e5e244aa1e37191f12fe68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Chair 2.FBX using Guid(400d5f3e43e5e244aa1e37191f12fe68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4787513f059553916d6ccf9b15fcdcb') in 0.019627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Cafe Interior/Models/Cake.FBX
+  artifactKey: Guid(0fd9dd7ce7d7eda48956f0453f902396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Cake.FBX using Guid(0fd9dd7ce7d7eda48956f0453f902396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58595024b4c06508367fce82bbf4033c') in 0.032409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Cafe Interior/Models/Refrigerator.FBX
+  artifactKey: Guid(2d7c0f31acdcbb840b91201b165837f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Refrigerator.FBX using Guid(2d7c0f31acdcbb840b91201b165837f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eed4d0f1fca5fb4c0b179ade08d1769') in 0.045622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cafe Interior/Models/Cash register.FBX
+  artifactKey: Guid(018e39a72c78a554aaabb8f4b926b92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cafe Interior/Models/Cash register.FBX using Guid(018e39a72c78a554aaabb8f4b926b92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608618f0ed694d5ab70cff6296e03581') in 0.025303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.394 seconds
-Refreshing native plugins compatible for Editor in 11.64 ms, found 18 plugins.
+- Loaded All Assemblies, in  0.490 seconds
+Refreshing native plugins compatible for Editor in 20.88 ms, found 18 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -291,48 +907,48 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.106 seconds
-Domain Reload Profiling: 1496ms
-	BeginReloadAssembly (132ms)
+- Finished resetting the current domain, in  1.340 seconds
+Domain Reload Profiling: 1824ms
+	BeginReloadAssembly (177ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
+		CreateAndSetChildDomain (49ms)
 	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (22ms)
-	LoadAllAssembliesAndSetupDomain (206ms)
-		LoadAssemblies (227ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (281ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (40ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
+		AnalyzeDomain (39ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
 			ResolveRequiredComponents (9ms)
-	FinalizeReload (1106ms)
+	FinalizeReload (1341ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (487ms)
+		SetupLoadedEditorAssemblies (494ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (23ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (68ms)
-			ProcessInitializeOnLoadAttributes (335ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (343ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (11ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Refreshing native plugins compatible for Editor in 12.81 ms, found 18 plugins.
-Preloading 2 native plugins for Editor in 0.08 ms.
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 23.17 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.16 ms.
 Unloading 6443 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 83 unused Assets / (2.6 MB). Loaded Objects now: 7126.
-Memory consumption went from 245.5 MB to 242.9 MB.
-Total: 3.710100 ms (FindLiveObjects: 0.457100 ms CreateObjectMapping: 0.139300 ms MarkObjects: 2.605900 ms  DeleteObjects: 0.506800 ms)
+Unloading 125 unused Assets / (2.6 MB). Loaded Objects now: 7258.
+Memory consumption went from 249.0 MB to 246.3 MB.
+Total: 4.413400 ms (FindLiveObjects: 0.500700 ms CreateObjectMapping: 0.259700 ms MarkObjects: 3.011600 ms  DeleteObjects: 0.640700 ms)
 
-Prepare: number of updated asset objects reloaded= 0
+Prepare: number of updated asset objects reloaded= 21
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -347,3 +963,115 @@ AssetImportParameters requested are different than current active one (requested
   custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.524 seconds
+Refreshing native plugins compatible for Editor in 20.67 ms, found 18 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: False
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs:31)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKBuildCheck.cs Line: 31)
+
+CreateSerializedAsset is not supported while importing out-of-process
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Unity.XR.PXR.PXR_ProjectSetting:GetProjectConfig () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs:122)
+Unity.XR.PXR.Editor.PXR_SDKSettingEditor:InitializeOnLoad () (at E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Editor/PXR_SDKSettingEditor.cs:146)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[E:/graduateschool/bishe/pico sdk/PICO Unity Integration SDK-3.3.0-20250917/Runtime/Scripts/PXR_ProjectSetting.cs line 122]
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> UnityEngine.UnityException: Creating asset at path Assets/Resources/PXR_ProjectSetting.asset failed.
+  at (wrapper managed-to-native) UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,string)
+  at Unity.XR.PXR.PXR_ProjectSetting.GetProjectConfig () [0x00161] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Runtime\Scripts\PXR_ProjectSetting.cs:122 
+  at Unity.XR.PXR.Editor.PXR_SDKSettingEditor.InitializeOnLoad () [0x00000] in E:\graduateschool\bishe\pico sdk\PICO Unity Integration SDK-3.3.0-20250917\Editor\PXR_SDKSettingEditor.cs:146 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <a3b02d6f9b494355b946095ea1f25c54>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <227afaeeb5894c00b1d9aa4278f87f8c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.420 seconds
+Domain Reload Profiling: 1932ms
+	BeginReloadAssembly (178ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (268ms)
+		LoadAssemblies (308ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (47ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (3ms)
+			ScanForSourceGeneratedMonoScriptInfo (23ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1420ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (519ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (357ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 23.31 ms, found 18 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Unloading 6548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 104 unused Assets / (5.0 MB). Loaded Objects now: 7290.
+Memory consumption went from 262.0 MB to 257.0 MB.
+Total: 5.282100 ms (FindLiveObjects: 0.492000 ms CreateObjectMapping: 0.294400 ms MarkObjects: 3.255600 ms  DeleteObjects: 1.239100 ms)
+
+Prepare: number of updated asset objects reloaded= 34
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ”…”⁄œﬂ≥ÃÕÀ≥ˆªÚ”¶”√≥Ã–Ú«Î«Û£¨“—÷–÷π I/O ≤Ÿ◊˜°£
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
