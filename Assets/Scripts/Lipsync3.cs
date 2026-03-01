@@ -14,7 +14,7 @@ public class Lipsync3 : MonoBehaviour
     [SerializeField] public float gain = 1.0f;
 
     [SerializeField] private AudioSource m_AudioSource;
-    [SerializeField] private TMP_Dropdown dropdown; // 你的 Dropdown 组件
+    //[SerializeField] private TMP_Dropdown dropdown; // 你的 Dropdown 组件
 
     [Tooltip("Array of Skinned Mesh Renderer Components for the character.")]
     public SkinnedMeshRenderer[] HeadMeshRenderers;
@@ -115,11 +115,7 @@ public class Lipsync3 : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        // 为Dropdown的valueChange事件添加监听器
-        dropdown.onValueChanged.AddListener(delegate {
-            ChangePeople();
-        });
-        // regex search for SkinnedMeshRenderers: head, teeth, tongue
+
         if (HeadSkinnedMeshRenderer == null)
             HeadSkinnedMeshRenderer = GetHeadSkinnedMeshRendererWithRegex(transform);
 
@@ -129,25 +125,7 @@ public class Lipsync3 : MonoBehaviour
 
     }
 
-    void ChangePeople()
-    {
-        // 获取选中的索引
-        int index = dropdown.value;
 
-        // 检查索引是否在所有数组的有效范围内
-        if (index >= 0 &&
-            index < HeadMeshRenderers.Length &&
-            index < TongueMeshRenderers.Length &&
-            index < jawBones.Length &&
-            index < tongueBones.Length)
-        {
-            // 直接使用索引赋值，避免重复的条件判断
-            HeadSkinnedMeshRenderer = HeadMeshRenderers[index];
-            TongueSkinnedMeshRenderer = TongueMeshRenderers[index];
-            jawBone = jawBones[index];
-            tongueBone = tongueBones[index];
-        }
-    }
 
     /// <summary>
     ///     This function finds the Head skinned mesh renderer components, if present,

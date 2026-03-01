@@ -7,7 +7,8 @@ using TMPro;
 using System.Globalization;
 using WebGLSupport;
 using System;
-using UnityEngine.SceneManagement; // 引入场景管理命名空间
+using UnityEngine.SceneManagement; 
+using System.Text.RegularExpressions;
 
 
 public class ChatSample : MonoBehaviour
@@ -60,7 +61,8 @@ public class ChatSample : MonoBehaviour
     ///火山tts组件
     /// </summary>
     //[SerializeField] private VoiceCloneTTS voiceCloneTTS;
-    [SerializeField] private VolcengineTextToSpeech volcengineTextToSpeech;
+    //[SerializeField] private VolcengineTextToSpeech volcengineTextToSpeech;
+    [SerializeField] private VolcengineVoiceCloneTTS volcengineVoiceCloneTTS;
     #endregion
 
     #region 参数定义
@@ -302,71 +304,78 @@ public class ChatSample : MonoBehaviour
     /// <param name="_response"></param>
     private void CallBack(string _response)
     {
-        _response = _response.Trim();
-
-        Debug.Log("收到AI增量回复：" + _response);
-
         if (string.IsNullOrEmpty(_response))
             return;
-        if (m_CreateVoiceMode)//合成输入为语音
-        {
-            // 合成语音模式下，直接将内容加入语音队列，无需分析完整性
-            m_VoiceQueue.Enqueue(_response); // 直接加入语音队列
-            Debug.Log($"[语音模式] 直接加入语音队列：{_response}");
-            TryPlayNextVoice(); // 尝试播放语音
-            return;
-        }
-        // 增量追加到显示文本
+
+        _response = _response.Trim();
+        Debug.Log("收到AI增量回复：" + _response);
+
+        // 1. 无论什么模式，先追加到显示文本
         AppendText(_response);
-        //StartCoroutine(GetReceiveChatInfo(_response));
-        // 拼接缓存的未完成部分
-        string toSpeak = m_UnfinishedBuffer + _response;
 
-        // 分析最后字符是否为完整句子或有效结束符号
-        if (IsSentenceComplete(toSpeak))
-        {
-            // 如果是完整的句子，加入语音队列并清空缓存
-            m_UnfinishedBuffer = string.Empty;
-            
-            /* 【LYF新增】：打断AI上一段语音 */
-            if(isNewInput){
-                isNewInput = false;
-                StopPlayAudio();
-            }
+        // 2. 拼接到缓冲区
+        m_UnfinishedBuffer += _response;
 
-            m_VoiceQueue.Enqueue(toSpeak); // 加入语音队列
-            Debug.Log($"加入语音队列：{toSpeak}");
-            TryPlayNextVoice(); // 尝试播放语音
-        }
-        else
+        // 3. 检查缓冲区是否含有“强停顿标点”
+        // 包含：句号、感叹号、问号、省略号、或者换行符
+        if (ContainsStrongPunctuation(m_UnfinishedBuffer))
         {
-            // 如果不是完整句子，将其缓存
-            m_UnfinishedBuffer = toSpeak;
-            Debug.Log($"未完成的缓存：{m_UnfinishedBuffer}");
+            SendBufferToVoiceQueue();
         }
 
-        // 启动随机动画
+        // 4. 启动随机动画
         if (!m_IsSpeaking)
         {
             m_IsSpeaking = true;
             StartSpeakingSequenceRandomly();
         }
     }
-    private IEnumerator GetReceiveChatInfo(string _receivemsg)
-    {
-        yield return new WaitForEndOfFrame();
-        ChatPrefab _receiveChat = Instantiate(m_RobotChatPrefab, m_rootTrans.transform);
-        m_TempChatBox.Add(_receiveChat.gameObject);
-        //// 逐字显示接收方的聊天信息
-        //StartCoroutine(SetTextPerWord(_receiveChat, _receivemsg));
-        //ChatPrefab _receiveChat = Instantiate(m_RobotChatPrefab, m_rootTrans.transform);
-        //_receiveChat.SetText(_receivemsg);  // 发送方的消息立即显示
-        //m_TempChatBox.Add(_receiveChat.gameObject);
 
-        //重新计算容器尺寸
-        LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
-        StartCoroutine(TurnToLastLine());
+    /// <summary>
+    /// 检查字符串是否包含强停顿标点
+    /// </summary>
+    private bool ContainsStrongPunctuation(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return false;
+
+        // 定义强停顿符号
+        char[] strongPunctuations = { '。', '！', '？', '!', '?', '\n' };
+
+        // 检查是否包含上述字符，或者包含省略号
+        if (text.IndexOfAny(strongPunctuations) != -1 || text.Contains("……") || text.Contains("..."))
+        {
+            return true;
+        }
+        return false;
     }
+
+    /// <summary>
+    /// 将当前缓冲区内容送入语音队列并清空
+    /// </summary>
+    private void SendBufferToVoiceQueue()
+    {
+        string toSpeak = m_UnfinishedBuffer.Trim();
+        if (string.IsNullOrEmpty(toSpeak)) return;
+
+        // 【打断逻辑】：如果是新的一轮对话的第一句
+        if (isNewInput)
+        {
+            isNewInput = false;
+            StopPlayAudio();
+            m_VoiceQueue.Clear(); // 清空旧队列，防止新老对话混在一起
+        }
+
+        // 加入队列
+        m_VoiceQueue.Enqueue(toSpeak);
+        Debug.Log($"[强标点断句] 加入语音队列：{toSpeak}");
+
+        // 清空缓存
+        m_UnfinishedBuffer = string.Empty;
+
+        // 尝试播放
+        TryPlayNextVoice();
+    }
+
     // 定义接收完整回复参数的方法
     public IEnumerator ReceiveFullResponse(string fullResponse)
     {
@@ -383,56 +392,7 @@ public class ChatSample : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
         StartCoroutine(TurnToLastLine());
     }
-    private IEnumerator SetTextPerWord(ChatPrefab chatfab, string _msg)
-    {
-
-        int currentPos = 0;
-        float originalWordWaitTime = m_WordWaitTime; // 保存原始的等待时间
-        while (m_WriteState)
-        {
-
-            if (currentPos < _msg.Length && CharUnicodeInfo.GetUnicodeCategory(_msg[currentPos]) == UnicodeCategory.OtherLetter)
-            {
-                // 中文或其他非拉丁字母
-                m_WordWaitTime = originalWordWaitTime;
-                //Debug.Log("other" + m_WordWaitTime);
-            }
-            else if (currentPos < _msg.Length && char.IsLetter(_msg[currentPos]) && _msg[currentPos] != ' ')
-            {
-                // 英文字符
-                m_WordWaitTime = 0.03f;
-                //Debug.Log("en" + m_WordWaitTime);
-            }
-            else
-            {
-                // 非字母字符
-                m_WordWaitTime = originalWordWaitTime;
-
-            }
-            yield return new WaitForSeconds(m_WordWaitTime);
-            currentPos++;
-            //更新显示的内容
-           
-            // 访问实例上的TextMeshProUGUI组件
-            //Text textComponent = chatfab.GetComponentInChildren<Text>();
-            //Debug.Log(textComponent.text);
-            m_WriteState = currentPos < _msg.Length;
-
-        }
-         StartCoroutine(TurnToLastLine());
-            chatfab.SetText(_msg.Substring(0, currentPos));
-        m_IsSpeaking = false;
-        //切换到等待动作
-        SetAnimator("state", 0);
-        // 恢复原始的等待时间
-        m_WordWaitTime = originalWordWaitTime;
-
-        //回复结束
-        if (OnAISpeakDone != null)
-        {
-            OnAISpeakDone();
-        }
-    }
+   
 
     private bool IsSentenceComplete(string text)
     {
@@ -459,16 +419,47 @@ public class ChatSample : MonoBehaviour
 
         // 从队列中取出下一段语音
         string nextVoice = m_VoiceQueue.Dequeue();
+        string cleanVoice=CleanTextForTTS(nextVoice);
+        // 【关键新增】：检查清理后的文本是否为空
+        if (string.IsNullOrWhiteSpace(cleanVoice))
+        {
+            Debug.LogWarning("检测到空文本语音，跳过并尝试播放下一条...");
+            // 递归调用，尝试播放队列中的下一个
+            TryPlayNextVoice();
+            return;
+        }
         isPlayingVoice = true;
 
-        Debug.Log($"开始播放语音：{nextVoice}");
+        Debug.Log($"开始播放语音：{cleanVoice}");
 
         // 调用语音合成播放
         //voiceCloneTTS.VoiceTTS(nextVoice,PlayVoice);
-        volcengineTextToSpeech.VoiceTTS1(nextVoice, PlayVoice);
+        volcengineVoiceCloneTTS.VoiceTTS1(cleanVoice, PlayVoice);
 
         // 调用语音合成播放
         //m_ChatSettings.m_TextToSpeech.Speak(nextVoice, PlayVoice);
+    }
+    private string CleanTextForTTS(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return string.Empty;
+
+        //// 1. 将所有空白字符（换行、回车、制表符、多余空格）统一替换为一个空格
+        //// \s 匹配 [ \f\n\r\t\v]，这能直接处理掉所有形式的“空行”
+        //input = Regex.Replace(input, @"\s+", " ");
+
+        // 2. 移除特殊字符
+        // 保留：中文、英文、数字、常用中英文标点
+        input = Regex.Replace(
+            input,
+            @"[^a-zA-Z0-9\u4e00-\u9fa5，。！？、,.!? ""“”: ：]+",
+        ""
+        );
+
+        //// 3. 再次确保没有因为特殊字符被删掉后留下的双空格
+        //input = Regex.Replace(input, @"\s{2,}", " ");
+
+        return input.Trim();
     }
 
     /* 【LYF新增】中断语音播放 */
