@@ -1,0 +1,16 @@
+https://api.figma.com/v1/images/aSxDgSi3JQ1oLYpJYKyyzJ?ids=26:43,26:44,26:60,26:123,26:140,26:158,26:183,26:210,26:309&format=png&scale=4
+
+{
+    "err": null,
+    "images": {
+        "26:43": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d3cd5401-a0b1-49cc-9aa6-9588cff58866",
+        "26:44": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2faad39a-b448-46ae-bfef-30debe23f543",
+        "26:60": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/91ba28c5-1bc8-4278-8c58-ac987472e615",
+        "26:123": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a71c8524-eba9-45d6-96b8-0f6b8130cec2",
+        "26:140": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ec93be24-73b6-4b15-8fa5-e7b528349d44",
+        "26:158": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/451ae4eb-f52b-4312-9027-3f4f716ae31b",
+        "26:183": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1feed075-fdb8-4305-8f78-0da2415a298e",
+        "26:210": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/08218260-0c35-4371-93c3-1070349d2984",
+        "26:309": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8491a0a7-1258-44bb-9dae-1ec6bf16c3ec"
+    }
+}

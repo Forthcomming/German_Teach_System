@@ -1,0 +1,775 @@
+https://content-webfonts.googleapis.com/v1/webfonts?subset=gujarati&key=AIzaSyB0yLZZpiSZCm6IeavzrW2SK5MdpymgZqI
+
+{
+    
+  "kind":  "webfonts#webfontList",
+    
+  "items":  [
+        
+    {
+            
+      "family":  "Anek Gujarati",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v17",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0F5G7w0KgB7Lm7g.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0l5C7w0KgB7Lm7g.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0SZC7w0KgB7Lm7g.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0F5C7w0KgB7Lm7g.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0JZC7w0KgB7Lm7g.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0yZe7w0KgB7Lm7g.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-08Je7w0KgB7Lm7g.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0l5e7w0KgB7Lm7g.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/anekgujarati/v17/l7g_bj5oysqknvkCo2T_8FuiIRBA7lncQUmbIBEtPKiYYQhRwyBxCD-0F5CLwkik.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Baloo Bhai 2",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v30",
+            
+      "lastModified":  "2025-09-10",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNighMXeCo-jsZzo.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNhohMXeCo-jsZzo.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNvYmMXeCo-jsZzo.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNs8mMXeCo-jsZzo.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNqgmMXeCo-jsZzo.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/baloobhai2/v30/sZlWdRSL-z1VEWZ4YNA7Y5ItevYWUOHDE8FvNighAXaIpw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Farsan",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v24",
+            
+      "lastModified":  "2025-09-16",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/farsan/v24/VEMwRoJ0vY_zsyz62q-pxDX9rQ.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/farsan/v24/VEMwRoJ0vY_zsyzK26Wt.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Google Sans",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "italic",
+                
+        "500italic",
+                
+        "600italic",
+                
+        "700italic"
+      
+            ],
+            
+      "subsets":  [
+                
+        "armenian",
+                
+        "bengali",
+                
+        "canadian-aboriginal",
+                
+        "cyrillic",
+                
+        "cyrillic-ext",
+                
+        "devanagari",
+                
+        "ethiopic",
+                
+        "georgian",
+                
+        "greek",
+                
+        "greek-ext",
+                
+        "gujarati",
+                
+        "gurmukhi",
+                
+        "hebrew",
+                
+        "khmer",
+                
+        "lao",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "malayalam",
+                
+        "oriya",
+                
+        "sinhala",
+                
+        "symbols",
+                
+        "tamil",
+                
+        "telugu",
+                
+        "thai",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v67",
+            
+      "lastModified":  "2025-12-10",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIKlirSjiEjo5.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IKlirSjiEjo5.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzaJ6lirSjiEjo5.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ6lirSjiEjo5.ttf",
+                
+        "italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY0EhpyzAFyo5T4o.ttf",
+                
+        "500italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY3MhpyzAFyo5T4o.ttf",
+                
+        "600italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY58mpyzAFyo5T4o.ttf",
+                
+        "700italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY6YmpyzAFyo5T4o.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJljpyw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Hind Vadodara",
+            
+      "variants":  [
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v16",
+            
+      "lastModified":  "2025-09-10",
+            
+      "files":  {
+                
+        "300":  "https://fonts.gstatic.com/s/hindvadodara/v16/neIQzCKvrIcn5pbuuuriV9tTSDn3iXM0oSOL2Yw.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/hindvadodara/v16/neINzCKvrIcn5pbuuuriV9tTcJXfrXsfvSo.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/hindvadodara/v16/neIQzCKvrIcn5pbuuuriV9tTSGH2iXM0oSOL2Yw.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/hindvadodara/v16/neIQzCKvrIcn5pbuuuriV9tTSE3xiXM0oSOL2Yw.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/hindvadodara/v16/neIQzCKvrIcn5pbuuuriV9tTSCnwiXM0oSOL2Yw.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/hindvadodara/v16/neINzCKvrIcn5pbuuuriV9tTQJTVqQ.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Kumar One",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v25",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/kumarone/v25/bMr1mS-P958wYi6YaGeGNO6WU3oT0g.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/kumarone/v25/bMr1mS-P958wYi6YaGe2NeSS.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Kumar One Outline",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v20",
+            
+      "lastModified":  "2025-06-25",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/kumaroneoutline/v20/Noao6VH62pyLP0fsrZ-v18wlUEcX9zDwRQu8EGKF.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/kumaroneoutline/v20/Noao6VH62pyLP0fsrZ-v18wlUEcX9wDxTw8.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Mogra",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v22",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/mogra/v22/f0X40eSs8c95TBo4DvLmxtnG.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/mogra/v22/f0X40eSs8c95TCo5BPY.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Mukta Vaani",
+            
+      "variants":  [
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v15",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "200":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGXNV8BD-u97MW1a.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGWpVMBD-u97MW1a.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/muktavaani/v15/3Jn5SD_-ynaxmxnEfVHPIF0FfORL0fNy.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGXxVcBD-u97MW1a.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGXdUsBD-u97MW1a.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGW5U8BD-u97MW1a.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/muktavaani/v15/3JnkSD_-ynaxmxnEfVHPIGWlUMBD-u97MW1a.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/muktavaani/v15/3Jn5SD_-ynaxmxnEfVHPIG0EduA.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Sans Gujarati",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "math",
+                
+        "symbols"
+      
+            ],
+            
+      "version":  "v27",
+            
+      "lastModified":  "2025-09-16",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_ypFgPM_OdiEH0s.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_wpFwPM_OdiEH0s.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_z3FwPM_OdiEH0s.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_ypFwPM_OdiEH0s.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_ybFwPM_OdiEH0s.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_x3EAPM_OdiEH0s.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_xOEAPM_OdiEH0s.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_wpEAPM_OdiEH0s.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_wAEAPM_OdiEH0s.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notosansgujarati/v27/wlpWgx_HC1ti5ViekvcxnhMlCVo3f5pv17ivlzsUB14gg1TMR2Gw4VceEl7MA_ypFzPN9uM.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Serif Gujarati",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "math",
+                
+        "symbols"
+      
+            ],
+            
+      "version":  "v29",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuYycYzuM1Kf-OJu.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuaycIzuM1Kf-OJu.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuZscIzuM1Kf-OJu.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuYycIzuM1Kf-OJu.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuYAcIzuM1Kf-OJu.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2Hubsd4zuM1Kf-OJu.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HubVd4zuM1Kf-OJu.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2Huayd4zuM1Kf-OJu.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2Huabd4zuM1Kf-OJu.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notoserifgujarati/v29/hESa6WBlOixO-3OJ1FTmTsmqlBRUJBVkcgNLpdsspzP2HuYycLzvOVY.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Rasa",
+            
+      "variants":  [
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "300italic",
+                
+        "italic",
+                
+        "500italic",
+                
+        "600italic",
+                
+        "700italic"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v27",
+            
+      "lastModified":  "2025-09-05",
+            
+      "files":  {
+                
+        "300":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN4YJW41fcvN2KT4.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN5GJW41fcvN2KT4.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN50JW41fcvN2KT4.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN6YIm41fcvN2KT4.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN6hIm41fcvN2KT4.ttf",
+                
+        "300italic":  "https://fonts.gstatic.com/s/rasa/v27/xn78YHIn1mWmfqBOmQhln0Bne8uOZth2d8_v3bT4Ycc.ttf",
+                
+        "italic":  "https://fonts.gstatic.com/s/rasa/v27/xn78YHIn1mWmfqBOmQhln0Bne8uOZoZ2d8_v3bT4Ycc.ttf",
+                
+        "500italic":  "https://fonts.gstatic.com/s/rasa/v27/xn78YHIn1mWmfqBOmQhln0Bne8uOZrR2d8_v3bT4Ycc.ttf",
+                
+        "600italic":  "https://fonts.gstatic.com/s/rasa/v27/xn78YHIn1mWmfqBOmQhln0Bne8uOZlhxd8_v3bT4Ycc.ttf",
+                
+        "700italic":  "https://fonts.gstatic.com/s/rasa/v27/xn78YHIn1mWmfqBOmQhln0Bne8uOZmFxd8_v3bT4Ycc.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/rasa/v27/xn76YHIn1mWmVKl8ZtAM9NrJfN5GJV40d88.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Shrikhand",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "gujarati",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v17",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/shrikhand/v17/a8IbNovtLWfR7T7bMJwbBIiQ0zhMtA.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/shrikhand/v17/a8IbNovtLWfR7T7bMJwrBYKU.ttf"
+    
+        }
+  
+    ]
+
+}

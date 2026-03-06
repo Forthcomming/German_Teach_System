@@ -1,0 +1,417 @@
+https://content-webfonts.googleapis.com/v1/webfonts?subset=oriya&key=AIzaSyB0yLZZpiSZCm6IeavzrW2SK5MdpymgZqI
+
+{
+    
+  "kind":  "webfonts#webfontList",
+    
+  "items":  [
+        
+    {
+            
+      "family":  "Alkatra",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "devanagari",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya"
+      
+            ],
+            
+      "version":  "v5",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medzngmu7cPrNDVemxE.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48MedzngUu7cPrNDVemxE.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medznj4vLcPrNDVemxE.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48MedznjBvLcPrNDVemxE.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medzngmu4cOptQ.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Anek Odia",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya"
+      
+            ],
+            
+      "version":  "v17",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnmZf63mXZAtm_es.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnkZfq3mXZAtm_es.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnnHfq3mXZAtm_es.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnmZfq3mXZAtm_es.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnmrfq3mXZAtm_es.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnlHea3mXZAtm_es.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnl-ea3mXZAtm_es.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnkZea3mXZAtm_es.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/anekodia/v17/TK3PWkoJARApz5UCd345tuevwwQX0CwsoYkAWgWYevAauivBUnmZfp3nV5Q.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Baloo Bhaina 2",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v29",
+            
+      "lastModified":  "2025-09-02",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEssPvRfRLYWmZSA.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEgMPvRfRLYWmZSA.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEbMTvRfRLYWmZSA.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEVcTvRfRLYWmZSA.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEMsTvRfRLYWmZSA.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/baloobhaina2/v29/qWc-B6yyq4P9Adr3RtoX1q6ySgbwusXwJjkOS-XEssPfRP5P.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Google Sans",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "italic",
+                
+        "500italic",
+                
+        "600italic",
+                
+        "700italic"
+      
+            ],
+            
+      "subsets":  [
+                
+        "armenian",
+                
+        "bengali",
+                
+        "canadian-aboriginal",
+                
+        "cyrillic",
+                
+        "cyrillic-ext",
+                
+        "devanagari",
+                
+        "ethiopic",
+                
+        "georgian",
+                
+        "greek",
+                
+        "greek-ext",
+                
+        "gujarati",
+                
+        "gurmukhi",
+                
+        "hebrew",
+                
+        "khmer",
+                
+        "lao",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "malayalam",
+                
+        "oriya",
+                
+        "sinhala",
+                
+        "symbols",
+                
+        "tamil",
+                
+        "telugu",
+                
+        "thai",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v67",
+            
+      "lastModified":  "2025-12-10",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIKlirSjiEjo5.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IKlirSjiEjo5.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzaJ6lirSjiEjo5.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ6lirSjiEjo5.ttf",
+                
+        "italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY0EhpyzAFyo5T4o.ttf",
+                
+        "500italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY3MhpyzAFyo5T4o.ttf",
+                
+        "600italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY58mpyzAFyo5T4o.ttf",
+                
+        "700italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY6YmpyzAFyo5T4o.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJljpyw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Sans Oriya",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya"
+      
+            ],
+            
+      "version":  "v35",
+            
+      "lastModified":  "2026-02-19",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Ivj0fq_c6LhHBRe-.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Ivh0f6_c6LhHBRe-.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Iviqf6_c6LhHBRe-.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Ivj0f6_c6LhHBRe-.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5IvjGf6_c6LhHBRe-.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5IvgqeK_c6LhHBRe-.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5IvgTeK_c6LhHBRe-.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Ivh0eK_c6LhHBRe-.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5IvhdeK_c6LhHBRe-.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notosansoriya/v35/AYCppXfzfccDCstK_hrjDyADv5e9748vhj3CJBLHIARtgD6TJQS0dJT5Ivj0f5_d4rw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Serif Oriya",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya"
+      
+            ],
+            
+      "version":  "v6",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/notoseriforiya/v6/MjQQmj56u-r69izk_LDqWN7w0cYByutv9qeWYrvLaxrc_Hy-v039MF1j.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notoseriforiya/v6/MjQQmj56u-r69izk_LDqWN7w0cYByutv9qeWYrvLaxru_Hy-v039MF1j.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notoseriforiya/v6/MjQQmj56u-r69izk_LDqWN7w0cYByutv9qeWYrvLaxoC-3y-v039MF1j.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notoseriforiya/v6/MjQQmj56u-r69izk_LDqWN7w0cYByutv9qeWYrvLaxo7-3y-v039MF1j.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notoseriforiya/v6/MjQQmj56u-r69izk_LDqWN7w0cYByutv9qeWYrvLaxrc_Ey_tUk.ttf"
+    
+        }
+  
+    ]
+
+}

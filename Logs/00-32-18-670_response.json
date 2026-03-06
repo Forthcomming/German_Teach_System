@@ -1,0 +1,189 @@
+https://content-webfonts.googleapis.com/v1/webfonts?subset=myanmar&key=AIzaSyB0yLZZpiSZCm6IeavzrW2SK5MdpymgZqI
+
+{
+    
+  "kind":  "webfonts#webfontList",
+    
+  "items":  [
+        
+    {
+            
+      "family":  "Noto Sans Myanmar",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "myanmar"
+      
+            ],
+            
+      "version":  "v27",
+            
+      "lastModified":  "2026-01-20",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGTOYltUbAZxluYE.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGbOZltUbAZxluYE.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGW2ZltUbAZxluYE.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGTOZltUbAZxluYE.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGQGZltUbAZxluYE.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGe2eltUbAZxluYE.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGdSeltUbAZxluYE.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGbOeltUbAZxluYE.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGZqeltUbAZxluYE.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notosansmyanmar/v27/AlZU_y1ZtY3ymOryg38hOCSdOnFq0FP9_gnYM_ME0QeqLzz8-kqmtY3KLEbEGTOZptQRBQ.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Serif Myanmar",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "myanmar"
+      
+            ],
+            
+      "version":  "v14",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJudM7F2Yv76aBKKs-bHMQfAHUw3jnNwBDsU9X6RPzQ.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNbDHMefv2TeXJng.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNCDLMefv2TeXJng.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJsdM7F2Yv76aBKKs-bHMQfAHUw3jn1pBrocdDqRA.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNUDPMefv2TeXJng.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNfDTMefv2TeXJng.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNGDXMefv2TeXJng.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNBDbMefv2TeXJng.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJvdM7F2Yv76aBKKs-bHMQfAHUw3jnNIDfMefv2TeXJng.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notoserifmyanmar/v14/VuJsdM7F2Yv76aBKKs-bHMQfAHUw3jnFpRDs.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Padauk",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "myanmar"
+      
+            ],
+            
+      "version":  "v17",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/padauk/v17/RrQRboJg-id7OnbBa0_g3LlYbg.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/padauk/v17/RrQSboJg-id7Onb512DE1JJEZ4YwGg.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/padauk/v17/RrQRboJg-id7OnbxakXk.ttf"
+    
+        }
+  
+    ]
+
+}

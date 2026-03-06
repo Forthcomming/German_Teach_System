@@ -1,0 +1,665 @@
+https://content-webfonts.googleapis.com/v1/webfonts?subset=bengali&key=AIzaSyB0yLZZpiSZCm6IeavzrW2SK5MdpymgZqI
+
+{
+    
+  "kind":  "webfonts#webfontList",
+    
+  "items":  [
+        
+    {
+            
+      "family":  "Alkatra",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "devanagari",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "oriya"
+      
+            ],
+            
+      "version":  "v5",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medzngmu7cPrNDVemxE.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48MedzngUu7cPrNDVemxE.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medznj4vLcPrNDVemxE.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48MedznjBvLcPrNDVemxE.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/alkatra/v5/r05EGLZA5qhCYsyJbuChFuK48Medzngmu4cOptQ.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Anek Bangla",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v16",
+            
+      "lastModified":  "2025-09-16",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofm9YIocg56yyvt0.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofu9ZIocg56yyvt0.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3OfjFZIocg56yyvt0.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofm9ZIocg56yyvt0.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofl1ZIocg56yyvt0.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3OfrFeIocg56yyvt0.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3OfoheIocg56yyvt0.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofu9eIocg56yyvt0.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/anekbangla/v16/_gPW1R38qTExHg-17BhM6n66QhabMYB0fBKONtHhRSIUIre5mq3Ofm9ZEoYq4w.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Atma",
+            
+      "variants":  [
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v19",
+            
+      "lastModified":  "2025-09-16",
+            
+      "files":  {
+                
+        "300":  "https://fonts.gstatic.com/s/atma/v19/uK_z4rqWc-Eoo8JzKjc9PvedRkM.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/atma/v19/uK_84rqWc-Eom25bDj8WIv4.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/atma/v19/uK_z4rqWc-Eoo5pyKjc9PvedRkM.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/atma/v19/uK_z4rqWc-Eoo7Z1Kjc9PvedRkM.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/atma/v19/uK_z4rqWc-Eoo9J0Kjc9PvedRkM.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/atma/v19/uK_84rqWc-Eoq29RCg.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Baloo Da 2",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v26",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjALsTNe55aRa7UE.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjA5sTNe55aRa7UE.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjDVtjNe55aRa7UE.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjDstjNe55aRa7UE.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjCLtjNe55aRa7UE.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/balooda2/v26/2-c39J9j0IaUMQZwAJyJaOX1UUnf3GLnYjALsQNf7ZI.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Galada",
+            
+      "variants":  [
+                
+        "regular"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin"
+      
+            ],
+            
+      "version":  "v21",
+            
+      "lastModified":  "2025-09-11",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/galada/v21/H4cmBXyGmcjXlUX-8iw-4Lqggw.ttf"
+      
+            },
+            
+      "category":  "display",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/galada/v21/H4cmBXyGmcjXlUXO8yY6.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Google Sans",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "italic",
+                
+        "500italic",
+                
+        "600italic",
+                
+        "700italic"
+      
+            ],
+            
+      "subsets":  [
+                
+        "armenian",
+                
+        "bengali",
+                
+        "canadian-aboriginal",
+                
+        "cyrillic",
+                
+        "cyrillic-ext",
+                
+        "devanagari",
+                
+        "ethiopic",
+                
+        "georgian",
+                
+        "greek",
+                
+        "greek-ext",
+                
+        "gujarati",
+                
+        "gurmukhi",
+                
+        "hebrew",
+                
+        "khmer",
+                
+        "lao",
+                
+        "latin",
+                
+        "latin-ext",
+                
+        "malayalam",
+                
+        "oriya",
+                
+        "sinhala",
+                
+        "symbols",
+                
+        "tamil",
+                
+        "telugu",
+                
+        "thai",
+                
+        "vietnamese"
+      
+            ],
+            
+      "version":  "v67",
+            
+      "lastModified":  "2025-12-10",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIKlirSjiEjo5.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IKlirSjiEjo5.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzaJ6lirSjiEjo5.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ6lirSjiEjo5.ttf",
+                
+        "italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY0EhpyzAFyo5T4o.ttf",
+                
+        "500italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY3MhpyzAFyo5T4o.ttf",
+                
+        "600italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY58mpyzAFyo5T4o.ttf",
+                
+        "700italic":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua9rENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQOs5beU3yksanMY6YmpyzAFyo5T4o.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/googlesans/v67/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJljpyw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Hind Siliguri",
+            
+      "variants":  [
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v14",
+            
+      "lastModified":  "2025-09-16",
+            
+      "files":  {
+                
+        "300":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRDf44uEfKiGvxts.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEofJvQxuk0Nig.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRG_54uEfKiGvxts.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-4uEfKiGvxts.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_4uEfKiGvxts.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJrawg.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Mina",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "700"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v14",
+            
+      "lastModified":  "2025-09-08",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/mina/v14/-nFzOGc18vARrz9j7i3y65o.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/mina/v14/-nF8OGc18vARl4NMyiXZ95OkJwA.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/mina/v14/-nFzOGc18vARnz5p6g.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Sans Bengali",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v33",
+            
+      "lastModified":  "2026-01-28",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsolKudCk8izI0lc.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsglLudCk8izI0lc.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmstdLudCk8izI0lc.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsolLudCk8izI0lc.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsrtLudCk8izI0lc.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsldMudCk8izI0lc.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6Kmsm5MudCk8izI0lc.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsglMudCk8izI0lc.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsiBMudCk8izI0lc.ttf"
+      
+            },
+            
+      "category":  "sans-serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notosansbengali/v33/Cn-SJsCGWQxOjaGwMQ6fIiMywrNJIky6nvd8BjzVMvJx2mcSPVFpVEqE-6KmsolLidGu9g.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Noto Serif Bengali",
+            
+      "variants":  [
+                
+        "100",
+                
+        "200",
+                
+        "300",
+                
+        "regular",
+                
+        "500",
+                
+        "600",
+                
+        "700",
+                
+        "800",
+                
+        "900"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v31",
+            
+      "lastModified":  "2025-09-17",
+            
+      "files":  {
+                
+        "100":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfcAH3qn4LjQH8yD.ttf",
+                
+        "200":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfeAHnqn4LjQH8yD.ttf",
+                
+        "300":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfdeHnqn4LjQH8yD.ttf",
+                
+        "regular":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfcAHnqn4LjQH8yD.ttf",
+                
+        "500":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfcyHnqn4LjQH8yD.ttf",
+                
+        "600":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JffeGXqn4LjQH8yD.ttf",
+                
+        "700":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JffnGXqn4LjQH8yD.ttf",
+                
+        "800":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfeAGXqn4LjQH8yD.ttf",
+                
+        "900":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfepGXqn4LjQH8yD.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/notoserifbengali/v31/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JfcAHkqm6rw.ttf"
+    
+        },
+        
+    {
+            
+      "family":  "Tiro Bangla",
+            
+      "variants":  [
+                
+        "regular",
+                
+        "italic"
+      
+            ],
+            
+      "subsets":  [
+                
+        "bengali",
+                
+        "latin",
+                
+        "latin-ext"
+      
+            ],
+            
+      "version":  "v6",
+            
+      "lastModified":  "2025-05-30",
+            
+      "files":  {
+                
+        "regular":  "https://fonts.gstatic.com/s/tirobangla/v6/IFSgHe1Tm95E3O8b5i2V8MG9-UPeuz4i.ttf",
+                
+        "italic":  "https://fonts.gstatic.com/s/tirobangla/v6/IFSiHe1Tm95E3O8b5i2V8PG_80f8vi4imBM.ttf"
+      
+            },
+            
+      "category":  "serif",
+            
+      "kind":  "webfonts#webfont",
+            
+      "menu":  "https://fonts.gstatic.com/s/tirobangla/v6/IFSgHe1Tm95E3O8b5i2V8PG880c.ttf"
+    
+        }
+  
+    ]
+
+}

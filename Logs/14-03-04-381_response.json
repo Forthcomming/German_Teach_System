@@ -1,0 +1,8 @@
+https://api.figma.com/v1/me
+
+{
+    "id": "1611628552121316504",
+    "email": "yangliyan0522@gmail.com",
+    "handle": "Liyan Yang",
+    "img_url": "https://s3-alpha.figma.com/profile/46c9a6e0-5f7c-4359-b644-d64880bb7a53"
+}
