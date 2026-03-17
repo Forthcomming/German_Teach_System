@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\SvgImageSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Nova\NovaBlurDrawer.cs" />
+    <Compile Include="Assets\Scripts\UI\CountdownUIController.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\RWKV\chatRWKV.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\FrameGroup.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Api\FigmaUser.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\Scenes\QuizModule.cs" />
+    <Compile Include="Assets\Scripts\Manager\LessonManager.cs" />
     <Compile Include="Assets\AIChatTookit\Tool\Webgl\webglTextInput\WebGLSupport\WebGLInput\Wrapper\IInputField.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\CanvasDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\PrefabSettings.cs" />
+    <Compile Include="Assets\Scripts\UI\QuizUIController.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Font\TmpDownloader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Extensions\FontExtensions.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\FigmaConverterUnity.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\NovaTransformData.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\Expression\BlinkController.cs" />
+    <Compile Include="Assets\Scripts\UI\QuizPanelController.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Sprite\SpriteDownloader\ConcurrentSpriteDownloader.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Font\FontLoader.cs" />
     <Compile Include="Assets\AIChatTookit\Tool\Webgl\webglVoiceInput\Scripts\WAV.cs" />
@@ -169,7 +172,6 @@
     <Compile Include="Assets\AIChatTookit\Scripts\WOV\UnityWakeOnVoice.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\Shapes2DSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Project\RecentProject.cs" />
-    <Compile Include="Assets\Scenes\DataLogger.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Sprite\SpriteGeneratorExtensions.cs" />
     <Compile Include="Assets\AIChatTookit\Tool\Webgl\webglTextInput\WebGLSupport\WebGLInput\Detail\RebuildChecker.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\Xunfei\XunfeiSettings.cs" />
@@ -178,6 +180,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\AutoLayoutDrawers\ContentSizeFitterDrawer.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\SparkAI\ChatSpark.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+    <Compile Include="Assets\Scripts\Manager\DataLogger.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Models\VignetteModel.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\LLM.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\OpenAI\OpenAITextToSpeech.cs" />
@@ -206,8 +209,10 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Extensions\FObjectExtensions.cs" />
     <Compile Include="Assets\AIChatTookit\Tool\Webgl\webglTextInput\WebGLSupport\WebGLInput\Wrapper\WrappedTMPInputField.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\LocalizationDrawers\DALocalizatorDrawer.cs" />
+    <Compile Include="Assets\Scripts\UI\UIButtonAudioHighlight.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\TTS.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\chatGLM\chatGLM.cs" />
+    <Compile Include="Assets\Scripts\Manager\QuizModule.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\Baidu\AppBuilderBaidu.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\BaiduAI\BaiduSettings.cs" />
@@ -232,7 +237,6 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\TextDrawers\UnityTextDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\DAJson\JFResult.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\ImageSpritesSettings.cs" />
-    <Compile Include="Assets\Scenes\PracticeModule.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\ScriptGeneratorSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Nova\NovaAutoLayoutDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\FontStruct.cs" />
@@ -292,7 +296,6 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\AutoLayoutDrawers\AspectRatioFitterDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Sprite\SpriteColorizer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\Scenes\LessonManager.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Core\AssetTools.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Font\TtfDownloader.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Sprite\SpriteGenerator.cs" />
@@ -321,6 +324,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\AutoLayoutDrawers\LayoutElementDrawer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\DiffInfo.cs" />
+    <Compile Include="Assets\Scripts\Manager\PracticeModule.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\ScrollViewDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Helpers\GraphicHelpers.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Helpers\ImportTempObject.cs" />
