@@ -6,14 +6,17 @@ using TMPro;
 
 namespace UI
 {
+    public enum QuestionPresentationMode
+    {
+        Choice,
+        Voice
+    }
+
     /// <summary>
     /// 面板级测验 UI 控制器（已整合倒计时逻辑）：
-    /// - 显示题干文本；
-    /// - 显示题目进度（题目: 1 / N）；
-    /// - 为选项图片 Image 赋值；
-    /// - 每题独立倒计时；
-    /// - 处理玩家点击选项，调用 QuizModule.OnUserAnswer；
-    /// - 控制对/错提示 UI 的显示与隐藏。
+    /// - 选择题：图/文混合选项，提交选项编号字符串；
+    /// - 语音题：隐藏选项区，由外部语音识别完成后调用 SubmitVoiceRecognizedText，提交识别文本与 QuizModule.answers 比对（忽略大小写、Trim）；
+    /// - 题目进度、每题倒计时、对/错反馈。
     /// </summary>
     [DisallowMultipleComponent]
     public class QuizPanelController : MonoBehaviour
@@ -29,20 +32,55 @@ namespace UI
         [Tooltip("用于显示题目进度的 TextMeshProUGUI，例如 \"题目: 1 / 10\"。")]
         [SerializeField] private TextMeshProUGUI progressText;
 
-        [Header("选项图片 UI")]
-        [Tooltip("用于显示选项图片的 Image 数组，例如长度为 4 对应四个选项。顺序即为选项编号 0/1/2/3。")]
-        [SerializeField] private Image[] optionImages;
-
         [Serializable]
-        public class QuestionSprites
+        public class OptionView
         {
-            [Tooltip("该题目对应的选项图片数组，顺序需与“选项编号”一致（0/1/2/3）。")]
-            public Sprite[] optionSprites;
+            [Tooltip("该选项对应的按钮（必填）。按钮的 OnClick 需要调用 QuizPanelController.OnOptionClicked(index)。")]
+            public Button button;
+
+            [Tooltip("该选项对应的图片（可选）。若为空或本题该选项未配置图片，则会隐藏。")]
+            public Image image;
+
+            [Tooltip("该选项对应的文字（可选）。若为空或本题该选项未配置文字，则会隐藏。")]
+            public TextMeshProUGUI label;
         }
 
-        [Header("每题对应的选项图片")]
-        [Tooltip("长度需与 QuizModule.questions 一致，每个元素包含该题的所有选项图片。")]
-        [SerializeField] private QuestionSprites[] questionSprites;
+        [Header("选项视图（最多 7 个）")]
+        [Tooltip("场景中预先放置的选项槽位（建议固定 7 个）。顺序即为选项编号 0/1/2/3...")]
+        [SerializeField] private OptionView[] optionViews;
+
+        [Serializable]
+        public class OptionData
+        {
+            [Tooltip("该选项的图片（可为空）。")]
+            public Sprite sprite;
+
+            [Tooltip("该选项的文字（可为空）。")]
+            public string text;
+        }
+
+        [Serializable]
+        public class QuestionOptions
+        {
+            [Tooltip("该题的选项列表，长度可变（4~7）。每个选项可仅图、仅文或图文混合。")]
+            public OptionData[] options;
+        }
+
+        [Header("每题对应的选项数据（图/文混合）")]
+        [Tooltip("长度需与 QuizModule.questions 一致。每题可配置 4~7 个选项。")]
+        [SerializeField] private QuestionOptions[] questionOptions;
+
+        [Header("题型（与 questions 一一对应）")]
+        [Tooltip("选择题走选项 UI；语音题走语音面板，answers 中填期望识别文本（非纯数字）。")]
+        [SerializeField] private QuestionPresentationMode[] questionModes;
+
+        [Header("选择题 / 语音题 面板（可选）")]
+        [Tooltip("选择题相关 UI 根节点（含选项槽位）。不填则仅通过隐藏选项表现语音题。")]
+        [SerializeField] private GameObject choicePanelRoot;
+        [Tooltip("语音题 UI 根节点（录音按钮、识别结果展示等）。")]
+        [SerializeField] private GameObject voicePanelRoot;
+        [Tooltip("可选：实时显示识别文本的 TMP，仅展示用。")]
+        [SerializeField] private TextMeshProUGUI voiceTranscriptText;
 
         [Header("对/错反馈 UI")]
         [Tooltip("答对时显示的提示 UI 根对象（如对号、文字提示等）。")]
@@ -51,10 +89,6 @@ namespace UI
         [SerializeField] private GameObject wrongPrompt;
         [Tooltip("对/错提示显示时长（秒）。")]
         [SerializeField] private float feedbackDuration = 1f;
-
-        [Header("选项按钮交互")]
-        [Tooltip("在反馈期间需要禁用/启用交互的按钮集合（通常是 4 个选项 Button）。")]
-        [SerializeField] private Button[] optionButtons;
 
         [Header("每题倒计时设置")]
         [Tooltip("每道题的倒计时时长（秒），例如 10 / 15 秒。")]
@@ -66,6 +100,17 @@ namespace UI
         private Coroutine feedbackCoroutine;
         private Coroutine countdownRoutine;
         private int lastSelectedOptionIndex = -1; // -1 表示本题还没选择过
+        private int currentOptionCount;
+
+        private bool IsVoiceQuestion(int questionIndex)
+        {
+            if (questionModes == null || questionIndex < 0 || questionIndex >= questionModes.Length)
+            {
+                return false;
+            }
+
+            return questionModes[questionIndex] == QuestionPresentationMode.Voice;
+        }
 
         private void Awake()
         {
@@ -116,6 +161,15 @@ namespace UI
                 return;
             }
 
+            if (quizModule.questions != null &&
+                questionModes != null &&
+                questionModes.Length != quizModule.questions.Length)
+            {
+                Debug.LogWarning(
+                    $"[QuizPanelController] questionModes 长度({questionModes.Length}) 与题目数({quizModule.questions.Length}) 不一致，未配置的题将视为选择题。",
+                    this);
+            }
+
             quizModule.StartQuiz(OnQuizFinished);
         }
 
@@ -132,9 +186,20 @@ namespace UI
                 return;
             }
 
+            if (IsVoiceQuestion(quizModule.CurrentIndex))
+            {
+                return;
+            }
+
             if (!awaitingAnswer)
             {
                 // 当前不在等待作答阶段（可能在播放反馈或超时/测验已结束），直接忽略点击。
+                return;
+            }
+
+            if (optionIndex < 0 || optionIndex >= currentOptionCount)
+            {
+                // 点击索引越界（例如某题只有 4 个选项但点了第 5 个槽位），忽略。
                 return;
             }
 
@@ -155,7 +220,51 @@ namespace UI
             {
                 StopCoroutine(feedbackCoroutine);
             }
-            feedbackCoroutine = StartCoroutine(ShowFeedbackAndSubmitAnswer(correct, optionIndex));
+            feedbackCoroutine = StartCoroutine(ShowFeedbackAndSubmitAnswerCoroutine(correct, optionIndex >= 0 ? optionIndex.ToString() : "-1"));
+        }
+
+        /// <summary>
+        /// 由语音识别组件在得到最终文本后调用；与当前题的 <see cref="QuizModule.answers"/> 按 QuizModule.CompareAnswer 规则比对。
+        /// </summary>
+        public void SubmitVoiceRecognizedText(string recognizedText)
+        {
+            if (quizModule == null)
+            {
+                Debug.LogWarning("[QuizPanelController] quizModule 为 null。", this);
+                return;
+            }
+
+            if (!awaitingAnswer)
+            {
+                return;
+            }
+
+            if (!IsVoiceQuestion(quizModule.CurrentIndex))
+            {
+                return;
+            }
+
+            if (countdownRoutine != null)
+            {
+                StopCoroutine(countdownRoutine);
+                countdownRoutine = null;
+            }
+
+            int idx = quizModule.CurrentIndex;
+            string expected = quizModule.answers != null && idx >= 0 && idx < quizModule.answers.Length
+                ? quizModule.answers[idx]
+                : string.Empty;
+            bool correct = QuizModule.CompareAnswer(recognizedText, expected);
+
+            awaitingAnswer = false;
+
+            if (feedbackCoroutine != null)
+            {
+                StopCoroutine(feedbackCoroutine);
+            }
+
+            string toSubmit = recognizedText ?? string.Empty;
+            feedbackCoroutine = StartCoroutine(ShowFeedbackAndSubmitAnswerCoroutine(correct, toSubmit));
         }
 
         private void OnQuestionShown(int questionIndex)
@@ -164,9 +273,22 @@ namespace UI
             lastSelectedOptionIndex = -1;
 
             UpdateQuestionText();
-            UpdateOptionImages(questionIndex);
             UpdateProgressText(questionIndex);
-            EnableOptionButtons(true);
+
+            bool voice = IsVoiceQuestion(questionIndex);
+            SetChoiceVoicePanels(!voice);
+
+            if (voice)
+            {
+                HideAllOptionViews();
+                currentOptionCount = 0;
+                ClearVoiceTranscript();
+            }
+            else
+            {
+                UpdateOptions(questionIndex);
+                EnableOptionButtons(true);
+            }
 
             // 切题时确保反馈 UI 关闭
             SetActiveIfNotNull(correctPrompt, false);
@@ -174,6 +296,38 @@ namespace UI
 
             // 启动本题倒计时
             StartPerQuestionCountdown();
+        }
+
+        private void SetChoiceVoicePanels(bool showChoice)
+        {
+            if (choicePanelRoot != null)
+            {
+                choicePanelRoot.SetActive(showChoice);
+            }
+
+            if (voicePanelRoot != null)
+            {
+                voicePanelRoot.SetActive(!showChoice);
+            }
+        }
+
+        private void ClearVoiceTranscript()
+        {
+            if (voiceTranscriptText != null)
+            {
+                voiceTranscriptText.text = string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 可选：识别过程中更新 UI 文案。
+        /// </summary>
+        public void SetVoiceTranscriptPreview(string text)
+        {
+            if (voiceTranscriptText != null)
+            {
+                voiceTranscriptText.text = text ?? string.Empty;
+            }
         }
 
         private void UpdateQuestionText()
@@ -203,46 +357,81 @@ namespace UI
             progressText.text = $"题目: {current} / {total}";
         }
 
-        private void UpdateOptionImages(int questionIndex)
+        private void UpdateOptions(int questionIndex)
         {
-            if (optionImages == null || optionImages.Length == 0)
+            currentOptionCount = 0;
+
+            if (optionViews == null || optionViews.Length == 0)
             {
                 return;
             }
 
-            if (questionSprites == null || questionIndex < 0 || questionIndex >= questionSprites.Length)
+            if (questionOptions == null || questionIndex < 0 || questionIndex >= questionOptions.Length)
             {
-                Debug.LogWarning($"[QuizPanelController] questionSprites 未正确配置或索引越界（index={questionIndex}）。", this);
+                Debug.LogWarning($"[QuizPanelController] questionOptions 未正确配置或索引越界（index={questionIndex}）。", this);
+                HideAllOptionViews();
                 return;
             }
 
-            QuestionSprites spritesForQuestion = questionSprites[questionIndex];
-            if (spritesForQuestion == null || spritesForQuestion.optionSprites == null)
+            QuestionOptions dataForQuestion = questionOptions[questionIndex];
+            if (dataForQuestion == null || dataForQuestion.options == null)
             {
-                Debug.LogWarning($"[QuizPanelController] 第 {questionIndex} 题的 optionSprites 未配置。", this);
+                Debug.LogWarning($"[QuizPanelController] 第 {questionIndex} 题的 options 未配置。", this);
+                HideAllOptionViews();
                 return;
             }
 
-            int count = Mathf.Min(optionImages.Length, spritesForQuestion.optionSprites.Length);
-            for (int i = 0; i < count; i++)
+            int configuredCount = Mathf.Min(optionViews.Length, dataForQuestion.options.Length);
+
+            // 先按配置渲染 0..configuredCount-1；若中间出现“既无图也无字”的断档，则视为选项结束，避免索引错乱。
+            for (int i = 0; i < configuredCount; i++)
             {
-                if (optionImages[i] == null)
+                OptionView view = optionViews[i];
+                if (view == null || view.button == null)
                 {
-                    continue;
+                    configuredCount = i;
+                    break;
                 }
 
-                optionImages[i].sprite = spritesForQuestion.optionSprites[i];
-                optionImages[i].enabled = optionImages[i].sprite != null;
-            }
+                OptionData option = dataForQuestion.options[i];
+                Sprite sprite = option != null ? option.sprite : null;
+                string text = option != null ? option.text : null;
 
-            // 多余的 Image 隐藏（如果有的话）
-            for (int i = count; i < optionImages.Length; i++)
-            {
-                if (optionImages[i] != null)
+                bool hasSprite = sprite != null;
+                bool hasText = !string.IsNullOrWhiteSpace(text);
+
+                if (!hasSprite && !hasText)
                 {
-                    optionImages[i].enabled = false;
+                    configuredCount = i;
+                    break;
+                }
+
+                view.button.gameObject.SetActive(true);
+
+                if (view.image != null)
+                {
+                    view.image.sprite = sprite;
+                    view.image.enabled = hasSprite;
+                }
+
+                if (view.label != null)
+                {
+                    view.label.text = hasText ? text : string.Empty;
+                    view.label.enabled = hasText;
                 }
             }
+
+            // 隐藏剩余槽位
+            for (int i = configuredCount; i < optionViews.Length; i++)
+            {
+                OptionView view = optionViews[i];
+                if (view?.button != null)
+                {
+                    view.button.gameObject.SetActive(false);
+                }
+            }
+
+            currentOptionCount = configuredCount;
         }
 
         #region 倒计时相关
@@ -313,16 +502,20 @@ namespace UI
 
             // 玩家完全没选 → 记成一个不可能正确的编号（-1），一定判错
             bool correct = false;
-            if (optionIndexToUse >= 0)
+            if (optionIndexToUse >= 0 && optionIndexToUse < currentOptionCount)
             {
                 correct = IsCurrentOptionCorrect(optionIndexToUse);
+            }
+            else
+            {
+                optionIndexToUse = -1;
             }
 
             if (feedbackCoroutine != null)
             {
                 StopCoroutine(feedbackCoroutine);
             }
-            feedbackCoroutine = StartCoroutine(ShowFeedbackAndSubmitAnswer(correct, optionIndexToUse));
+            feedbackCoroutine = StartCoroutine(ShowFeedbackAndSubmitAnswerCoroutine(correct, optionIndexToUse >= 0 ? optionIndexToUse.ToString() : "-1"));
         }
 
         #endregion
@@ -344,11 +537,10 @@ namespace UI
             }
 
             string expected = quizModule.answers[currentIndex];
-            string userAnswer = optionIndex.ToString();
-            return string.Equals(userAnswer, expected, StringComparison.Ordinal);
+            return QuizModule.CompareAnswer(optionIndex.ToString(), expected);
         }
 
-        private IEnumerator ShowFeedbackAndSubmitAnswer(bool correct, int optionIndex)
+        private IEnumerator ShowFeedbackAndSubmitAnswerCoroutine(bool correct, string answerForQuizModule)
         {
             // 播放反馈：显示对应 UI，并在期间禁用按钮。
             EnableOptionButtons(false);
@@ -373,10 +565,7 @@ namespace UI
             SetActiveIfNotNull(correctPrompt, false);
             SetActiveIfNotNull(wrongPrompt, false);
 
-            // 将玩家答案提交给 QuizModule，由其负责计分、记录日志和出下一题。
-            // 如果 optionIndex 为 -1（未选择且超时），会作为 "-1" 记录在日志中，一定判错。
-            string answerString = optionIndex >= 0 ? optionIndex.ToString() : "-1";
-            quizModule.OnUserAnswer(answerString);
+            quizModule.OnUserAnswer(answerForQuizModule ?? string.Empty);
 
             feedbackCoroutine = null;
         }
@@ -392,6 +581,13 @@ namespace UI
             }
 
             EnableOptionButtons(false);
+            HideAllOptionViews();
+            SetChoiceVoicePanels(true);
+            if (voicePanelRoot != null)
+            {
+                voicePanelRoot.SetActive(false);
+            }
+
             SetActiveIfNotNull(correctPrompt, false);
             SetActiveIfNotNull(wrongPrompt, false);
             UpdateTimeText(0f);
@@ -416,16 +612,37 @@ namespace UI
 
         private void EnableOptionButtons(bool enable)
         {
-            if (optionButtons == null)
+            if (optionViews == null)
             {
                 return;
             }
 
-            foreach (var btn in optionButtons)
+            for (int i = 0; i < optionViews.Length; i++)
             {
-                if (btn != null)
+                OptionView view = optionViews[i];
+                if (view == null || view.button == null)
                 {
-                    btn.interactable = enable;
+                    continue;
+                }
+
+                bool activeAndValid = view.button.gameObject.activeInHierarchy && i < currentOptionCount;
+                view.button.interactable = enable && activeAndValid;
+            }
+        }
+
+        private void HideAllOptionViews()
+        {
+            currentOptionCount = 0;
+            if (optionViews == null)
+            {
+                return;
+            }
+
+            foreach (var view in optionViews)
+            {
+                if (view?.button != null)
+                {
+                    view.button.gameObject.SetActive(false);
                 }
             }
         }

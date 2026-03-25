@@ -82,6 +82,7 @@
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\GroupedSyncHelpers.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Button\ButtonSettings.cs" />
+    <Compile Include="Assets\Scripts\UI\QuizAnswerButton.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Extensions\TagExtensions.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\FNames.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Extensions\TypeExtensions.cs" />
