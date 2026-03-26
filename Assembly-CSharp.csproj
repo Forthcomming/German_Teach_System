@@ -237,6 +237,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Core\ImageTypeSetter.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\TextDrawers\UnityTextDrawer.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\DAJson\JFResult.cs" />
+    <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\HuoShan\VolcengineAsrProtocol.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\ImageSpritesSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\ScriptGeneratorSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Nova\NovaAutoLayoutDrawer.cs" />
@@ -267,6 +268,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Drawers\Canvas\GameObjectDrawer.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Core\CameraTools.cs" />
+    <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\HuoShan\VolcengineAsrWsClient.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Core\FolderCreator.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Sprite\SpriteDownloader\FigmaLinkFetcher.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Text\TextMeshSettings.cs" />
@@ -289,6 +291,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\UnityImageSettings.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\ScriptData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\UI\VolcengineVoiceQuizBridge.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\LayoutUpdaterInputOutput.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\LocalizationSettings.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
@@ -303,10 +306,12 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Structs\PrefabStruct.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\Expression\AudioToLipSample.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\Chat\ChatSetting.cs" />
+    <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\HuoShan\VolcengineSpeechToTextNostream.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Helpers\FcuLogger.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\Cache\PlayerCache.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\Image\SpriteRendererSettings.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\HuoShan\VolcengineDebugLogger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Api\FigmaProject.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\JsonConverters\Vector2Converter.cs" />

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ea6f30de152f41be1810308f356fe, type: 3}
+  m_Name: VolcengineSettings
+  m_EditorClassIdentifier: 
+  appId: 1831939917
+  accessToken: lJoCtXAjj8gXaOowEJcO7eHC9YXOjgwu
+  appKey: 5158709953
+  accessKey: XobzqNjekcBQ0AdHn1HyKKzIROHbisIY
+  asrWsUrl: wss://openspeech.bytedance.com/api/v3/sauc/bigmodel_nostream
+  asrResourceId: volc.bigasr.sauc.duration
+  asrModelName: bigmodel
+  asrLanguage: de-DE
+  asrSegmentDurationMs: 100
+  enableItn: 0
+  enablePunc: 0
+  enableDdc: 0
+  showUtterances: 1
+  cluster: volcano_tts
+  voiceType: S_z32uVq5I1
+  speedRatio: 1
+  volumeRatio: 1
+  pitchRatio: 0
+  sampleRate: 24000
+  channels: 1

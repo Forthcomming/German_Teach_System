@@ -1,0 +1,893 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+using System.Globalization;
+using WebGLSupport;
+using System;
+using UnityEngine.SceneManagement; 
+using System.Text.RegularExpressions;
+
+
+public class ChatSample : MonoBehaviour
+{
+
+
+    /// <summary>
+    /// 鑱婂ぉ閰嶇疆
+    /// </summary>
+    [SerializeField] private ChatSetting m_ChatSettings;
+    #region UI瀹氫箟
+    /// <summary>
+    /// 鑱婂ぉUI绐�
+    /// </summary>
+    [SerializeField] private GameObject m_ChatPanel;
+    /// <summary>
+    /// 杈撳叆鐨勪俊鎭�
+    /// </summary>
+    [SerializeField] public InputField m_InputWord;
+    /// <summary>
+    /// 杩斿洖鐨勪俊鎭�
+    /// </summary>
+    [SerializeField] private Text m_TextBack;
+    /// <summary>
+    /// 鎾�鏀惧０闊�
+    /// </summary>
+    [SerializeField] private AudioSource m_AudioSource;
+    /// <summary>
+    /// 鍙戦€佷俊鎭�鎸夐挳
+    /// </summary>
+    [SerializeField] private Button m_CommitMsgBtn;
+    /// <summary>
+    /// 淇濆瓨璁剧疆鎸夐挳
+    /// </summary>
+    [SerializeField] private Button m_SaveSettingBtn;
+    /// 鏍囬��
+    /// </summary>
+    [SerializeField] private TextMeshProUGUI titleToSync;
+    /// 杈撳叆妗嗘枃瀛�
+    /// </summary>
+    [SerializeField] private TMP_InputField titleToType;
+    /// 浣犵殑 Dropdown 缁勪欢
+    /// </summary>
+    [SerializeField] private TMP_Dropdown dropdown;
+    /// <summary>
+    ///绂诲紑鑿滃崟
+    /// </summary>
+    [SerializeField] private CanvasGroup exitPanelCanvasGroup;  // 鎸囧悜 exitPanel 鐨� CanvasGroup 缁勪欢鐨勫紩鐢�
+    /// <summary>
+    ///鐏�灞眛ts缁勪欢
+    /// </summary>
+    //[SerializeField] private VoiceCloneTTS voiceCloneTTS;
+    //[SerializeField] private VolcengineTextToSpeech volcengineTextToSpeech;
+    [SerializeField] private VolcengineVoiceCloneTTS volcengineVoiceCloneTTS;
+    #endregion
+
+    #region 鍙傛暟瀹氫箟
+    /// <summary>
+    /// 鍔ㄧ敾鎺у埗鍣�
+    /// </summary>
+    [SerializeField] private Animator[] m_Animators;
+    /// <summary>
+    /// 鍔ㄧ敾鎺у埗鍣�
+    /// </summary>
+    [SerializeField] private Animator m_Animator;
+    /// <summary>
+    /// 璇�闊虫ā寮忥紝璁剧疆涓篺alse,鍒欎笉閫氳繃璇�闊冲悎鎴�
+    /// </summary>
+    [Header("璁剧疆鏄�鍚﹂€氳繃璇�闊冲悎鎴愭挱鏀炬枃鏈�")]
+    [SerializeField] private bool m_IsVoiceMode = true;
+    [Header("鍕鹃€夊垯涓嶅彂閫丩LM锛岀洿鎺ュ悎鎴愯緭鍏ユ枃瀛�")]
+    [SerializeField] private bool m_CreateVoiceMode = false;
+    /// <summary>
+    /// 璇磋瘽鍔ㄧ敾鐘舵€佺殑缂栧彿
+    /// </summary>
+    private int[] speakingStates = new int[] { 1, 2, 3,4,5,6 };
+    private int lastPlayedState = -1; // 璁板綍涓婁竴娆℃挱鏀剧殑鍔ㄧ敾鐘舵€�
+    /// <summary>
+    /// 鍗忕▼寮曠敤锛岀敤浜庡仠姝㈠崗绋�
+    /// </summary>
+    private Coroutine speakingCoroutine;
+    private bool m_IsSpeaking;
+
+    /// <summary>
+    /// AI鍥炲�嶇粨鏉熶箣鍚庯紝鍥炶皟
+    /// </summary>
+    public Action OnAISpeakDone;
+    private Queue<string> m_VoiceQueue = new Queue<string>(); // 璇�闊虫挱鏀鹃槦鍒�
+    private bool isPlayingVoice = false; // 鏄�鍚︽�ｅ湪鎾�鏀捐��闊�
+    private string m_UnfinishedBuffer = string.Empty; // 鐢ㄤ簬缂撳瓨鏈�瀹屾垚鐨勮��闊冲唴瀹�
+    private string accumulatedResponse = string.Empty; // 鐢ㄤ簬绱�绉疉I鐨勫洖澶嶅唴瀹�
+   
+    /* 銆怢YF鏂板�炪€戯細鎵撴柇AI涓婁竴娈佃��闊� */
+    private bool isNewInput; // 璁板綍鏄�鍚︽湁鏂板洖澶�
+    private Coroutine voicePlayWaitingCoroutine;
+    public Button stopPlayAudioButton;
+    public int isLoadingAnswer = 0; // 鏄�鍚﹀�勪簬鎬濊€冪姸鎬�,0琛ㄧず搴旂敤鍒氬惎鍔�锛�1琛ㄧず姝ｅ湪鎬濊€冿紝2琛ㄧず鎬濊€冨畬姣�
+
+    #endregion
+
+
+
+
+    private void Awake()
+    {
+        titleToType.text = titleToSync.text;
+        m_CommitMsgBtn.onClick.AddListener(delegate { SendData(); });
+        m_SaveSettingBtn.onClick.AddListener(delegate { SaveSetting(); });
+        RegistButtonEvent();
+        InputSettingWhenWebgl();
+    }
+    private void Start()
+    {
+        // 涓篋ropdown鐨剉alueChange浜嬩欢娣诲姞鐩戝惉鍣�
+        dropdown.onValueChanged.AddListener(delegate {
+            ChangeAnimator();
+        });
+        m_InputWord.onEndEdit.AddListener(HandleEndEdit);
+        // 纭�淇� exitPanel 鍒濆�嬩笉鍙�瑙�
+        exitPanelCanvasGroup.alpha = 0;
+        exitPanelCanvasGroup.blocksRaycasts = false;  // 鍒濆�嬫椂涓嶉樆鎸＄偣鍑�
+
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowExitPanel(); // 浣跨敤娓愭樉鏂规硶鏄剧ず闈㈡澘
+        }
+        if (m_AudioSource.isPlaying == false && m_IsSpeaking)
+        {
+            m_IsSpeaking = false;
+            SetAnimator("state", 0); // 鍒囨崲鍒伴潤姝㈢姸鎬�
+        }
+        /* 銆怢YF鏂板�炪€戞�€娴嬪綍闊宠嚜鍔ㄤ笂浼� */
+        if(m_VoiceInputs.isAutoStopRecording){
+            m_VoiceInputs.isAutoStopRecording = false;
+            ToggleRecord();
+        }
+        // 銆怢YF鏂板�炪€戞挱鏀捐��闊虫椂锛屾樉绀烘殏鍋滄挱鏀炬寜閽�锛涘惁鍒欓殣钘忔寜閽�
+        stopPlayAudioButton.gameObject.SetActive(isPlayingVoice);
+
+    }
+    private void HandleEndEdit(string text)
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            SendData();
+        }
+    }
+    public void OnConfirmExit()
+    {
+        Application.Quit(); // Quit the game
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in the editor
+#endif
+    }
+
+    public void OnCancelExit()
+    {
+        HideExitPanel(); // 浣跨敤娓愰殣鏂规硶闅愯棌闈㈡澘
+    }
+    IEnumerator FadeElement(CanvasGroup canvasGroup, float targetAlpha, float duration)
+    {
+        float startAlpha = canvasGroup.alpha;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.unscaledDeltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
+
+        // 鍦ㄦ笎鍙樼粨鏉熷悗鏇存柊 CanvasGroup 鐨� blocksRaycasts 灞炴€э紝浠ュ厑璁告垨闃绘�㈢偣鍑�
+        canvasGroup.blocksRaycasts = targetAlpha > 0;
+    }
+
+    public void ShowExitPanel()
+    {
+        StartCoroutine(FadeElement(exitPanelCanvasGroup, 1.0f, 0.5f));  // 娓愭樉
+        Time.timeScale = 0; // 鏆傚仠娓告垙
+    }
+
+    public void HideExitPanel()
+    {
+        StartCoroutine(FadeElement(exitPanelCanvasGroup, 0.0f, 0.5f));  // 娓愰殣
+        Time.timeScale = 1; // 鎭㈠�嶆父鎴忔椂闂�
+    }
+
+
+    /// <summary>
+    /// 鏇存崲animator
+    /// </summary>
+    void ChangeAnimator()
+{
+    // 纭�淇濈储寮曞湪鏈夋晥鑼冨洿鍐咃紝閬垮厤鏁扮粍瓒婄晫閿欒��
+    if (dropdown.value >= 0 && dropdown.value < m_Animators.Length)
+    {
+        m_Animator = m_Animators[dropdown.value];
+    }
+}
+
+    #region 娑堟伅鍙戦€�
+
+    /// <summary>
+    /// webgl鏃跺�勭悊锛屾敮鎸佷腑鏂囪緭鍏�
+    /// </summary>
+    private void InputSettingWhenWebgl()
+    {
+#if UNITY_WEBGL
+        m_InputWord.gameObject.AddComponent<WebGLSupport.WebGLInput>();
+#endif
+    }
+
+    /// <summary>
+    /// 淇濆瓨鏍囬��
+    /// </summary>
+     public void SaveSetting()
+    {
+        string temp = titleToType.text;
+        titleToSync.text = temp;
+    }
+
+
+    /// <summary>
+    /// 鍙戦€佷俊鎭�
+    /// </summary>
+    public void SendData()
+    {
+        if (m_InputWord.text.Equals(""))
+            return;
+
+        if (m_CreateVoiceMode)//鍚堟垚杈撳叆涓鸿��闊�
+        {
+            CallBack(m_InputWord.text);
+            m_InputWord.text = "";
+            return;
+        }
+
+        StartCoroutine(GetSendChatInfo(m_InputWord.text));
+        //娣诲姞璁板綍鑱婂ぉ
+        //m_ChatHistory.Add(m_InputWord.text);
+        //鎻愮ず璇�
+        string _msg = m_InputWord.text;
+
+        //鍙戦€佹暟鎹�
+        m_ChatSettings.m_ChatModel.PostMsg(_msg, CallBack);
+
+        m_InputWord.text = "";
+        m_TextBack.text = "姝ｅ湪鎬濊€冧腑...";
+
+        //鍒囨崲鎬濊€冨姩浣�
+        //SetAnimator("state", 1);
+    }
+    /// <summary>
+    /// 甯︽枃瀛楀彂閫�
+    /// </summary>
+    /// <param name="_postWord"></param>
+    public void SendData(string _postWord)
+    {
+        if (_postWord.Equals(""))
+            return;
+
+        if (m_CreateVoiceMode)//鍚堟垚杈撳叆涓鸿��闊�
+        {
+            CallBack(_postWord);
+            m_InputWord.text = "";
+            return;
+        }
+
+        StartCoroutine(GetSendChatInfo(_postWord));
+        //娣诲姞璁板綍鑱婂ぉ
+        //m_ChatHistory.Add(_postWord);
+        //鎻愮ず璇�
+        string _msg = _postWord;
+
+        //鍙戦€佹暟鎹�
+        m_ChatSettings.m_ChatModel.PostMsg(_msg, CallBack);
+
+        m_InputWord.text = "";
+        m_TextBack.text = "姝ｅ湪鎬濊€冧腑...";
+
+        //鍒囨崲鎬濊€冨姩浣�
+        //SetAnimator("state", 1);
+    }
+
+    /// <summary>
+    /// AI鍥炲�嶇殑淇℃伅鐨勫洖璋�
+    /// </summary>
+    /// <param name="_response"></param>
+    private void CallBack(string _response)
+    {
+        if (string.IsNullOrEmpty(_response))
+            return;
+
+        _response = _response.Trim();
+        Debug.Log("鏀跺埌AI澧為噺鍥炲�嶏細" + _response);
+
+        // 1. 鏃犺�轰粈涔堟ā寮忥紝鍏堣拷鍔犲埌鏄剧ず鏂囨湰
+        AppendText(_response);
+
+        // 2. 鎷兼帴鍒扮紦鍐插尯
+        m_UnfinishedBuffer += _response;
+
+        // 3. 妫€鏌ョ紦鍐插尯鏄�鍚﹀惈鏈夆€滃己鍋滈】鏍囩偣鈥�
+        // 鍖呭惈锛氬彞鍙枫€佹劅鍙瑰彿銆侀棶鍙枫€佺渷鐣ュ彿銆佹垨鑰呮崲琛岀��
+        if (ContainsStrongPunctuation(m_UnfinishedBuffer))
+        {
+            SendBufferToVoiceQueue();
+        }
+
+        // 4. 鍚�鍔ㄩ殢鏈哄姩鐢�
+        if (!m_IsSpeaking)
+        {
+            m_IsSpeaking = true;
+            StartSpeakingSequenceRandomly();
+        }
+    }
+
+    /// <summary>
+    /// 妫€鏌ュ瓧绗︿覆鏄�鍚﹀寘鍚�寮哄仠椤挎爣鐐�
+    /// </summary>
+    private bool ContainsStrongPunctuation(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return false;
+
+        // 瀹氫箟寮哄仠椤跨�﹀彿
+        char[] strongPunctuations = { '銆�', '锛�', '锛�', '!', '?', '\n' };
+
+        // 妫€鏌ユ槸鍚﹀寘鍚�涓婅堪瀛楃�︼紝鎴栬€呭寘鍚�鐪佺暐鍙�
+        if (text.IndexOfAny(strongPunctuations) != -1 || text.Contains("鈥︹€�") || text.Contains("..."))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// 灏嗗綋鍓嶇紦鍐插尯鍐呭�归€佸叆璇�闊抽槦鍒楀苟娓呯┖
+    /// </summary>
+    private void SendBufferToVoiceQueue()
+    {
+        string toSpeak = m_UnfinishedBuffer.Trim();
+        if (string.IsNullOrEmpty(toSpeak)) return;
+
+        // 銆愭墦鏂�閫昏緫銆戯細濡傛灉鏄�鏂扮殑涓€杞�瀵硅瘽鐨勭��涓€鍙�
+        if (isNewInput)
+        {
+            isNewInput = false;
+            StopPlayAudio();
+            m_VoiceQueue.Clear(); // 娓呯┖鏃ч槦鍒楋紝闃叉�㈡柊鑰佸�硅瘽娣峰湪涓€璧�
+        }
+
+        // 鍔犲叆闃熷垪
+        m_VoiceQueue.Enqueue(toSpeak);
+        Debug.Log($"[寮烘爣鐐规柇鍙�] 鍔犲叆璇�闊抽槦鍒楋細{toSpeak}");
+
+        // 娓呯┖缂撳瓨
+        m_UnfinishedBuffer = string.Empty;
+
+        // 灏濊瘯鎾�鏀�
+        TryPlayNextVoice();
+    }
+
+    // 瀹氫箟鎺ユ敹瀹屾暣鍥炲�嶅弬鏁扮殑鏂规硶
+    public IEnumerator ReceiveFullResponse(string fullResponse)
+    {
+        yield return new WaitForEndOfFrame();
+
+        /* 銆怢YF鏂板�炪€戯細鎵撴柇AI涓婁竴娈佃��闊� */
+        isNewInput = true;
+        m_UnfinishedBuffer = "";
+
+        ChatPrefab _receiveChat = Instantiate(m_RobotChatPrefab, m_rootTrans.transform);
+        m_TempChatBox.Add(_receiveChat.gameObject);
+        _receiveChat.SetText(fullResponse);
+        //閲嶆柊璁＄畻瀹瑰櫒灏哄��
+        LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
+        StartCoroutine(TurnToLastLine());
+    }
+   
+
+    private bool IsSentenceComplete(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return false;
+
+        char lastChar = text[text.Length - 1];
+        return lastChar == '銆�' || lastChar == '锛�' || lastChar == '锛�' || lastChar == '锛�' || lastChar == ' ' || char.IsPunctuation(lastChar);
+    }
+    private void TryPlayNextVoice()
+    {
+        // 銆怢YF鏂板�炪€戜紭鍖栫瓑寰匒I鎬濊€冩椂鐨刄I,姝ゅ�凙I宸茶繑鍥炶��闊虫秷鎭�
+        m_VoiceBottonText.text = "鐐瑰嚮鎸夐挳锛屽紑濮嬪綍闊�"; 
+        isLoadingAnswer = 2;
+        m_RecordTips.text = "";
+        m_VoiceInputBotton.interactable = true;
+
+        // 濡傛灉宸茬粡鍦ㄦ挱鏀捐��闊筹紝鎴栬€呰��闊抽槦鍒椾负绌猴紝鍒欑洿鎺ヨ繑鍥�
+        if (isPlayingVoice || m_VoiceQueue.Count == 0)
+        {
+            Debug.Log("褰撳墠娌℃湁闇€瑕佹挱鏀剧殑璇�闊虫垨姝ｅ湪鎾�鏀句腑...");
+            return;
+        }
+
+        // 浠庨槦鍒椾腑鍙栧嚭涓嬩竴娈佃��闊�
+        string nextVoice = m_VoiceQueue.Dequeue();
+        string cleanVoice=CleanTextForTTS(nextVoice);
+        // 銆愬叧閿�鏂板�炪€戯細妫€鏌ユ竻鐞嗗悗鐨勬枃鏈�鏄�鍚︿负绌�
+        if (string.IsNullOrWhiteSpace(cleanVoice))
+        {
+            Debug.LogWarning("妫€娴嬪埌绌烘枃鏈�璇�闊筹紝璺宠繃骞跺皾璇曟挱鏀句笅涓€鏉�...");
+            // 閫掑綊璋冪敤锛屽皾璇曟挱鏀鹃槦鍒椾腑鐨勪笅涓€涓�
+            TryPlayNextVoice();
+            return;
+        }
+        isPlayingVoice = true;
+
+        Debug.Log($"寮€濮嬫挱鏀捐��闊筹細{cleanVoice}");
+
+        // 璋冪敤璇�闊冲悎鎴愭挱鏀�
+        //voiceCloneTTS.VoiceTTS(nextVoice,PlayVoice);
+        //volcengineVoiceCloneTTS.VoiceTTS1(cleanVoice, PlayVoice);
+
+        // 璋冪敤璇�闊冲悎鎴愭挱鏀�
+        m_ChatSettings.m_TextToSpeech.Speak(cleanVoice, PlayVoice);
+    }
+    private string CleanTextForTTS(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return string.Empty;
+
+        //// 1. 灏嗘墍鏈夌┖鐧藉瓧绗︼紙鎹㈣�屻€佸洖杞︺€佸埗琛ㄧ�︺€佸�氫綑绌烘牸锛夌粺涓€鏇挎崲涓轰竴涓�绌烘牸
+        //// \s 鍖归厤 [ \f\n\r\t\v]锛岃繖鑳界洿鎺ュ�勭悊鎺夋墍鏈夊舰寮忕殑鈥滅┖琛屸€�
+        //input = Regex.Replace(input, @"\s+", " ");
+
+        // 2. 绉婚櫎鐗规畩瀛楃��
+        // 淇濈暀锛氫腑鏂囥€佽嫳鏂囥€佹暟瀛椼€佸父鐢ㄤ腑鑻辨枃鏍囩偣
+        input = Regex.Replace(
+            input,
+            @"[^a-zA-Z0-9\u4e00-\u9fa5锛屻€傦紒锛熴€�,.!? ""鈥溾€�: 锛歖+",
+        ""
+        );
+
+        //// 3. 鍐嶆�＄‘淇濇病鏈夊洜涓虹壒娈婂瓧绗﹁��鍒犳帀鍚庣暀涓嬬殑鍙岀┖鏍�
+        //input = Regex.Replace(input, @"\s{2,}", " ");
+
+        return input.Trim();
+    }
+
+    /* 銆怢YF鏂板�炪€戜腑鏂�璇�闊虫挱鏀� */
+    public void StopPlayAudio(){
+        if(voicePlayWaitingCoroutine!=null){
+            StopCoroutine(voicePlayWaitingCoroutine);
+        }
+        m_VoiceQueue.Clear();
+        m_AudioSource.Stop();
+        isPlayingVoice = false; // 鏍囪�板綋鍓嶆挱鏀剧粨鏉�
+        StopSpeakingSequence(); // 鍋滄�㈠綋鍓嶅姩鐢诲苟鍒囨崲鍒伴潤姝㈢姸鎬�
+    }
+
+    private void AppendText(string _response)
+    {
+        if (string.IsNullOrEmpty(_response))
+            return;
+
+        // 澧為噺杩藉姞鍒版樉绀烘枃鏈�
+        m_TextBack.text += _response;
+        Debug.Log("m_TextBack.text"+m_TextBack.text);
+        // 濡傛灉閫愬瓧鏄剧ず鏈�瀹屾垚锛屽垯缁х画閫愬瓧鏄剧ず
+        if (!m_WriteState)
+        {
+            StartTypeWords(m_TextBack.text);
+        }
+    }
+
+    #endregion
+
+    #region 璇�闊宠緭鍏�
+    /// <summary>
+    /// 璇�闊宠瘑鍒�杩斿洖鐨勬枃鏈�鏄�鍚︾洿鎺ュ彂閫佽嚦LLM
+    /// </summary>
+    [SerializeField] private bool m_AutoSend = true;
+    /// <summary>
+    /// 璇�闊宠緭鍏ョ殑鎸夐挳
+    /// </summary>
+    [SerializeField] private Button m_VoiceInputBotton;
+    /// <summary>
+    /// 褰曢煶鎸夐挳鐨勬枃鏈�
+    /// </summary>
+    [SerializeField]private Text m_VoiceBottonText;
+    /// <summary>
+    /// 褰曢煶鐨勬彁绀轰俊鎭�
+    /// </summary>
+    [SerializeField] private Text m_RecordTips;
+    /// <summary>
+    /// AI鎬濊€冩椂鐨勬枃鏈�淇℃伅
+    /// </summary>
+    [SerializeField] private string m_WatingText;
+    /// <summary>
+    /// 璇�闊宠緭鍏ュ�勭悊绫�
+    /// </summary>
+    [SerializeField] private VoiceInputs m_VoiceInputs;
+    /// <summary>
+    /// 娉ㄥ唽鎸夐挳浜嬩欢
+    /// </summary>
+
+    private bool isRecording = false; // 鐢ㄤ簬璺熻釜褰曢煶鐘舵€�
+    private void RegistButtonEvent()
+    {
+        if (m_VoiceInputBotton == null || m_VoiceInputBotton.GetComponent<EventTrigger>())
+            return;
+
+        EventTrigger _trigger = m_VoiceInputBotton.gameObject.AddComponent<EventTrigger>();
+
+        // 娣诲姞鎸夐挳鐐瑰嚮浜嬩欢
+        EventTrigger.Entry clickEntry = new EventTrigger.Entry();
+        clickEntry.eventID = EventTriggerType.PointerClick;
+        clickEntry.callback = new EventTrigger.TriggerEvent();
+        clickEntry.callback.AddListener((data) => ToggleRecord());
+
+        _trigger.triggers.Add(clickEntry);
+    }
+
+
+    /// <summary>
+    /// 鍒囨崲褰曢煶鐘舵€�
+    /// </summary>
+    private void ToggleRecord()
+    {
+        if (isRecording)
+        {
+            StopRecord();
+        }
+        else
+        {
+            StartRecord();
+        }
+        isRecording = !isRecording; // 鏇存柊褰曢煶鐘舵€�
+    }
+    /// <summary>
+    /// 寮€濮嬪綍鍒�
+    /// </summary>
+    public void StartRecord()
+    {
+        /* 銆怢YF鏂板�炪€� */
+        StopPlayAudio();
+
+        m_VoiceBottonText.text = "姝ｅ湪褰曢煶涓�...";
+        m_VoiceInputs.StartRecordAudio();
+    }
+    /// <summary>
+    /// 缁撴潫褰曞埗
+    /// </summary>
+    public void StopRecord()
+    {
+        m_RecordTips.text = "褰曢煶缁撴潫锛屾�ｅ湪璇嗗埆...";
+
+        // 銆怢YF鏂板�炪€慤I浼樺寲锛氫复鏃剁�佺敤褰曢煶鎸夐挳闃叉�㈠嚭鐜板洖澶嶆彃闃熺殑鎯呭喌
+        m_VoiceInputBotton.interactable = false;
+        m_VoiceBottonText.text = ""; 
+
+        m_VoiceInputs.StopRecordAudio(AcceptClip);
+    }
+
+    /// <summary>
+    /// 澶勭悊褰曞埗鐨勯煶棰戞暟鎹�
+    /// </summary>
+    /// <param name="_data"></param>
+    private void AcceptData(byte[] _data)
+    {
+        if (m_ChatSettings.m_SpeechToText == null)
+            return;
+
+        m_ChatSettings.m_SpeechToText.SpeechToText(_data, DealingTextCallback);
+    }
+
+    /// <summary>
+    /// 澶勭悊褰曞埗鐨勯煶棰戞暟鎹�
+    /// </summary>
+    /// <param name="_data"></param>
+    public void AcceptClip(AudioClip _audioClip)
+    {
+        if (m_ChatSettings.m_SpeechToText == null)
+            return;
+
+        m_ChatSettings.m_SpeechToText.SpeechToText(_audioClip, DealingTextCallback);
+    }
+    /// <summary>
+    /// 澶勭悊璇嗗埆鍒扮殑鏂囨湰
+    /// </summary>
+    /// <param name="_msg"></param>
+    private void DealingTextCallback(string _msg)
+    {
+        m_RecordTips.text = _msg;
+        StartCoroutine(SetTextVisible(m_RecordTips));
+        //鑷�鍔ㄥ彂閫�
+        if (m_AutoSend)
+        {
+            SendData(_msg);
+            return;
+        }
+
+        m_InputWord.text = _msg;
+    }
+
+    private IEnumerator SetTextVisible(Text _textbox)
+    {
+        yield return new WaitForSeconds(2f);
+        // 銆怢YF鏂板�炪€戜紭鍖栫瓑寰匒I鎬濊€冩椂鐨刄I锛屾�ゅ�凙I鍒氫笂浼犺��闊虫秷鎭�
+        if(isPlayingVoice == false){
+            _textbox.text = m_WatingText;
+            isLoadingAnswer = 1;
+        }else{
+            _textbox.text = ""; 
+        }
+        
+    }
+
+    #endregion
+
+    #region 璇�闊冲悎鎴�
+
+    private IEnumerator TriggerSpeakingActionsRandomly()
+    {
+        while (m_IsSpeaking)
+        {
+            // 鑾峰彇闅忔満鍔ㄧ敾鐘舵€�
+            int randomState = GetRandomState();
+
+            // 濡傛灉闅忔満鐘舵€佷笌涓婃�℃挱鏀剧殑鐩稿悓锛屽垯璺宠繃
+            if (randomState == lastPlayedState)
+            {
+                yield return null;
+                continue;
+            }
+
+            // 鎾�鏀惧姩鐢�
+            PlayAnimator("talk" + randomState);
+            lastPlayedState = randomState;
+
+            Debug.Log($"鎾�鏀惧姩鐢伙細talk{randomState}");
+
+            // 绛夊緟鍔ㄧ敾瀹屾垚
+            yield return new WaitForSeconds(6f); // 鏍规嵁鍔ㄧ敾鏃堕暱璋冩暣
+        }
+    }
+
+    public void StartSpeakingSequenceRandomly()
+    {
+        if (speakingCoroutine != null)
+        {
+            StopCoroutine(speakingCoroutine);
+        }
+
+        // 鍚�鍔ㄥ姩鐢绘挱鏀惧崗绋�
+        speakingCoroutine = StartCoroutine(TriggerSpeakingActionsRandomly());
+    }
+    private int GetRandomState()
+    {
+        int randomIndex;
+
+        do
+        {
+            randomIndex = UnityEngine.Random.Range(1, speakingStates.Length);
+        }
+        while (randomIndex == lastPlayedState); // 纭�淇濋殢鏈虹姸鎬佷笉閲嶅��
+
+        lastPlayedState = randomIndex;
+        return randomIndex;
+    }
+
+
+
+    public void StopSpeakingSequence()
+    {
+        m_IsSpeaking = false;
+
+        // 鍒囨崲鍒伴粯璁ら潤姝㈢姸鎬�
+        SetAnimator("state", 0);
+        Debug.Log("鍔ㄧ敾宸插仠姝�锛屽垏鎹㈠埌闈欐�㈢姸鎬�");
+    }
+    private void PlayVoice(AudioClip _clip, string _response)
+    {
+        if (_clip == null)
+        {
+            Debug.LogError("璇�闊冲悎鎴愬け璐ワ細AudioClip 涓虹┖锛屾棤娉曟挱鏀捐��闊炽€�");
+            isPlayingVoice = false; // 鏍囪�颁负鏈�鎾�鏀�
+            TryPlayNextVoice(); // 灏濊瘯鎾�鏀句笅涓€涓�璇�闊�
+            return;
+        }
+
+        // 璁剧疆闊抽�戝壀杈戝苟鎾�鏀�
+        m_AudioSource.clip = _clip;
+        m_AudioSource.Play();
+
+        Debug.Log($"鎾�鏀捐��闊筹細{_response}锛屾椂闀匡細{_clip.length} 绉�");
+
+        // 瑙﹀彂涓€涓�闅忔満鍔ㄧ敾
+        if (!m_IsSpeaking)
+        {
+            m_IsSpeaking = true;
+
+            // 閫夋嫨涓€涓�闅忔満鐨勮�磋瘽鍔ㄧ敾
+            int randomState = GetRandomState();
+            PlayAnimator("talk" + randomState); // 瑙﹀彂鍔ㄧ敾
+            Debug.Log($"瑙﹀彂鍔ㄧ敾锛歵alk{randomState}");
+        }
+
+        // 绛夊緟璇�闊虫挱鏀惧畬鎴�
+        voicePlayWaitingCoroutine = StartCoroutine(HandleVoicePlaybackCompletion(_clip.length));
+    }
+
+
+    private IEnumerator HandleVoicePlaybackCompletion(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        Debug.Log("璇�闊虫挱鏀惧畬鎴�");
+
+        isPlayingVoice = false; // 鏍囪�板綋鍓嶆挱鏀剧粨鏉�
+
+        // 鍋滄�㈠姩鐢绘挱鏀�
+        if (m_IsSpeaking)
+        {
+            StopSpeakingSequence(); // 鍋滄�㈠綋鍓嶅姩鐢诲苟鍒囨崲鍒伴潤姝㈢姸鎬�
+        }
+
+        // 灏濊瘯鎾�鏀鹃槦鍒椾腑鐨勪笅涓€涓�璇�闊�
+        TryPlayNextVoice();
+
+        // 濡傛灉璇�闊虫挱鏀惧畬鎴愪笖娌℃湁鏇村�氭祦寮忔暟鎹�锛屽仠姝㈠姩鐢�
+        if (!m_IsSpeaking && m_VoiceQueue.Count == 0)
+        {
+            StopSpeakingSequence();
+        }
+    }
+
+    #endregion
+
+    #region 鏂囧瓧閫愪釜鏄剧ず
+    //閫愬瓧鏄剧ず鐨勬椂闂撮棿闅�
+    [SerializeField] private float m_WordWaitTime = 0.2f;
+    //鏄�鍚︽樉绀哄畬鎴�
+    [SerializeField] private bool m_WriteState = false;
+
+    /// <summary>
+    /// 寮€濮嬮€愪釜鎵撳嵃
+    /// </summary>
+    /// <param name="_msg"></param>
+    private void StartTypeWords(string _msg)
+    {
+        if (_msg == "")
+            return;
+
+        m_WriteState = true;
+        StartCoroutine(SetTextPerWord(_msg));
+        // 鑷�鍔ㄥ姞杞借亰澶╁巻鍙�
+        //StartCoroutine(GetHistoryChatInfo());
+    }
+
+
+
+    private IEnumerator SetTextPerWord(string _msg)
+    {
+        int currentPos = 0;
+        float originalWordWaitTime = m_WordWaitTime; // 淇濆瓨鍘熷�嬬殑绛夊緟鏃堕棿
+        while (m_WriteState)
+        {
+
+            if (currentPos < _msg.Length && CharUnicodeInfo.GetUnicodeCategory(_msg[currentPos]) == UnicodeCategory.OtherLetter)
+            {
+                // 涓�鏂囨垨鍏朵粬闈炴媺涓佸瓧姣�
+                m_WordWaitTime = originalWordWaitTime;
+                //Debug.Log("other" + m_WordWaitTime);
+            }
+            else if (currentPos < _msg.Length && char.IsLetter(_msg[currentPos]) && _msg[currentPos] != ' ')
+            {
+                // 鑻辨枃瀛楃��
+                m_WordWaitTime = 0.03f;
+                //Debug.Log("en" + m_WordWaitTime);
+            }
+            else
+            {
+                // 闈炲瓧姣嶅瓧绗�
+                m_WordWaitTime = originalWordWaitTime;
+                //Debug.Log(m_WordWaitTime);
+            }
+            yield return new WaitForSeconds(m_WordWaitTime);
+            currentPos++;
+            //鏇存柊鏄剧ず鐨勫唴瀹�
+            m_TextBack.text = _msg.Substring(0, currentPos);
+
+            m_WriteState = currentPos < _msg.Length;
+
+        }
+        m_IsSpeaking = false;
+        //鍒囨崲鍒扮瓑寰呭姩浣�
+        //SetAnimator("state",0);
+        // 鎭㈠�嶅師濮嬬殑绛夊緟鏃堕棿
+        m_WordWaitTime = originalWordWaitTime;
+
+        //鍥炲�嶇粨鏉�
+        if (OnAISpeakDone != null)
+        {
+            OnAISpeakDone();
+        }
+    }
+
+#endregion
+
+#region 鑱婂ぉ璁板綍
+
+    //缂撳瓨宸插垱寤虹殑鑱婂ぉ姘旀场
+    [SerializeField] private List<GameObject> m_TempChatBox;
+    //鑱婂ぉ璁板綍鏄剧ず灞�
+    [SerializeField] private GameObject m_HistoryPanel;
+    //鑱婂ぉ鏂囨湰鏀剧疆鐨勫眰
+    [SerializeField] private RectTransform m_rootTrans;
+    //鍙戦€佽亰澶╂皵娉�
+    [SerializeField] private ChatPrefab m_PostChatPrefab;
+    //鍥炲�嶇殑鑱婂ぉ姘旀场
+    [SerializeField] private ChatPrefab m_RobotChatPrefab;
+    //婊氬姩鏉�
+    [SerializeField] private ScrollRect m_ScroTectObject;
+    //鑾峰彇鑱婂ぉ璁板綍
+
+
+    private IEnumerator TurnToLastLine()
+    {
+        yield return new WaitForEndOfFrame();
+        //婊氬姩鍒版渶杩戠殑娑堟伅
+        m_ScroTectObject.verticalNormalizedPosition = 0;
+    }
+
+
+    private IEnumerator GetSendChatInfo(string _sendmsg)
+    {
+        yield return new WaitForEndOfFrame();
+
+        ChatPrefab _sendChat = Instantiate(m_PostChatPrefab, m_rootTrans.transform);
+        _sendChat.SetText(_sendmsg);  // 鍙戦€佹柟鐨勬秷鎭�绔嬪嵆鏄剧ず
+        m_TempChatBox.Add(_sendChat.gameObject);
+
+        //閲嶆柊璁＄畻瀹瑰櫒灏哄��
+        LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
+        StartCoroutine(TurnToLastLine());
+
+    }
+  
+
+
+
+
+
+
+    #endregion
+
+    private void SetAnimator(string _para,int _value)
+    {
+        if (m_Animator == null)
+            return;
+
+        m_Animator.SetInteger(_para, _value);
+    }
+    private void PlayAnimator(string name)
+    {
+        if (m_Animator == null)
+            return;
+
+        m_Animator.Play(name);
+    }
+
+    public void ChangeScene()
+    {
+        // 鍒囨崲鍦烘櫙
+        SceneManager.LoadScene("desktopscene");
+    }
+}

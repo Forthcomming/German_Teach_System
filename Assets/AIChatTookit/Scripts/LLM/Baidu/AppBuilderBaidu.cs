@@ -11,10 +11,10 @@ public class AppBuilderBaidu : LLM
 
     [SerializeField] private string app_id = string.Empty; // App ID
     [SerializeField] private string api_key = string.Empty; // API Key
-    private string m_ConversationUrl = string.Empty; // ĞÂ½¨»á»°APIµØÖ·
-    [SerializeField] private string m_ConversationID = string.Empty; // ¶Ô»°ID
+    private string m_ConversationUrl = string.Empty; // æ–°å»ºä¼šè¯APIåœ°å€
+    [SerializeField] private string m_ConversationID = string.Empty; // å¯¹è¯ID
     public string singleRoundFullResponse = string.Empty;
-    // ĞÂÔö³ÉÔ±±äÁ¿£¬ÓÃÓÚ´æ´¢ChatSample½Å±¾ÊµÀı
+    // æ–°å¢æˆå‘˜å˜é‡ï¼Œç”¨äºå­˜å‚¨ChatSampleè„šæœ¬å®ä¾‹
     private ChatSample chatSample;
     #endregion
 
@@ -24,17 +24,17 @@ public class AppBuilderBaidu : LLM
 
 
     /// <summary>
-    /// ·¢ËÍÏûÏ¢
+    /// å‘é€æ¶ˆæ¯
     /// </summary>
     public override void PostMsg(string _msg, Action<string> _callback)
     {
-        // »º´æ·¢ËÍµÄĞÅÏ¢ÁĞ±í
+        // ç¼“å­˜å‘é€çš„ä¿¡æ¯åˆ—è¡¨
         m_DataList.Add(new SendData("user", _msg));
         StartCoroutine(Request(_msg, _callback));
     }
 
     /// <summary>
-    /// ·¢ËÍÊı¾İ£¨Á÷Ê½ÇëÇó£©
+    /// å‘é€æ•°æ®ï¼ˆæµå¼è¯·æ±‚ï¼‰
     /// </summary>
     public override IEnumerator Request(string _postWord, Action<string> _callback)
     {
@@ -45,10 +45,10 @@ public class AppBuilderBaidu : LLM
             app_id = app_id,
             query = _postWord,
             conversation_id = m_ConversationID,
-            stream = true // ÆôÓÃÁ÷Ê½Ä£Ê½
+            stream = true // å¯ç”¨æµå¼æ¨¡å¼
         });
 
-        //Debug.Log($"·¢ËÍµÄÇëÇó¸ºÔØ: {jsonPayload}");
+        //Debug.Log($"å‘é€çš„è¯·æ±‚è´Ÿè½½: {jsonPayload}");
 
         using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
         {
@@ -66,21 +66,21 @@ public class AppBuilderBaidu : LLM
             while (!operation.isDone)
             {
                 string responseText = request.downloadHandler.text;
-                //Debug.Log($"·şÎñÆ÷·µ»ØÄÚÈİ: {responseText}");
+                //Debug.Log($"æœåŠ¡å™¨è¿”å›å†…å®¹: {responseText}");
 
                 if (!string.IsNullOrEmpty(responseText) && responseText != previousData)
                 {
                     string newData = responseText.Substring(previousData.Length);
                     previousData = responseText;
 
-                    //Debug.Log($"ĞÂÔöÊı¾İ: {newData}");
+                    //Debug.Log($"æ–°å¢æ•°æ®: {newData}");
 
                     string[] lines = newData.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
                     foreach (string line in lines)
                     {
-                        //Debug.Log($"µ±Ç°´¦ÀíµÄĞĞÊı¾İ: {line}");
+                        //Debug.Log($"å½“å‰å¤„ç†çš„è¡Œæ•°æ®: {line}");
 
-                        // È¥µô data: Ç°×º
+                        // å»æ‰ data: å‰ç¼€
                         string jsonLine = line.TrimStart().StartsWith("data:") ? line.Substring(5).Trim() : line;
 
                         if (!string.IsNullOrEmpty(jsonLine) && jsonLine.StartsWith("{"))
@@ -88,25 +88,25 @@ public class AppBuilderBaidu : LLM
                             try
                             {
                                 ResponseData response = JsonConvert.DeserializeObject<ResponseData>(jsonLine);
-                                //Debug.Log($"½âÎö³É¹¦µÄJSON: {jsonLine}");
+                                //Debug.Log($"è§£ææˆåŠŸçš„JSON: {jsonLine}");
                                 if (!string.IsNullOrEmpty(response.answer))
                                 {
-                                    // ½«ÔöÁ¿»Ø¸´×·¼Óµ½ÍêÕû»Ø¸´±äÁ¿ÖĞ
+                                    // å°†å¢é‡å›å¤è¿½åŠ åˆ°å®Œæ•´å›å¤å˜é‡ä¸­
                                     singleRoundFullResponse += response.answer;
-                                    //Debug.Log($"=== Á÷Ê½ÔöÁ¿Êı¾İ ===: {response.answer}");
-                                    // ¼ÌĞøÔ­ÓĞµÄ»Øµ÷Âß¼­£¬ÕâÀïÎ´×ö¸Ä±ä
+                                    //Debug.Log($"=== æµå¼å¢é‡æ•°æ® ===: {response.answer}");
+                                    // ç»§ç»­åŸæœ‰çš„å›è°ƒé€»è¾‘ï¼Œè¿™é‡Œæœªåšæ”¹å˜
                                     _callback(response.answer);
                                 }
                             }
                             catch (Exception ex)
                             {
-                                Debug.LogError($"JSON½âÎö´íÎó: {ex.Message}");
-                                Debug.LogError($"ÎŞ·¨½âÎöµÄJSONĞĞ: {jsonLine}");
+                                Debug.LogError($"JSONè§£æé”™è¯¯: {ex.Message}");
+                                Debug.LogError($"æ— æ³•è§£æçš„JSONè¡Œ: {jsonLine}");
                             }
                         }
                         else
                         {
-                            Debug.LogWarning($"ÎŞĞ§µÄĞĞÊı¾İ»ò·ÇJSON: {line}");
+                            Debug.LogWarning($"æ— æ•ˆçš„è¡Œæ•°æ®æˆ–éJSON: {line}");
                         }
                     }
                 }
@@ -118,30 +118,30 @@ public class AppBuilderBaidu : LLM
             if (request.responseCode == 200)
             {
                 //Debug.Log("Streaming complete.");
-                // Êä³öµ¥ÂÖÍêÕû»Ø¸´ÄÚÈİ
-                Debug.Log("µ¥ÂÖÍêÕû»Ø¸´£º" + singleRoundFullResponse);
-                // ¼ì²éÊÇ·ñ³É¹¦»ñÈ¡µ½ChatSample½Å±¾ÊµÀı
+                // è¾“å‡ºå•è½®å®Œæ•´å›å¤å†…å®¹
+                Debug.Log("å•è½®å®Œæ•´å›å¤ï¼š" + singleRoundFullResponse);
+                // æ£€æŸ¥æ˜¯å¦æˆåŠŸè·å–åˆ°ChatSampleè„šæœ¬å®ä¾‹
                 if (chatSample != null)
                 {
-                    // µ÷ÓÃChatSample½Å±¾µÄ·½·¨²¢´«µİ²ÎÊı
+                    // è°ƒç”¨ChatSampleè„šæœ¬çš„æ–¹æ³•å¹¶ä¼ é€’å‚æ•°
                     StartCoroutine(chatSample.ReceiveFullResponse(singleRoundFullResponse));
 
                 }
                 else
                 {
-                    Debug.LogError("Î´ÄÜ»ñÈ¡µ½ChatSample½Å±¾ÊµÀı£¡");
+                    Debug.LogError("æœªèƒ½è·å–åˆ°ChatSampleè„šæœ¬å®ä¾‹ï¼");
                 }
-                // Ã¿ÂÖ½áÊøºóÇå¿Õµ¥ÂÖÍêÕû»Ø¸´ÄÚÈİ
+                // æ¯è½®ç»“æŸåæ¸…ç©ºå•è½®å®Œæ•´å›å¤å†…å®¹
                 singleRoundFullResponse = string.Empty;
             }
             else
             {
-                Debug.LogError($"ÇëÇóÊ§°Ü: {request.error}");
+                Debug.LogError($"è¯·æ±‚å¤±è´¥: {request.error}");
             }
         }
 
         stopwatch.Stop();
-        Debug.Log($"Á÷Ê½ÇëÇóºÄÊ±: {stopwatch.Elapsed.TotalSeconds} Ãë");
+        Debug.Log($"æµå¼è¯·æ±‚è€—æ—¶: {stopwatch.Elapsed.TotalSeconds} ç§’");
     }
     #endregion
 
@@ -149,23 +149,23 @@ public class AppBuilderBaidu : LLM
 
     void Awake()
     {
-        // »ñÈ¡ChatSample½Å±¾ËùÔÚµÄÓÎÏ·¶ÔÏóÊµÀı
+        // è·å–ChatSampleè„šæœ¬æ‰€åœ¨çš„æ¸¸æˆå¯¹è±¡å®ä¾‹
         chatSample = GameObject.FindObjectOfType<ChatSample>();
         OnInitial();
     }
 
     /// <summary>
-    /// ³õÊ¼»¯
+    /// åˆå§‹åŒ–
     /// </summary>
     private void OnInitial()
     {
-        m_ConversationUrl = "https://qianfan.baidubce.com/v2/app/conversation"; // ĞÂ½¨»á»°µØÖ·
-        url = "https://qianfan.baidubce.com/v2/app/conversation/runs"; // ÁÄÌìAPIµØÖ·
+        m_ConversationUrl = "https://qianfan.baidubce.com/v2/app/conversation"; // æ–°å»ºä¼šè¯åœ°å€
+        url = "https://qianfan.baidubce.com/v2/app/conversation/runs"; // èŠå¤©APIåœ°å€
         StartCoroutine(OnStartConversation());
     }
 
     /// <summary>
-    /// ĞÂ½¨»á»°
+    /// æ–°å»ºä¼šè¯
     /// </summary>
     private IEnumerator OnStartConversation()
     {
@@ -188,7 +188,7 @@ public class AppBuilderBaidu : LLM
 
                 if (response.code == string.Empty)
                 {
-                    m_ConversationID = response.conversation_id; // »ñÈ¡»á»°ID
+                    m_ConversationID = response.conversation_id; // è·å–ä¼šè¯ID
                 }
                 else
                 {
@@ -225,22 +225,22 @@ public class AppBuilderBaidu : LLM
     public class RequestData
     {
         public string app_id = string.Empty; // App ID
-        public string query = string.Empty; // ÌáÎÊÄÚÈİ
-        public bool stream = true; // ÆôÓÃÁ÷Ê½Ä£Ê½
-        public string conversation_id = string.Empty; // ¶Ô»°ID
-        public List<string> file_ids = new List<string>(); // ÎÄ¼şIDÁĞ±í
+        public string query = string.Empty; // æé—®å†…å®¹
+        public bool stream = true; // å¯ç”¨æµå¼æ¨¡å¼
+        public string conversation_id = string.Empty; // å¯¹è¯ID
+        public List<string> file_ids = new List<string>(); // æ–‡ä»¶IDåˆ—è¡¨
     }
 
     [Serializable]
     public class ResponseData
     {
-        public string code = string.Empty; // ´íÎóÂë
-        public string message = string.Empty; // ´íÎóĞÅÏ¢
-        public string request_id = string.Empty; // ÓÃÓÚ×·×ÙµÄÇëÇóID
-        public string date = string.Empty; // ·µ»ØÊ±¼ä´Á
-        public string answer = string.Empty; // ÔöÁ¿Êı¾İ
-        public string conversation_id = string.Empty; // ¶Ô»°ID
-        public string message_id = string.Empty; // ÏûÏ¢ID
+        public string code = string.Empty; // é”™è¯¯ç 
+        public string message = string.Empty; // é”™è¯¯ä¿¡æ¯
+        public string request_id = string.Empty; // ç”¨äºè¿½è¸ªçš„è¯·æ±‚ID
+        public string date = string.Empty; // è¿”å›æ—¶é—´æˆ³
+        public string answer = string.Empty; // å¢é‡æ•°æ®
+        public string conversation_id = string.Empty; // å¯¹è¯ID
+        public string message_id = string.Empty; // æ¶ˆæ¯ID
     }
 
     #endregion

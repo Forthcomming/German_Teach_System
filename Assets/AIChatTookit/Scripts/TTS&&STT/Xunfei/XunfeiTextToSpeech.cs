@@ -5,6 +5,7 @@ using System.Net.WebSockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using TMPro; // 引入 TextMeshPro 命名空间
 
@@ -123,7 +124,9 @@ public class XunfeiTextToSpeech : TTS
     /// <summary>
     /// 数据队列
     /// </summary>
-    Queue<float> m_AudioQueue = new Queue<float>();
+    private readonly List<float> m_AudioBuffer = new List<float>(16000);
+    private bool m_IsSynthesisCompleted;
+    private bool m_HasSynthesisError;
 
     /// <summary>
     /// 获取语音合成
@@ -131,43 +134,59 @@ public class XunfeiTextToSpeech : TTS
     /// <param name="_text"></param>
     /// <param name="_callback"></param>
     /// <returns></returns>
+
     public IEnumerator GetSpeech(string _text, Action<AudioClip, string> _callback)
     {
         stopwatch.Restart();
         yield return null;
 
-        if (m_WebSocket != null) { m_WebSocket.Abort(); }
+        if (m_WebSocket != null)
+        {
+            m_WebSocket.Abort();
+            m_WebSocket.Dispose();
+            m_WebSocket = null;
+        }
 
-        ConnectHost(_text);
-        AudioClip _audioClip = AudioClip.Create("audio", 16000 * 60, 1, 16000, true, OnAudioRead);
+        m_AudioLenth = 0;
+        m_AudioBuffer.Clear();
+        m_IsSynthesisCompleted = false;
+        m_HasSynthesisError = false;
 
-        //回调
+        _ = ConnectHost(_text);
+        float waitSeconds = 0f;
+        const float maxWaitSeconds = 30f;
+
+        while (!m_IsSynthesisCompleted && !m_HasSynthesisError && waitSeconds < maxWaitSeconds)
+        {
+            waitSeconds += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        if (waitSeconds >= maxWaitSeconds)
+        {
+            m_HasSynthesisError = true;
+            Debug.LogError("Xunfei tts timeout.");
+        }
+
+        AudioClip _audioClip = null;
+        if (!m_HasSynthesisError && m_AudioBuffer.Count > 0)
+        {
+            int sampleCount = m_AudioBuffer.Count;
+            _audioClip = AudioClip.Create("audio", sampleCount, 1, 16000, false);
+            _audioClip.SetData(m_AudioBuffer.ToArray(), 0);
+        }
+
         _callback(_audioClip, _text);
 
         stopwatch.Stop();
         UnityEngine.Debug.Log("讯飞语音合成耗时：" + stopwatch.Elapsed.TotalSeconds);
-    }
-    void OnAudioRead(float[] data)
-    {
-        for (int i = 0; i < data.Length; i++)
-        {
-            if (m_AudioQueue.Count > 0)
-            {
-                data[i] = m_AudioQueue.Dequeue();
-            }
-            else
-            {
-                if (m_WebSocket == null || m_WebSocket.State != WebSocketState.Aborted) m_AudioLenth++;
-                data[i] = 0;
-            }
-        }
     }
 
 
     /// <summary>
     /// 连接服务器，合成语音
     /// </summary>
-    private async void ConnectHost(string text)
+    private async Task ConnectHost(string text)
     {
         try
         {
@@ -218,12 +237,12 @@ public class XunfeiTextToSpeech : TTS
                     //拿到音频数据
                     float[] fs = BytesToFloat(Convert.FromBase64String(_responseData.data.audio));
                     m_AudioLenth += fs.Length;
-                    foreach (float f in fs) m_AudioQueue.Enqueue(f);
+                    m_AudioBuffer.AddRange(fs);
 
                     if (_responseData.data.status == 2)
                     {
-
-                        m_WebSocket.Abort();
+                        m_IsSynthesisCompleted = true;
+                        await m_WebSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "done", m_CancellationToken);
                         break;
                     }
                 }
@@ -232,8 +251,17 @@ public class XunfeiTextToSpeech : TTS
         }
         catch (Exception ex)
         {
+            m_HasSynthesisError = true;
             Debug.LogError("报错信息: " + ex.Message);
-            m_WebSocket.Dispose();
+        }
+        finally
+        {
+            m_IsSynthesisCompleted = true;
+            if (m_WebSocket != null)
+            {
+                m_WebSocket.Dispose();
+                m_WebSocket = null;
+            }
         }
     }
 
