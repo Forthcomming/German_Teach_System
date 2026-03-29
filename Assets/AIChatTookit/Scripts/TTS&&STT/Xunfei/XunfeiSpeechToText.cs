@@ -8,33 +8,33 @@ using System.Threading;
 using UnityEngine;
 public class XunfeiSpeechToText : STT
 {
-    #region ????
+    #region 配置参数
     /// <summary>
-    /// ???????????
+    /// 讯飞语音识别配置组件
     /// </summary>
     [SerializeField] private XunfeiSettings m_XunfeiSettings;
     /// <summary>
-    /// host???
+    /// 接口 host 地址
     /// </summary>
     [SerializeField] private string m_HostUrl = "iat-api.xfyun.cn";
     /// <summary>
-    /// ????
+    /// 识别语言
     /// </summary>
     [SerializeField] private string m_Language = "zh_cn";
     /// <summary>
-    /// ???????
+    /// 业务领域参数
     /// </summary>
     [SerializeField] private string m_Domain = "iat";
     /// <summary>
-    /// ????mandarin?????????????????????
+    /// 方言参数，中文场景默认 mandarin，非中文语言通常留空
     /// </summary>
     [SerializeField] private string m_Accent = "mandarin";
     /// <summary>
-    /// ??????????
+    /// 音频格式参数
     /// </summary>
     [SerializeField] private string m_Format = "audio/L16;rate=16000";
     /// <summary>
-    /// ?????????
+    /// 音频编码参数
     /// </summary>
     [SerializeField] private string m_Encoding = "raw";
     #endregion
@@ -52,7 +52,7 @@ public class XunfeiSpeechToText : STT
 
 
     /// <summary>
-    /// ???????
+    /// 将 AudioClip 转为文字
     /// </summary>
     /// <param name="_clip"></param>
     /// <param name="_callback"></param>
@@ -62,7 +62,7 @@ public class XunfeiSpeechToText : STT
         StartCoroutine(SendAudioData(_audioData, _callback));
     }
     /// <summary>
-    /// ???????
+    /// 将字节音频转为文字
     /// </summary>
     /// <param name="_audioData"></param>
     /// <param name="_callback"></param>
@@ -72,25 +72,25 @@ public class XunfeiSpeechToText : STT
     }
 
 
-    #region ??????Url
+    #region 鉴权 URL 生成
 
     /// <summary>
-    /// ??????url
+    /// 生成带鉴权参数的 websocket url
     /// </summary>
     /// <returns></returns>
     private string GetUrl()
     {
-        //???????
+        // 获取 RFC1123 格式时间
         string date = DateTime.Now.ToString("r");
-        //???????signature
+        // 拼接待签名字符串
         string signature_origin = string.Format("host: " + m_HostUrl + "\ndate: " + date + "\nGET /v2/iat HTTP/1.1");
-        //hmac-sha256??-???????????base64????
+        // 使用 hmac-sha256 签名，并将结果做 base64
         string signature = Convert.ToBase64String(new HMACSHA256(Encoding.UTF8.GetBytes(m_XunfeiSettings.m_APISecret)).ComputeHash(Encoding.UTF8.GetBytes(signature_origin)));
-        //???????authorization
+        // 拼接 authorization 原文
         string authorization_origin = string.Format("api_key=\"{0}\",algorithm=\"hmac-sha256\",headers=\"host date request-line\",signature=\"{1}\"", m_XunfeiSettings.m_APIKey, signature);
-        //????base64????
+        // 对 authorization 做 base64 编码
         string authorization = Convert.ToBase64String(Encoding.UTF8.GetBytes(authorization_origin));
-        //???????url
+        // 组合最终请求 url
         string url = string.Format("{0}?authorization={1}&date={2}&host={3}", m_SpeechRecognizeURL, authorization, date, m_HostUrl);
 
         return url;
@@ -98,10 +98,10 @@ public class XunfeiSpeechToText : STT
 
     #endregion
 
-    #region ???????
+    #region 发送与识别
 
     /// <summary>
-    /// ???????
+    /// 协程入口，发送音频数据
     /// </summary>
     /// <param name="_audioData"></param>
     /// <param name="_callback"></param>
@@ -113,7 +113,7 @@ public class XunfeiSpeechToText : STT
     }
 
     /// <summary>
-    /// ????????????
+    /// 连接讯飞服务并持续接收识别结果
     /// </summary>
     /// <param name="_audioData"></param>
     /// <param name="_callback"></param>
@@ -122,12 +122,12 @@ public class XunfeiSpeechToText : STT
         try
         {
             stopwatch.Restart();
-            //????socket????
+            // 创建并连接 websocket
             m_WebSocket = new ClientWebSocket();
             m_CancellationToken = new CancellationToken();
             Uri uri = new Uri(GetUrl());
             await m_WebSocket.ConnectAsync(uri, m_CancellationToken);
-            //??????
+            // 发送音频数据
             SendVoiceData(_audioData, m_WebSocket);
             StringBuilder stringBuilder = new StringBuilder();
             while (m_WebSocket.State == WebSocketState.Open)
@@ -140,7 +140,7 @@ public class XunfeiSpeechToText : STT
                 }
 
                 string str = Encoding.UTF8.GetString(result, 0, receiveResult.Count);
-                //????????json
+                // 反序列化返回 json
                 ResponseData _responseData = JsonUtility.FromJson<ResponseData>(str);
                 if (_responseData.code == 0)
                 {
@@ -153,28 +153,28 @@ public class XunfeiSpeechToText : STT
                 else
                 {
                     PrintErrorLog(_responseData.code);
-                    Debug.LogError($"Ѷ��ʶ��ʧ�� code={_responseData.code}, message={_responseData.message}");
+                    Debug.LogError($"讯飞识别失败 code={_responseData.code}, message={_responseData.message}");
 
                 }
             }
 
             string _resultMsg = stringBuilder.ToString();
-            //??????????
+            // 回调最终识别文本
             _callback(_resultMsg);
 
             stopwatch.Stop();
-            Debug.Log("??????????????" + stopwatch.Elapsed.TotalSeconds);
+            Debug.Log("讯飞语音识别耗时（秒）: " + stopwatch.Elapsed.TotalSeconds);
         }
         catch (Exception ex)
         {
-            Debug.LogError("???????: " + ex.Message);
+            Debug.LogError("讯飞识别异常: " + ex.Message);
             m_WebSocket.Dispose();
         }
 
     }
 
     /// <summary>
-    /// ??????????
+    /// 从响应结构中提取识别词串
     /// </summary>
     /// <param name="_responseData"></param>
     /// <returns></returns>
@@ -212,7 +212,7 @@ public class XunfeiSpeechToText : STT
 
         string _jsonData = JsonUtility.ToJson(_postData);
 
-        //????????
+        // 发送整包数据（当前实现为一次性发送）
         socket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(_jsonData)), WebSocketMessageType.Text, true, new CancellationToken());
     }
 
@@ -220,9 +220,9 @@ public class XunfeiSpeechToText : STT
     #endregion
 
 
-    #region ???????
+    #region 音频与错误处理
     /// <summary>
-    /// audioclip??byte[]
+    /// 将 AudioClip 转为 PCM byte[]
     /// </summary>
     /// <param name="audioClip"></param>
     /// <returns></returns>
@@ -268,89 +268,89 @@ public class XunfeiSpeechToText : STT
         return audioClip;
     }
     /// <summary>
-    /// ??????????
+    /// 根据错误码输出可读日志
     /// </summary>
     /// <param name="status"></param>
     private void PrintErrorLog(int status)
     {
         if (status == 10005)
         {
-            Debug.LogError("appid??????");
+            Debug.LogError("appid 未注册");
             return;
         }
         if (status == 10006)
         {
-            Debug.LogError("?????????????");
+            Debug.LogError("日流控超限，请稍后重试");
             return;
         }
         if (status == 10007)
         {
-            Debug.LogError("???????????��");
+            Debug.LogError("应用未授权或权限不足");
             return;
         }
         if (status == 10010)
         {
-            Debug.LogError("???????????");
+            Debug.LogError("无效的请求参数");
             return;
         }
         if (status == 10019)
         {
-            Debug.LogError("session???");
+            Debug.LogError("session 超时");
             return;
         }
         if (status == 10043)
         {
-            Debug.LogError("??????????");
+            Debug.LogError("音频解码失败");
             return;
         }
         if (status == 10101)
         {
-            Debug.LogError("??????????");
+            Debug.LogError("引擎内部错误");
             return;
         }
         if (status == 10313)
         {
-            Debug.LogError("appid???????");
+            Debug.LogError("appid 没有调用权限");
             return;
         }
         if (status == 10317)
         {
-            Debug.LogError("?��???");
+            Debug.LogError("引擎繁忙");
             return;
         }
         if (status == 11200)
         {
-            Debug.LogError("??????");
+            Debug.LogError("auth 失败");
             return;
         }
         if (status == 11201)
         {
-            Debug.LogError("?????????");
+            Debug.LogError("鉴权参数错误");
             return;
         }
         if (status == 10160)
         {
-            Debug.LogError("?????????????");
+            Debug.LogError("请求数据格式错误");
             return;
         }
         if (status == 10161)
         {
-            Debug.LogError("base64???????");
+            Debug.LogError("base64 解码失败");
             return;
         }
         if (status == 10163)
         {
-            Debug.LogError("??????????????????????????????????????????");
+            Debug.LogError("音频参数不符合要求，请检查采样率、声道和编码");
             return;
         }
         if (status == 10200)
         {
-            Debug.LogError("?????????");
+            Debug.LogError("会话已断开");
             return;
         }
         if (status == 10222)
         {
-            Debug.LogError("??????");
+            Debug.LogError("文本为空");
             return;
         }
     }
@@ -358,10 +358,10 @@ public class XunfeiSpeechToText : STT
 
     #endregion
 
-    #region ???????
+    #region 数据结构定义
 
     /// <summary>
-    /// ?????????
+    /// 请求体根结构
     /// </summary>
     [Serializable]
     public class PostData

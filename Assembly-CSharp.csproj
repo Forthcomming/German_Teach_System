@@ -103,6 +103,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Api\FigmaUser.cs" />
     <Compile Include="Assets\Cafe Interior\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+    <Compile Include="Assets\Scripts\UI\VoiceLlmStreamingController.cs" />
     <Compile Include="Assets\Scripts\Manager\LessonManager.cs" />
     <Compile Include="Assets\AIChatTookit\Tool\Webgl\webglTextInput\WebGLSupport\WebGLInput\Wrapper\IInputField.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -382,6 +383,7 @@
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Extensions\FObjectExtensionsAssembly.cs" />
     <Compile Include="Assets\D.A. Assets\Figma-Converter-for-Unity\Runtime\Scripts\Settings\UITK_Settings.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\Xunfei\XunfeiTextToSpeech.cs" />
+    <Compile Include="Assets\Scripts\UI\PronunciationPracticeController.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\LLM\chatGPT\chatgptTurbo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\AIChatTookit\Scripts\TTS&amp;&amp;STT\OpenAI\OpenAISpeechToText.cs" />

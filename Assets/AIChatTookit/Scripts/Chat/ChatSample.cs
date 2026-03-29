@@ -9,6 +9,7 @@ using WebGLSupport;
 using System;
 using UnityEngine.SceneManagement; 
 using System.Text.RegularExpressions;
+using System.Text;
 
 
 public class ChatSample : MonoBehaviour
@@ -16,96 +17,98 @@ public class ChatSample : MonoBehaviour
 
 
     /// <summary>
-    /// ÁÄÌìÅäÖÃ
+    /// èŠå¤©é…ç½®
     /// </summary>
     [SerializeField] private ChatSetting m_ChatSettings;
-    #region UI¶¨Òå
+    #region UIå®šä¹‰
     /// <summary>
-    /// ÁÄÌìUI´°
+    /// èŠå¤©UIçª—
     /// </summary>
     [SerializeField] private GameObject m_ChatPanel;
     /// <summary>
-    /// ÊäÈëµÄĞÅÏ¢
+    /// è¾“å…¥çš„ä¿¡æ¯
     /// </summary>
     [SerializeField] public InputField m_InputWord;
     /// <summary>
-    /// ·µ»ØµÄĞÅÏ¢
+    /// è¿”å›çš„ä¿¡æ¯
     /// </summary>
     [SerializeField] private Text m_TextBack;
     /// <summary>
-    /// ²¥·ÅÉùÒô
+    /// æ’­æ”¾å£°éŸ³
     /// </summary>
     [SerializeField] private AudioSource m_AudioSource;
     /// <summary>
-    /// ·¢ËÍĞÅÏ¢°´Å¥
+    /// å‘é€ä¿¡æ¯æŒ‰é’®
     /// </summary>
     [SerializeField] private Button m_CommitMsgBtn;
     /// <summary>
-    /// ±£´æÉèÖÃ°´Å¥
+    /// ä¿å­˜è®¾ç½®æŒ‰é’®
     /// </summary>
     [SerializeField] private Button m_SaveSettingBtn;
-    /// ±êÌâ
+    /// æ ‡é¢˜
     /// </summary>
     [SerializeField] private TextMeshProUGUI titleToSync;
-    /// ÊäÈë¿òÎÄ×Ö
+    /// è¾“å…¥æ¡†æ–‡å­—
     /// </summary>
     [SerializeField] private TMP_InputField titleToType;
-    /// ÄãµÄ Dropdown ×é¼ş
+    /// ä½ çš„ Dropdown ç»„ä»¶
     /// </summary>
     [SerializeField] private TMP_Dropdown dropdown;
     /// <summary>
-    ///Àë¿ª²Ëµ¥
+    ///ç¦»å¼€èœå•
     /// </summary>
-    [SerializeField] private CanvasGroup exitPanelCanvasGroup;  // Ö¸Ïò exitPanel µÄ CanvasGroup ×é¼şµÄÒıÓÃ
+  
     /// <summary>
-    ///»ğÉ½tts×é¼ş
+    ///ç«å±±ttsç»„ä»¶
     /// </summary>
     //[SerializeField] private VoiceCloneTTS voiceCloneTTS;
     //[SerializeField] private VolcengineTextToSpeech volcengineTextToSpeech;
     [SerializeField] private VolcengineVoiceCloneTTS volcengineVoiceCloneTTS;
     #endregion
 
-    #region ²ÎÊı¶¨Òå
+    #region å‚æ•°å®šä¹‰
     /// <summary>
-    /// ¶¯»­¿ØÖÆÆ÷
+    /// åŠ¨ç”»æ§åˆ¶å™¨
     /// </summary>
     [SerializeField] private Animator[] m_Animators;
     /// <summary>
-    /// ¶¯»­¿ØÖÆÆ÷
+    /// åŠ¨ç”»æ§åˆ¶å™¨
     /// </summary>
     [SerializeField] private Animator m_Animator;
     /// <summary>
-    /// ÓïÒôÄ£Ê½£¬ÉèÖÃÎªfalse,Ôò²»Í¨¹ıÓïÒôºÏ³É
+    /// è¯­éŸ³æ¨¡å¼ï¼Œè®¾ç½®ä¸ºfalse,åˆ™ä¸é€šè¿‡è¯­éŸ³åˆæˆ
     /// </summary>
-    [Header("ÉèÖÃÊÇ·ñÍ¨¹ıÓïÒôºÏ³É²¥·ÅÎÄ±¾")]
+    [Header("è®¾ç½®æ˜¯å¦é€šè¿‡è¯­éŸ³åˆæˆæ’­æ”¾æ–‡æœ¬")]
     [SerializeField] private bool m_IsVoiceMode = true;
-    [Header("¹´Ñ¡Ôò²»·¢ËÍLLM£¬Ö±½ÓºÏ³ÉÊäÈëÎÄ×Ö")]
+    [Header("å‹¾é€‰åˆ™ä¸å‘é€LLMï¼Œç›´æ¥åˆæˆè¾“å…¥æ–‡å­—")]
     [SerializeField] private bool m_CreateVoiceMode = false;
+    [Header("å¯ç”¨åç”±å¤–éƒ¨æ§åˆ¶å™¨è½¬å‘UIäº‹ä»¶ï¼Œé¿å…é‡å¤ç»‘å®š")]
+    [SerializeField] private bool m_UseExternalUIControl = false;
     /// <summary>
-    /// Ëµ»°¶¯»­×´Ì¬µÄ±àºÅ
+    /// è¯´è¯åŠ¨ç”»çŠ¶æ€çš„ç¼–å·
     /// </summary>
     private int[] speakingStates = new int[] { 1, 2, 3,4,5,6 };
-    private int lastPlayedState = -1; // ¼ÇÂ¼ÉÏÒ»´Î²¥·ÅµÄ¶¯»­×´Ì¬
+    private int lastPlayedState = -1; // è®°å½•ä¸Šä¸€æ¬¡æ’­æ”¾çš„åŠ¨ç”»çŠ¶æ€
     /// <summary>
-    /// Ğ­³ÌÒıÓÃ£¬ÓÃÓÚÍ£Ö¹Ğ­³Ì
+    /// åç¨‹å¼•ç”¨ï¼Œç”¨äºåœæ­¢åç¨‹
     /// </summary>
     private Coroutine speakingCoroutine;
     private bool m_IsSpeaking;
 
     /// <summary>
-    /// AI»Ø¸´½áÊøÖ®ºó£¬»Øµ÷
+    /// AIå›å¤ç»“æŸä¹‹åï¼Œå›è°ƒ
     /// </summary>
     public Action OnAISpeakDone;
-    private Queue<string> m_VoiceQueue = new Queue<string>(); // ÓïÒô²¥·Å¶ÓÁĞ
-    private bool isPlayingVoice = false; // ÊÇ·ñÕıÔÚ²¥·ÅÓïÒô
-    private string m_UnfinishedBuffer = string.Empty; // ÓÃÓÚ»º´æÎ´Íê³ÉµÄÓïÒôÄÚÈİ
-    private string accumulatedResponse = string.Empty; // ÓÃÓÚÀÛ»ıAIµÄ»Ø¸´ÄÚÈİ
+    private Queue<string> m_VoiceQueue = new Queue<string>(); // è¯­éŸ³æ’­æ”¾é˜Ÿåˆ—
+    private bool isPlayingVoice = false; // æ˜¯å¦æ­£åœ¨æ’­æ”¾è¯­éŸ³
+    private string m_UnfinishedBuffer = string.Empty; // ç”¨äºç¼“å­˜æœªå®Œæˆçš„è¯­éŸ³å†…å®¹
+    private string accumulatedResponse = string.Empty; // ç”¨äºç´¯ç§¯AIçš„å›å¤å†…å®¹
    
-    /* ¡¾LYFĞÂÔö¡¿£º´ò¶ÏAIÉÏÒ»¶ÎÓïÒô */
-    private bool isNewInput; // ¼ÇÂ¼ÊÇ·ñÓĞĞÂ»Ø¸´
+    /* ã€LYFæ–°å¢ã€‘ï¼šæ‰“æ–­AIä¸Šä¸€æ®µè¯­éŸ³ */
+    private bool isNewInput; // è®°å½•æ˜¯å¦æœ‰æ–°å›å¤
     private Coroutine voicePlayWaitingCoroutine;
     public Button stopPlayAudioButton;
-    public int isLoadingAnswer = 0; // ÊÇ·ñ´¦ÓÚË¼¿¼×´Ì¬,0±íÊ¾Ó¦ÓÃ¸ÕÆô¶¯£¬1±íÊ¾ÕıÔÚË¼¿¼£¬2±íÊ¾Ë¼¿¼Íê±Ï
+    public int isLoadingAnswer = 0; // æ˜¯å¦å¤„äºæ€è€ƒçŠ¶æ€,0è¡¨ç¤ºåº”ç”¨åˆšå¯åŠ¨ï¼Œ1è¡¨ç¤ºæ­£åœ¨æ€è€ƒï¼Œ2è¡¨ç¤ºæ€è€ƒå®Œæ¯•
 
     #endregion
 
@@ -115,40 +118,41 @@ public class ChatSample : MonoBehaviour
     private void Awake()
     {
         titleToType.text = titleToSync.text;
-        m_CommitMsgBtn.onClick.AddListener(delegate { SendData(); });
-        m_SaveSettingBtn.onClick.AddListener(delegate { SaveSetting(); });
-        RegistButtonEvent();
+        if (!m_UseExternalUIControl)
+        {
+            m_CommitMsgBtn.onClick.AddListener(delegate { SendData(); });
+            m_SaveSettingBtn.onClick.AddListener(delegate { SaveSetting(); });
+            RegistButtonEvent();
+        }
         InputSettingWhenWebgl();
     }
     private void Start()
     {
-        // ÎªDropdownµÄvalueChangeÊÂ¼şÌí¼Ó¼àÌıÆ÷
+        // ä¸ºDropdownçš„valueChangeäº‹ä»¶æ·»åŠ ç›‘å¬å™¨
         dropdown.onValueChanged.AddListener(delegate {
             ChangeAnimator();
         });
-        m_InputWord.onEndEdit.AddListener(HandleEndEdit);
-        // È·±£ exitPanel ³õÊ¼²»¿É¼û
-        exitPanelCanvasGroup.alpha = 0;
-        exitPanelCanvasGroup.blocksRaycasts = false;  // ³õÊ¼Ê±²»×èµ²µã»÷
+        if (!m_UseExternalUIControl)
+        {
+            m_InputWord.onEndEdit.AddListener(HandleEndEdit);
+        }
+
 
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ShowExitPanel(); // Ê¹ÓÃ½¥ÏÔ·½·¨ÏÔÊ¾Ãæ°å
-        }
+       
         if (m_AudioSource.isPlaying == false && m_IsSpeaking)
         {
             m_IsSpeaking = false;
-            SetAnimator("state", 0); // ÇĞ»»µ½¾²Ö¹×´Ì¬
+            SetAnimator("state", 0); // åˆ‡æ¢åˆ°é™æ­¢çŠ¶æ€
         }
-        /* ¡¾LYFĞÂÔö¡¿¼ì²âÂ¼Òô×Ô¶¯ÉÏ´« */
+        /* ã€LYFæ–°å¢ã€‘æ£€æµ‹å½•éŸ³è‡ªåŠ¨ä¸Šä¼  */
         if(m_VoiceInputs.isAutoStopRecording){
             m_VoiceInputs.isAutoStopRecording = false;
             ToggleRecord();
         }
-        // ¡¾LYFĞÂÔö¡¿²¥·ÅÓïÒôÊ±£¬ÏÔÊ¾ÔİÍ£²¥·Å°´Å¥£»·ñÔòÒş²Ø°´Å¥
+        // ã€LYFæ–°å¢ã€‘æ’­æ”¾è¯­éŸ³æ—¶ï¼Œæ˜¾ç¤ºæš‚åœæ’­æ”¾æŒ‰é’®ï¼›å¦åˆ™éšè—æŒ‰é’®
         stopPlayAudioButton.gameObject.SetActive(isPlayingVoice);
 
     }
@@ -167,10 +171,7 @@ public class ChatSample : MonoBehaviour
 #endif
     }
 
-    public void OnCancelExit()
-    {
-        HideExitPanel(); // Ê¹ÓÃ½¥Òş·½·¨Òş²ØÃæ°å
-    }
+   
     IEnumerator FadeElement(CanvasGroup canvasGroup, float targetAlpha, float duration)
     {
         float startAlpha = canvasGroup.alpha;
@@ -185,39 +186,28 @@ public class ChatSample : MonoBehaviour
 
         canvasGroup.alpha = targetAlpha;
 
-        // ÔÚ½¥±ä½áÊøºó¸üĞÂ CanvasGroup µÄ blocksRaycasts ÊôĞÔ£¬ÒÔÔÊĞí»ò×èÖ¹µã»÷
+        // åœ¨æ¸å˜ç»“æŸåæ›´æ–° CanvasGroup çš„ blocksRaycasts å±æ€§ï¼Œä»¥å…è®¸æˆ–é˜»æ­¢ç‚¹å‡»
         canvasGroup.blocksRaycasts = targetAlpha > 0;
     }
 
-    public void ShowExitPanel()
-    {
-        StartCoroutine(FadeElement(exitPanelCanvasGroup, 1.0f, 0.5f));  // ½¥ÏÔ
-        Time.timeScale = 0; // ÔİÍ£ÓÎÏ·
-    }
-
-    public void HideExitPanel()
-    {
-        StartCoroutine(FadeElement(exitPanelCanvasGroup, 0.0f, 0.5f));  // ½¥Òş
-        Time.timeScale = 1; // »Ö¸´ÓÎÏ·Ê±¼ä
-    }
 
 
     /// <summary>
-    /// ¸ü»»animator
+    /// æ›´æ¢animator
     /// </summary>
     void ChangeAnimator()
 {
-    // È·±£Ë÷ÒıÔÚÓĞĞ§·¶Î§ÄÚ£¬±ÜÃâÊı×éÔ½½ç´íÎó
+    // ç¡®ä¿ç´¢å¼•åœ¨æœ‰æ•ˆèŒƒå›´å†…ï¼Œé¿å…æ•°ç»„è¶Šç•Œé”™è¯¯
     if (dropdown.value >= 0 && dropdown.value < m_Animators.Length)
     {
         m_Animator = m_Animators[dropdown.value];
     }
 }
 
-    #region ÏûÏ¢·¢ËÍ
+    #region æ¶ˆæ¯å‘é€
 
     /// <summary>
-    /// webglÊ±´¦Àí£¬Ö§³ÖÖĞÎÄÊäÈë
+    /// webglæ—¶å¤„ç†ï¼Œæ”¯æŒä¸­æ–‡è¾“å…¥
     /// </summary>
     private void InputSettingWhenWebgl()
     {
@@ -227,7 +217,7 @@ public class ChatSample : MonoBehaviour
     }
 
     /// <summary>
-    /// ±£´æ±êÌâ
+    /// ä¿å­˜æ ‡é¢˜
     /// </summary>
      public void SaveSetting()
     {
@@ -237,14 +227,14 @@ public class ChatSample : MonoBehaviour
 
 
     /// <summary>
-    /// ·¢ËÍĞÅÏ¢
+    /// å‘é€ä¿¡æ¯
     /// </summary>
     public void SendData()
     {
         if (m_InputWord.text.Equals(""))
             return;
 
-        if (m_CreateVoiceMode)//ºÏ³ÉÊäÈëÎªÓïÒô
+        if (m_CreateVoiceMode)//åˆæˆè¾“å…¥ä¸ºè¯­éŸ³
         {
             CallBack(m_InputWord.text);
             m_InputWord.text = "";
@@ -252,22 +242,23 @@ public class ChatSample : MonoBehaviour
         }
 
         StartCoroutine(GetSendChatInfo(m_InputWord.text));
-        //Ìí¼Ó¼ÇÂ¼ÁÄÌì
+        //æ·»åŠ è®°å½•èŠå¤©
         //m_ChatHistory.Add(m_InputWord.text);
-        //ÌáÊ¾´Ê
+        //æç¤ºè¯
         string _msg = m_InputWord.text;
 
-        //·¢ËÍÊı¾İ
+        //å‘é€æ•°æ®
         m_ChatSettings.m_ChatModel.PostMsg(_msg, CallBack);
 
+        accumulatedResponse = string.Empty;
         m_InputWord.text = "";
-        m_TextBack.text = "ÕıÔÚË¼¿¼ÖĞ...";
+        m_TextBack.text = "æ­£åœ¨æ€è€ƒä¸­...";
 
-        //ÇĞ»»Ë¼¿¼¶¯×÷
+        //åˆ‡æ¢æ€è€ƒåŠ¨ä½œ
         //SetAnimator("state", 1);
     }
     /// <summary>
-    /// ´øÎÄ×Ö·¢ËÍ
+    /// å¸¦æ–‡å­—å‘é€
     /// </summary>
     /// <param name="_postWord"></param>
     public void SendData(string _postWord)
@@ -275,7 +266,7 @@ public class ChatSample : MonoBehaviour
         if (_postWord.Equals(""))
             return;
 
-        if (m_CreateVoiceMode)//ºÏ³ÉÊäÈëÎªÓïÒô
+        if (m_CreateVoiceMode)//åˆæˆè¾“å…¥ä¸ºè¯­éŸ³
         {
             CallBack(_postWord);
             m_InputWord.text = "";
@@ -283,23 +274,24 @@ public class ChatSample : MonoBehaviour
         }
 
         StartCoroutine(GetSendChatInfo(_postWord));
-        //Ìí¼Ó¼ÇÂ¼ÁÄÌì
+        //æ·»åŠ è®°å½•èŠå¤©
         //m_ChatHistory.Add(_postWord);
-        //ÌáÊ¾´Ê
+        //æç¤ºè¯
         string _msg = _postWord;
 
-        //·¢ËÍÊı¾İ
+        //å‘é€æ•°æ®
         m_ChatSettings.m_ChatModel.PostMsg(_msg, CallBack);
 
+        accumulatedResponse = string.Empty;
         m_InputWord.text = "";
-        m_TextBack.text = "ÕıÔÚË¼¿¼ÖĞ...";
+        m_TextBack.text = "æ­£åœ¨æ€è€ƒä¸­...";
 
-        //ÇĞ»»Ë¼¿¼¶¯×÷
+        //åˆ‡æ¢æ€è€ƒåŠ¨ä½œ
         //SetAnimator("state", 1);
     }
 
     /// <summary>
-    /// AI»Ø¸´µÄĞÅÏ¢µÄ»Øµ÷
+    /// AIå›å¤çš„ä¿¡æ¯çš„å›è°ƒ
     /// </summary>
     /// <param name="_response"></param>
     private void CallBack(string _response)
@@ -308,22 +300,22 @@ public class ChatSample : MonoBehaviour
             return;
 
         _response = _response.Trim();
-        Debug.Log("ÊÕµ½AIÔöÁ¿»Ø¸´£º" + _response);
+        Debug.Log("æ”¶åˆ°AIå¢é‡å›å¤ï¼š" + _response);
 
-        // 1. ÎŞÂÛÊ²Ã´Ä£Ê½£¬ÏÈ×·¼Óµ½ÏÔÊ¾ÎÄ±¾
+        // 1. æ— è®ºä»€ä¹ˆæ¨¡å¼ï¼Œå…ˆè¿½åŠ åˆ°æ˜¾ç¤ºæ–‡æœ¬
         AppendText(_response);
 
-        // 2. Æ´½Óµ½»º³åÇø
+        // 2. æ‹¼æ¥åˆ°ç¼“å†²åŒº
         m_UnfinishedBuffer += _response;
 
-        // 3. ¼ì²é»º³åÇøÊÇ·ñº¬ÓĞ¡°Ç¿Í£¶Ù±êµã¡±
-        // °üº¬£º¾äºÅ¡¢¸ĞÌ¾ºÅ¡¢ÎÊºÅ¡¢Ê¡ÂÔºÅ¡¢»òÕß»»ĞĞ·û
+        // 3. æ£€æŸ¥ç¼“å†²åŒºæ˜¯å¦å«æœ‰â€œå¼ºåœé¡¿æ ‡ç‚¹â€
+        // åŒ…å«ï¼šå¥å·ã€æ„Ÿå¹å·ã€é—®å·ã€çœç•¥å·ã€æˆ–è€…æ¢è¡Œç¬¦
         if (ContainsStrongPunctuation(m_UnfinishedBuffer))
         {
             SendBufferToVoiceQueue();
         }
 
-        // 4. Æô¶¯Ëæ»ú¶¯»­
+        // 4. å¯åŠ¨éšæœºåŠ¨ç”»
         if (!m_IsSpeaking)
         {
             m_IsSpeaking = true;
@@ -332,17 +324,17 @@ public class ChatSample : MonoBehaviour
     }
 
     /// <summary>
-    /// ¼ì²é×Ö·û´®ÊÇ·ñ°üº¬Ç¿Í£¶Ù±êµã
+    /// æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦åŒ…å«å¼ºåœé¡¿æ ‡ç‚¹
     /// </summary>
     private bool ContainsStrongPunctuation(string text)
     {
         if (string.IsNullOrEmpty(text)) return false;
 
-        // ¶¨ÒåÇ¿Í£¶Ù·ûºÅ
-        char[] strongPunctuations = { '¡£', '£¡', '£¿', '!', '?', '\n' };
+        // å®šä¹‰å¼ºåœé¡¿ç¬¦å·
+        char[] strongPunctuations = { 'ã€‚', 'ï¼', 'ï¼Ÿ', '!', '?', '\n' };
 
-        // ¼ì²éÊÇ·ñ°üº¬ÉÏÊö×Ö·û£¬»òÕß°üº¬Ê¡ÂÔºÅ
-        if (text.IndexOfAny(strongPunctuations) != -1 || text.Contains("¡­¡­") || text.Contains("..."))
+        // æ£€æŸ¥æ˜¯å¦åŒ…å«ä¸Šè¿°å­—ç¬¦ï¼Œæˆ–è€…åŒ…å«çœç•¥å·
+        if (text.IndexOfAny(strongPunctuations) != -1 || text.Contains("â€¦â€¦") || text.Contains("..."))
         {
             return true;
         }
@@ -350,45 +342,68 @@ public class ChatSample : MonoBehaviour
     }
 
     /// <summary>
-    /// ½«µ±Ç°»º³åÇøÄÚÈİËÍÈëÓïÒô¶ÓÁĞ²¢Çå¿Õ
+    /// å°†å½“å‰ç¼“å†²åŒºå†…å®¹é€å…¥è¯­éŸ³é˜Ÿåˆ—å¹¶æ¸…ç©º
     /// </summary>
     private void SendBufferToVoiceQueue()
     {
         string toSpeak = m_UnfinishedBuffer.Trim();
         if (string.IsNullOrEmpty(toSpeak)) return;
 
-        // ¡¾´ò¶ÏÂß¼­¡¿£ºÈç¹ûÊÇĞÂµÄÒ»ÂÖ¶Ô»°µÄµÚÒ»¾ä
+        // ã€æ‰“æ–­é€»è¾‘ã€‘ï¼šå¦‚æœæ˜¯æ–°çš„ä¸€è½®å¯¹è¯çš„ç¬¬ä¸€å¥
         if (isNewInput)
         {
             isNewInput = false;
             StopPlayAudio();
-            m_VoiceQueue.Clear(); // Çå¿Õ¾É¶ÓÁĞ£¬·ÀÖ¹ĞÂÀÏ¶Ô»°»ìÔÚÒ»Æğ
+            m_VoiceQueue.Clear(); // æ¸…ç©ºæ—§é˜Ÿåˆ—ï¼Œé˜²æ­¢æ–°è€å¯¹è¯æ··åœ¨ä¸€èµ·
         }
 
-        // ¼ÓÈë¶ÓÁĞ
-        m_VoiceQueue.Enqueue(toSpeak);
-        Debug.Log($"[Ç¿±êµã¶Ï¾ä] ¼ÓÈëÓïÒô¶ÓÁĞ£º{toSpeak}");
+        // æ··åˆè¯­è¨€æ—¶æ‹†åˆ†ç‰‡æ®µï¼Œç¡®ä¿ä¸€æ¡å›å¤é‡Œä¸­/å¾·å¯æŒ‰ä¸åŒTTSåˆ†åˆ«åˆæˆã€‚
+        List<string> voiceSegments = SplitMixedLanguageSegments(toSpeak);
+        if (voiceSegments.Count == 0)
+        {
+            m_VoiceQueue.Enqueue(toSpeak);
+            Debug.Log($"[å¼ºæ ‡ç‚¹æ–­å¥] åŠ å…¥è¯­éŸ³é˜Ÿåˆ—ï¼š{toSpeak}");
+        }
+        else
+        {
+            foreach (string segment in voiceSegments)
+            {
+                if (string.IsNullOrWhiteSpace(segment))
+                {
+                    continue;
+                }
 
-        // Çå¿Õ»º´æ
+                string trimmedSegment = segment.Trim();
+                m_VoiceQueue.Enqueue(trimmedSegment);
+                Debug.Log($"[æ··åˆè¯­ç§åˆ†ç‰‡] åŠ å…¥è¯­éŸ³é˜Ÿåˆ—ï¼š{trimmedSegment}");
+            }
+        }
+
+        // æ¸…ç©ºç¼“å­˜
         m_UnfinishedBuffer = string.Empty;
 
-        // ³¢ÊÔ²¥·Å
+        // å°è¯•æ’­æ”¾
         TryPlayNextVoice();
     }
 
-    // ¶¨Òå½ÓÊÕÍêÕû»Ø¸´²ÎÊıµÄ·½·¨
+    // å®šä¹‰æ¥æ”¶å®Œæ•´å›å¤å‚æ•°çš„æ–¹æ³•
     public IEnumerator ReceiveFullResponse(string fullResponse)
     {
         yield return new WaitForEndOfFrame();
 
-        /* ¡¾LYFĞÂÔö¡¿£º´ò¶ÏAIÉÏÒ»¶ÎÓïÒô */
+        // æ”¶å°¾æ—¶å¦‚æœè¿˜æœ‰æœªåˆ°å¼ºæ ‡ç‚¹çš„å°¾å¥ï¼Œè¡¥å‘åˆ°è¯­éŸ³é˜Ÿåˆ—é¿å…æ¼æ’­ã€‚
+        if (!string.IsNullOrWhiteSpace(m_UnfinishedBuffer))
+        {
+            SendBufferToVoiceQueue();
+        }
+
+        // æ ‡è®°ä¸‹ä¸€è½®é¦–å¥è§¦å‘æ‰“æ–­æ—§è¯­éŸ³ã€‚
         isNewInput = true;
-        m_UnfinishedBuffer = "";
 
         ChatPrefab _receiveChat = Instantiate(m_RobotChatPrefab, m_rootTrans.transform);
         m_TempChatBox.Add(_receiveChat.gameObject);
         _receiveChat.SetText(fullResponse);
-        //ÖØĞÂ¼ÆËãÈİÆ÷³ß´ç
+        //é‡æ–°è®¡ç®—å®¹å™¨å°ºå¯¸
         LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
         StartCoroutine(TurnToLastLine());
     }
@@ -400,77 +415,244 @@ public class ChatSample : MonoBehaviour
             return false;
 
         char lastChar = text[text.Length - 1];
-        return lastChar == '¡£' || lastChar == '£¡' || lastChar == '£¿' || lastChar == '£¬' || lastChar == ' ' || char.IsPunctuation(lastChar);
+        return lastChar == 'ã€‚' || lastChar == 'ï¼' || lastChar == 'ï¼Ÿ' || lastChar == 'ï¼Œ' || lastChar == ' ' || char.IsPunctuation(lastChar);
     }
     private void TryPlayNextVoice()
     {
-        // ¡¾LYFĞÂÔö¡¿ÓÅ»¯µÈ´ıAIË¼¿¼Ê±µÄUI,´Ë´¦AIÒÑ·µ»ØÓïÒôÏûÏ¢
-        m_VoiceBottonText.text = "µã»÷°´Å¥£¬¿ªÊ¼Â¼Òô"; 
+        // ã€LYFæ–°å¢ã€‘ä¼˜åŒ–ç­‰å¾…AIæ€è€ƒæ—¶çš„UI,æ­¤å¤„AIå·²è¿”å›è¯­éŸ³æ¶ˆæ¯
+        m_VoiceBottonText.text = "ç‚¹å‡»æŒ‰é’®ï¼Œå¼€å§‹å½•éŸ³"; 
         isLoadingAnswer = 2;
         m_RecordTips.text = "";
         m_VoiceInputBotton.interactable = true;
 
-        // Èç¹ûÒÑ¾­ÔÚ²¥·ÅÓïÒô£¬»òÕßÓïÒô¶ÓÁĞÎª¿Õ£¬ÔòÖ±½Ó·µ»Ø
+        // å¦‚æœå·²ç»åœ¨æ’­æ”¾è¯­éŸ³ï¼Œæˆ–è€…è¯­éŸ³é˜Ÿåˆ—ä¸ºç©ºï¼Œåˆ™ç›´æ¥è¿”å›
         if (isPlayingVoice || m_VoiceQueue.Count == 0)
         {
-            Debug.Log("µ±Ç°Ã»ÓĞĞèÒª²¥·ÅµÄÓïÒô»òÕıÔÚ²¥·ÅÖĞ...");
+            Debug.Log("å½“å‰æ²¡æœ‰éœ€è¦æ’­æ”¾çš„è¯­éŸ³æˆ–æ­£åœ¨æ’­æ”¾ä¸­...");
             return;
         }
 
-        // ´Ó¶ÓÁĞÖĞÈ¡³öÏÂÒ»¶ÎÓïÒô
+        // ä»é˜Ÿåˆ—ä¸­å–å‡ºä¸‹ä¸€æ®µè¯­éŸ³
         string nextVoice = m_VoiceQueue.Dequeue();
         string cleanVoice=CleanTextForTTS(nextVoice);
-        // ¡¾¹Ø¼üĞÂÔö¡¿£º¼ì²éÇåÀíºóµÄÎÄ±¾ÊÇ·ñÎª¿Õ
+        // ã€å…³é”®æ–°å¢ã€‘ï¼šæ£€æŸ¥æ¸…ç†åçš„æ–‡æœ¬æ˜¯å¦ä¸ºç©º
         if (string.IsNullOrWhiteSpace(cleanVoice))
         {
-            Debug.LogWarning("¼ì²âµ½¿ÕÎÄ±¾ÓïÒô£¬Ìø¹ı²¢³¢ÊÔ²¥·ÅÏÂÒ»Ìõ...");
-            // µİ¹éµ÷ÓÃ£¬³¢ÊÔ²¥·Å¶ÓÁĞÖĞµÄÏÂÒ»¸ö
+            Debug.LogWarning("æ£€æµ‹åˆ°ç©ºæ–‡æœ¬è¯­éŸ³ï¼Œè·³è¿‡å¹¶å°è¯•æ’­æ”¾ä¸‹ä¸€æ¡...");
+            // é€’å½’è°ƒç”¨ï¼Œå°è¯•æ’­æ”¾é˜Ÿåˆ—ä¸­çš„ä¸‹ä¸€ä¸ª
             TryPlayNextVoice();
             return;
         }
         isPlayingVoice = true;
 
-        Debug.Log($"¿ªÊ¼²¥·ÅÓïÒô£º{cleanVoice}");
+        Debug.Log($"å¼€å§‹æ’­æ”¾è¯­éŸ³ï¼š{cleanVoice}");
 
-        // µ÷ÓÃÓïÒôºÏ³É²¥·Å
-        //voiceCloneTTS.VoiceTTS(nextVoice,PlayVoice);
-        volcengineVoiceCloneTTS.VoiceTTS1(cleanVoice, PlayVoice);
+        bool preferDefaultTTS = ShouldUseDefaultTTS(nextVoice);
+        bool usedTTS = false;
 
-        // µ÷ÓÃÓïÒôºÏ³É²¥·Å
-        //m_ChatSettings.m_TextToSpeech.Speak(nextVoice, PlayVoice);
+        if (preferDefaultTTS)
+        {
+            usedTTS = TrySpeakWithDefaultTTS(cleanVoice);
+            if (!usedTTS)
+            {
+                usedTTS = TrySpeakWithVolcengineTTS(cleanVoice);
+            }
+        }
+        else
+        {
+            usedTTS = TrySpeakWithVolcengineTTS(cleanVoice);
+            if (!usedTTS)
+            {
+                usedTTS = TrySpeakWithDefaultTTS(cleanVoice);
+            }
+        }
+
+        if (usedTTS)
+        {
+            return;
+        }
+
+        Debug.LogWarning("æœªé…ç½®å¯ç”¨çš„TTSç»„ä»¶ï¼Œè·³è¿‡å½“å‰è¯­éŸ³ç‰‡æ®µã€‚");
+        isPlayingVoice = false;
+        TryPlayNextVoice();
     }
+
+    private bool TrySpeakWithDefaultTTS(string text)
+    {
+        if (m_ChatSettings == null || m_ChatSettings.m_TextToSpeech == null)
+        {
+            return false;
+        }
+
+        Debug.Log("[TTSè·¯ç”±] ä½¿ç”¨é€šç”¨TTS(m_ChatSettings.m_TextToSpeech)ã€‚");
+        m_ChatSettings.m_TextToSpeech.Speak(text, PlayVoice);
+        return true;
+    }
+
+    private bool TrySpeakWithVolcengineTTS(string text)
+    {
+        if (volcengineVoiceCloneTTS == null)
+        {
+            return false;
+        }
+
+        Debug.Log("[TTSè·¯ç”±] ä½¿ç”¨ç«å±±TTS(volcengineVoiceCloneTTS.VoiceTTS1)ã€‚");
+        volcengineVoiceCloneTTS.VoiceTTS1(text, PlayVoice);
+        return true;
+    }
+
+    private bool ShouldUseDefaultTTS(string originalText)
+    {
+        if (IsGermanText(originalText))
+        {
+            Debug.Log("[TTSè·¯ç”±] æ£€æµ‹ç»“æœï¼šGermanï¼Œé¦–é€‰é€šç”¨TTSã€‚");
+            return true;
+        }
+
+        if (ContainsChinese(originalText) || ContainsEnglishLetter(originalText))
+        {
+            Debug.Log("[TTSè·¯ç”±] æ£€æµ‹ç»“æœï¼šNonGerman(ä¸­æ–‡/è‹±è¯­)ï¼Œé¦–é€‰ç«å±±TTSã€‚");
+            return false;
+        }
+
+        // æœªè¯†åˆ«åˆ°æ˜æ˜¾è¯­ç§æ—¶ï¼Œå›é€€é»˜è®¤TTSï¼Œé¿å…å¼‚å¸¸æ–‡æœ¬æ— æ³•å‘å£°ã€‚
+        Debug.Log("[TTSè·¯ç”±] æ£€æµ‹ç»“æœï¼šUnknownï¼Œé¦–é€‰é€šç”¨TTSã€‚");
+        return true;
+    }
+
+    private bool IsGermanText(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        if (Regex.IsMatch(text, "[Ã¤Ã¶Ã¼Ã„Ã–ÃœÃŸ]"))
+        {
+            return true;
+        }
+
+        const string germanWordPattern =
+            @"\b(der|die|das|ein|eine|und|ist|nicht|ich|du|wir|sie|mit|fÃ¼r|auf|zu|den|dem|des|im|am|von)\b";
+        return Regex.IsMatch(text, germanWordPattern, RegexOptions.IgnoreCase);
+    }
+
+    private bool ContainsChinese(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        return Regex.IsMatch(text, @"[\u4e00-\u9fff]");
+    }
+
+    private bool ContainsEnglishLetter(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        return Regex.IsMatch(text, "[A-Za-z]");
+    }
+
+    private List<string> SplitMixedLanguageSegments(string text)
+    {
+        List<string> segments = new List<string>();
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return segments;
+        }
+
+        StringBuilder current = new StringBuilder();
+        bool? currentIsChinese = null;
+
+        foreach (char c in text)
+        {
+            bool isChinese = IsChineseChar(c);
+            bool isLetterOrDigit = char.IsLetterOrDigit(c) || c == 'Ã¤' || c == 'Ã¶' || c == 'Ã¼' || c == 'Ã„' || c == 'Ã–' || c == 'Ãœ' || c == 'ÃŸ';
+            bool isSeparator = char.IsWhiteSpace(c) || char.IsPunctuation(c) || char.IsSymbol(c);
+
+            if (!isLetterOrDigit && !isSeparator)
+            {
+                isSeparator = true;
+            }
+
+            if (isSeparator)
+            {
+                current.Append(c);
+                continue;
+            }
+
+            if (currentIsChinese == null)
+            {
+                currentIsChinese = isChinese;
+                current.Append(c);
+                continue;
+            }
+
+            if (currentIsChinese.Value == isChinese)
+            {
+                current.Append(c);
+            }
+            else
+            {
+                if (current.Length > 0)
+                {
+                    segments.Add(current.ToString());
+                }
+                current.Clear();
+                currentIsChinese = isChinese;
+                current.Append(c);
+            }
+        }
+
+        if (current.Length > 0)
+        {
+            segments.Add(current.ToString());
+        }
+
+        return segments;
+    }
+
+    private bool IsChineseChar(char c)
+    {
+        return c >= '\u4e00' && c <= '\u9fff';
+    }
+
     private string CleanTextForTTS(string input)
     {
         if (string.IsNullOrEmpty(input))
             return string.Empty;
 
-        //// 1. ½«ËùÓĞ¿Õ°××Ö·û£¨»»ĞĞ¡¢»Ø³µ¡¢ÖÆ±í·û¡¢¶àÓà¿Õ¸ñ£©Í³Ò»Ìæ»»ÎªÒ»¸ö¿Õ¸ñ
-        //// \s Æ¥Åä [ \f\n\r\t\v]£¬ÕâÄÜÖ±½Ó´¦ÀíµôËùÓĞĞÎÊ½µÄ¡°¿ÕĞĞ¡±
+        //// 1. å°†æ‰€æœ‰ç©ºç™½å­—ç¬¦ï¼ˆæ¢è¡Œã€å›è½¦ã€åˆ¶è¡¨ç¬¦ã€å¤šä½™ç©ºæ ¼ï¼‰ç»Ÿä¸€æ›¿æ¢ä¸ºä¸€ä¸ªç©ºæ ¼
+        //// \s åŒ¹é… [ \f\n\r\t\v]ï¼Œè¿™èƒ½ç›´æ¥å¤„ç†æ‰æ‰€æœ‰å½¢å¼çš„â€œç©ºè¡Œâ€
         //input = Regex.Replace(input, @"\s+", " ");
 
-        // 2. ÒÆ³ıÌØÊâ×Ö·û
-        // ±£Áô£ºÖĞÎÄ¡¢Ó¢ÎÄ¡¢Êı×Ö¡¢³£ÓÃÖĞÓ¢ÎÄ±êµã
-        input = Regex.Replace(
-            input,
-            @"[^a-zA-Z0-9\u4e00-\u9fa5£¬¡££¡£¿¡¢,.!? ""¡°¡±: £º]+",
-        ""
-        );
+        // 2. ç§»é™¤ç‰¹æ®Šå­—ç¬¦
+        // ä¿ç•™ï¼šä¸­æ–‡ã€è‹±æ–‡ã€æ•°å­—ã€å¸¸ç”¨ä¸­è‹±æ–‡æ ‡ç‚¹
+        //input = Regex.Replace(
+        //    input,
+        //    @"[^a-zA-Z0-9Ã¤Ã¶Ã¼Ã„Ã–ÃœÃŸ\u4e00-\u9fa5ï¼Œã€‚ï¼ï¼Ÿã€,.!? ""â€œâ€: ï¼š]+",
+        //""
+        //);
 
-        //// 3. ÔÙ´ÎÈ·±£Ã»ÓĞÒòÎªÌØÊâ×Ö·û±»É¾µôºóÁôÏÂµÄË«¿Õ¸ñ
+        //// 3. å†æ¬¡ç¡®ä¿æ²¡æœ‰å› ä¸ºç‰¹æ®Šå­—ç¬¦è¢«åˆ æ‰åç•™ä¸‹çš„åŒç©ºæ ¼
         //input = Regex.Replace(input, @"\s{2,}", " ");
 
         return input.Trim();
     }
 
-    /* ¡¾LYFĞÂÔö¡¿ÖĞ¶ÏÓïÒô²¥·Å */
+    /* ã€LYFæ–°å¢ã€‘ä¸­æ–­è¯­éŸ³æ’­æ”¾ */
     public void StopPlayAudio(){
         if(voicePlayWaitingCoroutine!=null){
             StopCoroutine(voicePlayWaitingCoroutine);
         }
         m_VoiceQueue.Clear();
         m_AudioSource.Stop();
-        isPlayingVoice = false; // ±ê¼Çµ±Ç°²¥·Å½áÊø
-        StopSpeakingSequence(); // Í£Ö¹µ±Ç°¶¯»­²¢ÇĞ»»µ½¾²Ö¹×´Ì¬
+        isPlayingVoice = false; // æ ‡è®°å½“å‰æ’­æ”¾ç»“æŸ
+        StopSpeakingSequence(); // åœæ­¢å½“å‰åŠ¨ç”»å¹¶åˆ‡æ¢åˆ°é™æ­¢çŠ¶æ€
     }
 
     private void AppendText(string _response)
@@ -478,48 +660,47 @@ public class ChatSample : MonoBehaviour
         if (string.IsNullOrEmpty(_response))
             return;
 
-        // ÔöÁ¿×·¼Óµ½ÏÔÊ¾ÎÄ±¾
-        m_TextBack.text += _response;
-        Debug.Log("m_TextBack.text"+m_TextBack.text);
-        // Èç¹ûÖğ×ÖÏÔÊ¾Î´Íê³É£¬Ôò¼ÌĞøÖğ×ÖÏÔÊ¾
+        // ç»´æŠ¤å®Œæ•´å¢é‡ç¼“å­˜ï¼Œé¿å…é€å­—åç¨‹ä¸æµå¼è¿½åŠ äº’ç›¸è¦†ç›–é€ æˆæ–‡æœ¬ä¸å®Œæ•´ã€‚
+        accumulatedResponse += _response;
+        // å¦‚æœé€å­—æ˜¾ç¤ºæœªå®Œæˆï¼Œåˆ™ç»§ç»­é€å­—æ˜¾ç¤º
         if (!m_WriteState)
         {
-            StartTypeWords(m_TextBack.text);
+            StartTypeWords(accumulatedResponse);
         }
     }
 
     #endregion
 
-    #region ÓïÒôÊäÈë
+    #region è¯­éŸ³è¾“å…¥
     /// <summary>
-    /// ÓïÒôÊ¶±ğ·µ»ØµÄÎÄ±¾ÊÇ·ñÖ±½Ó·¢ËÍÖÁLLM
+    /// è¯­éŸ³è¯†åˆ«è¿”å›çš„æ–‡æœ¬æ˜¯å¦ç›´æ¥å‘é€è‡³LLM
     /// </summary>
     [SerializeField] private bool m_AutoSend = true;
     /// <summary>
-    /// ÓïÒôÊäÈëµÄ°´Å¥
+    /// è¯­éŸ³è¾“å…¥çš„æŒ‰é’®
     /// </summary>
     [SerializeField] private Button m_VoiceInputBotton;
     /// <summary>
-    /// Â¼Òô°´Å¥µÄÎÄ±¾
+    /// å½•éŸ³æŒ‰é’®çš„æ–‡æœ¬
     /// </summary>
     [SerializeField]private Text m_VoiceBottonText;
     /// <summary>
-    /// Â¼ÒôµÄÌáÊ¾ĞÅÏ¢
+    /// å½•éŸ³çš„æç¤ºä¿¡æ¯
     /// </summary>
     [SerializeField] private Text m_RecordTips;
     /// <summary>
-    /// AIË¼¿¼Ê±µÄÎÄ±¾ĞÅÏ¢
+    /// AIæ€è€ƒæ—¶çš„æ–‡æœ¬ä¿¡æ¯
     /// </summary>
     [SerializeField] private string m_WatingText;
     /// <summary>
-    /// ÓïÒôÊäÈë´¦ÀíÀà
+    /// è¯­éŸ³è¾“å…¥å¤„ç†ç±»
     /// </summary>
     [SerializeField] private VoiceInputs m_VoiceInputs;
     /// <summary>
-    /// ×¢²á°´Å¥ÊÂ¼ş
+    /// æ³¨å†ŒæŒ‰é’®äº‹ä»¶
     /// </summary>
 
-    private bool isRecording = false; // ÓÃÓÚ¸ú×ÙÂ¼Òô×´Ì¬
+    private bool isRecording = false; // ç”¨äºè·Ÿè¸ªå½•éŸ³çŠ¶æ€
     private void RegistButtonEvent()
     {
         if (m_VoiceInputBotton == null || m_VoiceInputBotton.GetComponent<EventTrigger>())
@@ -527,7 +708,7 @@ public class ChatSample : MonoBehaviour
 
         EventTrigger _trigger = m_VoiceInputBotton.gameObject.AddComponent<EventTrigger>();
 
-        // Ìí¼Ó°´Å¥µã»÷ÊÂ¼ş
+        // æ·»åŠ æŒ‰é’®ç‚¹å‡»äº‹ä»¶
         EventTrigger.Entry clickEntry = new EventTrigger.Entry();
         clickEntry.eventID = EventTriggerType.PointerClick;
         clickEntry.callback = new EventTrigger.TriggerEvent();
@@ -538,7 +719,7 @@ public class ChatSample : MonoBehaviour
 
 
     /// <summary>
-    /// ÇĞ»»Â¼Òô×´Ì¬
+    /// åˆ‡æ¢å½•éŸ³çŠ¶æ€
     /// </summary>
     private void ToggleRecord()
     {
@@ -550,27 +731,50 @@ public class ChatSample : MonoBehaviour
         {
             StartRecord();
         }
-        isRecording = !isRecording; // ¸üĞÂÂ¼Òô×´Ì¬
+        isRecording = !isRecording; // æ›´æ–°å½•éŸ³çŠ¶æ€
     }
+
     /// <summary>
-    /// ¿ªÊ¼Â¼ÖÆ
+    /// å¯¹å¤–æš´éœ²å½•éŸ³å¼€å…³ï¼Œä¾›å¤–éƒ¨æ§åˆ¶å™¨å¤ç”¨å†…éƒ¨çŠ¶æ€æœºã€‚
+    /// </summary>
+    public void ToggleRecordExternal()
+    {
+        ToggleRecord();
+    }
+
+    /// <summary>
+    /// ä¾›å¤–éƒ¨UIè¯»å–å½“å‰å½•éŸ³çŠ¶æ€ã€‚
+    /// </summary>
+    public bool IsRecording => isRecording;
+
+    /// <summary>
+    /// ä¾›å¤–éƒ¨UIåŒæ­¥å½“å‰æµå¼æ–‡æœ¬ã€‚
+    /// </summary>
+    public string CurrentResponseText => accumulatedResponse;
+
+    /// <summary>
+    /// ä¾›å¤–éƒ¨UIåŒæ­¥å½“å‰è¯†åˆ«/æç¤ºæ–‡æœ¬ã€‚
+    /// </summary>
+    public string CurrentRecordTipText => m_RecordTips != null ? m_RecordTips.text : string.Empty;
+    /// <summary>
+    /// å¼€å§‹å½•åˆ¶
     /// </summary>
     public void StartRecord()
     {
-        /* ¡¾LYFĞÂÔö¡¿ */
+        /* ã€LYFæ–°å¢ã€‘ */
         StopPlayAudio();
 
-        m_VoiceBottonText.text = "ÕıÔÚÂ¼ÒôÖĞ...";
+        m_VoiceBottonText.text = "æ­£åœ¨å½•éŸ³ä¸­...";
         m_VoiceInputs.StartRecordAudio();
     }
     /// <summary>
-    /// ½áÊøÂ¼ÖÆ
+    /// ç»“æŸå½•åˆ¶
     /// </summary>
     public void StopRecord()
     {
-        m_RecordTips.text = "Â¼Òô½áÊø£¬ÕıÔÚÊ¶±ğ...";
+        m_RecordTips.text = "å½•éŸ³ç»“æŸï¼Œæ­£åœ¨è¯†åˆ«...";
 
-        // ¡¾LYFĞÂÔö¡¿UIÓÅ»¯£ºÁÙÊ±½ûÓÃÂ¼Òô°´Å¥·ÀÖ¹³öÏÖ»Ø¸´²å¶ÓµÄÇé¿ö
+        // ã€LYFæ–°å¢ã€‘UIä¼˜åŒ–ï¼šä¸´æ—¶ç¦ç”¨å½•éŸ³æŒ‰é’®é˜²æ­¢å‡ºç°å›å¤æ’é˜Ÿçš„æƒ…å†µ
         m_VoiceInputBotton.interactable = false;
         m_VoiceBottonText.text = ""; 
 
@@ -578,7 +782,7 @@ public class ChatSample : MonoBehaviour
     }
 
     /// <summary>
-    /// ´¦ÀíÂ¼ÖÆµÄÒôÆµÊı¾İ
+    /// å¤„ç†å½•åˆ¶çš„éŸ³é¢‘æ•°æ®
     /// </summary>
     /// <param name="_data"></param>
     private void AcceptData(byte[] _data)
@@ -590,7 +794,7 @@ public class ChatSample : MonoBehaviour
     }
 
     /// <summary>
-    /// ´¦ÀíÂ¼ÖÆµÄÒôÆµÊı¾İ
+    /// å¤„ç†å½•åˆ¶çš„éŸ³é¢‘æ•°æ®
     /// </summary>
     /// <param name="_data"></param>
     public void AcceptClip(AudioClip _audioClip)
@@ -601,14 +805,14 @@ public class ChatSample : MonoBehaviour
         m_ChatSettings.m_SpeechToText.SpeechToText(_audioClip, DealingTextCallback);
     }
     /// <summary>
-    /// ´¦ÀíÊ¶±ğµ½µÄÎÄ±¾
+    /// å¤„ç†è¯†åˆ«åˆ°çš„æ–‡æœ¬
     /// </summary>
     /// <param name="_msg"></param>
     private void DealingTextCallback(string _msg)
     {
         m_RecordTips.text = _msg;
         StartCoroutine(SetTextVisible(m_RecordTips));
-        //×Ô¶¯·¢ËÍ
+        //è‡ªåŠ¨å‘é€
         if (m_AutoSend)
         {
             SendData(_msg);
@@ -621,7 +825,7 @@ public class ChatSample : MonoBehaviour
     private IEnumerator SetTextVisible(Text _textbox)
     {
         yield return new WaitForSeconds(2f);
-        // ¡¾LYFĞÂÔö¡¿ÓÅ»¯µÈ´ıAIË¼¿¼Ê±µÄUI£¬´Ë´¦AI¸ÕÉÏ´«ÓïÒôÏûÏ¢
+        // ã€LYFæ–°å¢ã€‘ä¼˜åŒ–ç­‰å¾…AIæ€è€ƒæ—¶çš„UIï¼Œæ­¤å¤„AIåˆšä¸Šä¼ è¯­éŸ³æ¶ˆæ¯
         if(isPlayingVoice == false){
             _textbox.text = m_WatingText;
             isLoadingAnswer = 1;
@@ -633,30 +837,30 @@ public class ChatSample : MonoBehaviour
 
     #endregion
 
-    #region ÓïÒôºÏ³É
+    #region è¯­éŸ³åˆæˆ
 
     private IEnumerator TriggerSpeakingActionsRandomly()
     {
         while (m_IsSpeaking)
         {
-            // »ñÈ¡Ëæ»ú¶¯»­×´Ì¬
+            // è·å–éšæœºåŠ¨ç”»çŠ¶æ€
             int randomState = GetRandomState();
 
-            // Èç¹ûËæ»ú×´Ì¬ÓëÉÏ´Î²¥·ÅµÄÏàÍ¬£¬ÔòÌø¹ı
+            // å¦‚æœéšæœºçŠ¶æ€ä¸ä¸Šæ¬¡æ’­æ”¾çš„ç›¸åŒï¼Œåˆ™è·³è¿‡
             if (randomState == lastPlayedState)
             {
                 yield return null;
                 continue;
             }
 
-            // ²¥·Å¶¯»­
+            // æ’­æ”¾åŠ¨ç”»
             PlayAnimator("talk" + randomState);
             lastPlayedState = randomState;
 
-            Debug.Log($"²¥·Å¶¯»­£ºtalk{randomState}");
+            Debug.Log($"æ’­æ”¾åŠ¨ç”»ï¼štalk{randomState}");
 
-            // µÈ´ı¶¯»­Íê³É
-            yield return new WaitForSeconds(6f); // ¸ù¾İ¶¯»­Ê±³¤µ÷Õû
+            // ç­‰å¾…åŠ¨ç”»å®Œæˆ
+            yield return new WaitForSeconds(6f); // æ ¹æ®åŠ¨ç”»æ—¶é•¿è°ƒæ•´
         }
     }
 
@@ -667,7 +871,7 @@ public class ChatSample : MonoBehaviour
             StopCoroutine(speakingCoroutine);
         }
 
-        // Æô¶¯¶¯»­²¥·ÅĞ­³Ì
+        // å¯åŠ¨åŠ¨ç”»æ’­æ”¾åç¨‹
         speakingCoroutine = StartCoroutine(TriggerSpeakingActionsRandomly());
     }
     private int GetRandomState()
@@ -678,7 +882,7 @@ public class ChatSample : MonoBehaviour
         {
             randomIndex = UnityEngine.Random.Range(1, speakingStates.Length);
         }
-        while (randomIndex == lastPlayedState); // È·±£Ëæ»ú×´Ì¬²»ÖØ¸´
+        while (randomIndex == lastPlayedState); // ç¡®ä¿éšæœºçŠ¶æ€ä¸é‡å¤
 
         lastPlayedState = randomIndex;
         return randomIndex;
@@ -690,38 +894,38 @@ public class ChatSample : MonoBehaviour
     {
         m_IsSpeaking = false;
 
-        // ÇĞ»»µ½Ä¬ÈÏ¾²Ö¹×´Ì¬
+        // åˆ‡æ¢åˆ°é»˜è®¤é™æ­¢çŠ¶æ€
         SetAnimator("state", 0);
-        Debug.Log("¶¯»­ÒÑÍ£Ö¹£¬ÇĞ»»µ½¾²Ö¹×´Ì¬");
+        Debug.Log("åŠ¨ç”»å·²åœæ­¢ï¼Œåˆ‡æ¢åˆ°é™æ­¢çŠ¶æ€");
     }
     private void PlayVoice(AudioClip _clip, string _response)
     {
         if (_clip == null)
         {
-            Debug.LogError("ÓïÒôºÏ³ÉÊ§°Ü£ºAudioClip Îª¿Õ£¬ÎŞ·¨²¥·ÅÓïÒô¡£");
-            isPlayingVoice = false; // ±ê¼ÇÎªÎ´²¥·Å
-            TryPlayNextVoice(); // ³¢ÊÔ²¥·ÅÏÂÒ»¸öÓïÒô
+            Debug.LogError("è¯­éŸ³åˆæˆå¤±è´¥ï¼šAudioClip ä¸ºç©ºï¼Œæ— æ³•æ’­æ”¾è¯­éŸ³ã€‚");
+            isPlayingVoice = false; // æ ‡è®°ä¸ºæœªæ’­æ”¾
+            TryPlayNextVoice(); // å°è¯•æ’­æ”¾ä¸‹ä¸€ä¸ªè¯­éŸ³
             return;
         }
 
-        // ÉèÖÃÒôÆµ¼ô¼­²¢²¥·Å
+        // è®¾ç½®éŸ³é¢‘å‰ªè¾‘å¹¶æ’­æ”¾
         m_AudioSource.clip = _clip;
         m_AudioSource.Play();
 
-        Debug.Log($"²¥·ÅÓïÒô£º{_response}£¬Ê±³¤£º{_clip.length} Ãë");
+        Debug.Log($"æ’­æ”¾è¯­éŸ³ï¼š{_response}ï¼Œæ—¶é•¿ï¼š{_clip.length} ç§’");
 
-        // ´¥·¢Ò»¸öËæ»ú¶¯»­
+        // è§¦å‘ä¸€ä¸ªéšæœºåŠ¨ç”»
         if (!m_IsSpeaking)
         {
             m_IsSpeaking = true;
 
-            // Ñ¡ÔñÒ»¸öËæ»úµÄËµ»°¶¯»­
+            // é€‰æ‹©ä¸€ä¸ªéšæœºçš„è¯´è¯åŠ¨ç”»
             int randomState = GetRandomState();
-            PlayAnimator("talk" + randomState); // ´¥·¢¶¯»­
-            Debug.Log($"´¥·¢¶¯»­£ºtalk{randomState}");
+            PlayAnimator("talk" + randomState); // è§¦å‘åŠ¨ç”»
+            Debug.Log($"è§¦å‘åŠ¨ç”»ï¼štalk{randomState}");
         }
 
-        // µÈ´ıÓïÒô²¥·ÅÍê³É
+        // ç­‰å¾…è¯­éŸ³æ’­æ”¾å®Œæˆ
         voicePlayWaitingCoroutine = StartCoroutine(HandleVoicePlaybackCompletion(_clip.length));
     }
 
@@ -730,20 +934,20 @@ public class ChatSample : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
 
-        Debug.Log("ÓïÒô²¥·ÅÍê³É");
+        Debug.Log("è¯­éŸ³æ’­æ”¾å®Œæˆ");
 
-        isPlayingVoice = false; // ±ê¼Çµ±Ç°²¥·Å½áÊø
+        isPlayingVoice = false; // æ ‡è®°å½“å‰æ’­æ”¾ç»“æŸ
 
-        // Í£Ö¹¶¯»­²¥·Å
+        // åœæ­¢åŠ¨ç”»æ’­æ”¾
         if (m_IsSpeaking)
         {
-            StopSpeakingSequence(); // Í£Ö¹µ±Ç°¶¯»­²¢ÇĞ»»µ½¾²Ö¹×´Ì¬
+            StopSpeakingSequence(); // åœæ­¢å½“å‰åŠ¨ç”»å¹¶åˆ‡æ¢åˆ°é™æ­¢çŠ¶æ€
         }
 
-        // ³¢ÊÔ²¥·Å¶ÓÁĞÖĞµÄÏÂÒ»¸öÓïÒô
+        // å°è¯•æ’­æ”¾é˜Ÿåˆ—ä¸­çš„ä¸‹ä¸€ä¸ªè¯­éŸ³
         TryPlayNextVoice();
 
-        // Èç¹ûÓïÒô²¥·ÅÍê³ÉÇÒÃ»ÓĞ¸ü¶àÁ÷Ê½Êı¾İ£¬Í£Ö¹¶¯»­
+        // å¦‚æœè¯­éŸ³æ’­æ”¾å®Œæˆä¸”æ²¡æœ‰æ›´å¤šæµå¼æ•°æ®ï¼Œåœæ­¢åŠ¨ç”»
         if (!m_IsSpeaking && m_VoiceQueue.Count == 0)
         {
             StopSpeakingSequence();
@@ -752,14 +956,14 @@ public class ChatSample : MonoBehaviour
 
     #endregion
 
-    #region ÎÄ×ÖÖğ¸öÏÔÊ¾
-    //Öğ×ÖÏÔÊ¾µÄÊ±¼ä¼ä¸ô
+    #region æ–‡å­—é€ä¸ªæ˜¾ç¤º
+    //é€å­—æ˜¾ç¤ºçš„æ—¶é—´é—´éš”
     [SerializeField] private float m_WordWaitTime = 0.2f;
-    //ÊÇ·ñÏÔÊ¾Íê³É
+    //æ˜¯å¦æ˜¾ç¤ºå®Œæˆ
     [SerializeField] private bool m_WriteState = false;
 
     /// <summary>
-    /// ¿ªÊ¼Öğ¸ö´òÓ¡
+    /// å¼€å§‹é€ä¸ªæ‰“å°
     /// </summary>
     /// <param name="_msg"></param>
     private void StartTypeWords(string _msg)
@@ -769,7 +973,7 @@ public class ChatSample : MonoBehaviour
 
         m_WriteState = true;
         StartCoroutine(SetTextPerWord(_msg));
-        // ×Ô¶¯¼ÓÔØÁÄÌìÀúÊ·
+        // è‡ªåŠ¨åŠ è½½èŠå¤©å†å²
         //StartCoroutine(GetHistoryChatInfo());
     }
 
@@ -778,43 +982,43 @@ public class ChatSample : MonoBehaviour
     private IEnumerator SetTextPerWord(string _msg)
     {
         int currentPos = 0;
-        float originalWordWaitTime = m_WordWaitTime; // ±£´æÔ­Ê¼µÄµÈ´ıÊ±¼ä
+        float originalWordWaitTime = m_WordWaitTime; // ä¿å­˜åŸå§‹çš„ç­‰å¾…æ—¶é—´
         while (m_WriteState)
         {
 
             if (currentPos < _msg.Length && CharUnicodeInfo.GetUnicodeCategory(_msg[currentPos]) == UnicodeCategory.OtherLetter)
             {
-                // ÖĞÎÄ»òÆäËû·ÇÀ­¶¡×ÖÄ¸
+                // ä¸­æ–‡æˆ–å…¶ä»–éæ‹‰ä¸å­—æ¯
                 m_WordWaitTime = originalWordWaitTime;
                 //Debug.Log("other" + m_WordWaitTime);
             }
             else if (currentPos < _msg.Length && char.IsLetter(_msg[currentPos]) && _msg[currentPos] != ' ')
             {
-                // Ó¢ÎÄ×Ö·û
+                // è‹±æ–‡å­—ç¬¦
                 m_WordWaitTime = 0.03f;
                 //Debug.Log("en" + m_WordWaitTime);
             }
             else
             {
-                // ·Ç×ÖÄ¸×Ö·û
+                // éå­—æ¯å­—ç¬¦
                 m_WordWaitTime = originalWordWaitTime;
                 //Debug.Log(m_WordWaitTime);
             }
             yield return new WaitForSeconds(m_WordWaitTime);
             currentPos++;
-            //¸üĞÂÏÔÊ¾µÄÄÚÈİ
+            //æ›´æ–°æ˜¾ç¤ºçš„å†…å®¹
             m_TextBack.text = _msg.Substring(0, currentPos);
 
             m_WriteState = currentPos < _msg.Length;
 
         }
         m_IsSpeaking = false;
-        //ÇĞ»»µ½µÈ´ı¶¯×÷
+        //åˆ‡æ¢åˆ°ç­‰å¾…åŠ¨ä½œ
         //SetAnimator("state",0);
-        // »Ö¸´Ô­Ê¼µÄµÈ´ıÊ±¼ä
+        // æ¢å¤åŸå§‹çš„ç­‰å¾…æ—¶é—´
         m_WordWaitTime = originalWordWaitTime;
 
-        //»Ø¸´½áÊø
+        //å›å¤ç»“æŸ
         if (OnAISpeakDone != null)
         {
             OnAISpeakDone();
@@ -823,27 +1027,27 @@ public class ChatSample : MonoBehaviour
 
 #endregion
 
-#region ÁÄÌì¼ÇÂ¼
+#region èŠå¤©è®°å½•
 
-    //»º´æÒÑ´´½¨µÄÁÄÌìÆøÅİ
+    //ç¼“å­˜å·²åˆ›å»ºçš„èŠå¤©æ°”æ³¡
     [SerializeField] private List<GameObject> m_TempChatBox;
-    //ÁÄÌì¼ÇÂ¼ÏÔÊ¾²ã
+    //èŠå¤©è®°å½•æ˜¾ç¤ºå±‚
     [SerializeField] private GameObject m_HistoryPanel;
-    //ÁÄÌìÎÄ±¾·ÅÖÃµÄ²ã
+    //èŠå¤©æ–‡æœ¬æ”¾ç½®çš„å±‚
     [SerializeField] private RectTransform m_rootTrans;
-    //·¢ËÍÁÄÌìÆøÅİ
+    //å‘é€èŠå¤©æ°”æ³¡
     [SerializeField] private ChatPrefab m_PostChatPrefab;
-    //»Ø¸´µÄÁÄÌìÆøÅİ
+    //å›å¤çš„èŠå¤©æ°”æ³¡
     [SerializeField] private ChatPrefab m_RobotChatPrefab;
-    //¹ö¶¯Ìõ
+    //æ»šåŠ¨æ¡
     [SerializeField] private ScrollRect m_ScroTectObject;
-    //»ñÈ¡ÁÄÌì¼ÇÂ¼
+    //è·å–èŠå¤©è®°å½•
 
 
     private IEnumerator TurnToLastLine()
     {
         yield return new WaitForEndOfFrame();
-        //¹ö¶¯µ½×î½üµÄÏûÏ¢
+        //æ»šåŠ¨åˆ°æœ€è¿‘çš„æ¶ˆæ¯
         m_ScroTectObject.verticalNormalizedPosition = 0;
     }
 
@@ -853,10 +1057,10 @@ public class ChatSample : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         ChatPrefab _sendChat = Instantiate(m_PostChatPrefab, m_rootTrans.transform);
-        _sendChat.SetText(_sendmsg);  // ·¢ËÍ·½µÄÏûÏ¢Á¢¼´ÏÔÊ¾
+        _sendChat.SetText(_sendmsg);  // å‘é€æ–¹çš„æ¶ˆæ¯ç«‹å³æ˜¾ç¤º
         m_TempChatBox.Add(_sendChat.gameObject);
 
-        //ÖØĞÂ¼ÆËãÈİÆ÷³ß´ç
+        //é‡æ–°è®¡ç®—å®¹å™¨å°ºå¯¸
         LayoutRebuilder.ForceRebuildLayoutImmediate(m_rootTrans);
         StartCoroutine(TurnToLastLine());
 
@@ -887,7 +1091,7 @@ public class ChatSample : MonoBehaviour
 
     public void ChangeScene()
     {
-        // ÇĞ»»³¡¾°
+        // åˆ‡æ¢åœºæ™¯
         SceneManager.LoadScene("desktopscene");
     }
 }

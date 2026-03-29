@@ -7,46 +7,46 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
-using TMPro; // ÒıÈë TextMeshPro ÃüÃû¿Õ¼ä
+using TMPro; // å¼•å…¥ TextMeshPro å‘½åç©ºé—´
 
 
 public class XunfeiTextToSpeech : TTS
 {
-    #region ²ÎÊı
+    #region å‚æ•°
     /// <summary>
-    /// Ñ¶·ÉµÄÓ¦ÓÃÉèÖÃ
+    /// è®¯é£çš„åº”ç”¨è®¾ç½®
     /// </summary>
     [SerializeField]private XunfeiSettings m_XunfeiSettings;
     /// <summary>
-    /// hostµØÖ·
+    /// hoståœ°å€
     /// </summary>
     [SerializeField] private string m_HostUrl = "tts-api.xfyun.cn";
 
     /// <summary>
-    /// ÒôÆµ±àÂë£¬¿ÉÑ¡Öµ£º
-    ///raw£ºÎ´Ñ¹ËõµÄpcm
-    ///lame£ºmp3(µ±aue= lameÊ±Ğè´«²Îsfl = 1)
-    ///speex-org-wb;7£º ±ê×¼¿ªÔ´speex£¨for speex_wideband£¬¼´16k£©Êı×Ö´ú±íÖ¸¶¨Ñ¹ËõµÈ¼¶£¨Ä¬ÈÏµÈ¼¶Îª8£©
-    ///speex-org-nb;7£º ±ê×¼¿ªÔ´speex£¨for speex_narrowband£¬¼´8k£©Êı×Ö´ú±íÖ¸¶¨Ñ¹ËõµÈ¼¶£¨Ä¬ÈÏµÈ¼¶Îª8£©
-    ///speex;7£ºÑ¹Ëõ¸ñÊ½£¬Ñ¹ËõµÈ¼¶1 ~10£¬Ä¬ÈÏÎª7£¨8kÑ¶·É¶¨ÖÆspeex£©
-    ///speex-wb;7£ºÑ¹Ëõ¸ñÊ½£¬Ñ¹ËõµÈ¼¶1 ~10£¬Ä¬ÈÏÎª7£¨16kÑ¶·É¶¨ÖÆspeex£©
+    /// éŸ³é¢‘ç¼–ç ï¼Œå¯é€‰å€¼ï¼š
+    ///rawï¼šæœªå‹ç¼©çš„pcm
+    ///lameï¼šmp3(å½“aue= lameæ—¶éœ€ä¼ å‚sfl = 1)
+    ///speex-org-wb;7ï¼š æ ‡å‡†å¼€æºspeexï¼ˆfor speex_widebandï¼Œå³16kï¼‰æ•°å­—ä»£è¡¨æŒ‡å®šå‹ç¼©ç­‰çº§ï¼ˆé»˜è®¤ç­‰çº§ä¸º8ï¼‰
+    ///speex-org-nb;7ï¼š æ ‡å‡†å¼€æºspeexï¼ˆfor speex_narrowbandï¼Œå³8kï¼‰æ•°å­—ä»£è¡¨æŒ‡å®šå‹ç¼©ç­‰çº§ï¼ˆé»˜è®¤ç­‰çº§ä¸º8ï¼‰
+    ///speex;7ï¼šå‹ç¼©æ ¼å¼ï¼Œå‹ç¼©ç­‰çº§1 ~10ï¼Œé»˜è®¤ä¸º7ï¼ˆ8kè®¯é£å®šåˆ¶speexï¼‰
+    ///speex-wb;7ï¼šå‹ç¼©æ ¼å¼ï¼Œå‹ç¼©ç­‰çº§1 ~10ï¼Œé»˜è®¤ä¸º7ï¼ˆ16kè®¯é£å®šåˆ¶speexï¼‰
     /// </summary>
     [SerializeField] private string m_Aue = "raw";
     /// <summary>
-    /// ·¢ÒôÈË
+    /// å‘éŸ³äºº
     /// </summary>
-    [Header("Ñ¡ÔñÀÊ¶ÁµÄÉùÒô")]
-    [SerializeField] private Speaker m_Vcn = Speaker.Ñ¶·ÉĞ¡Ñà;
+    [Header("é€‰æ‹©æœ—è¯»çš„å£°éŸ³")]
+    [SerializeField] private Speaker m_Vcn = Speaker.è®¯é£å°ç‡•;
     /// <summary>
-    /// ÒôÁ¿£¬¿ÉÑ¡Öµ£º[0-100]£¬Ä¬ÈÏÎª50
+    /// éŸ³é‡ï¼Œå¯é€‰å€¼ï¼š[0-100]ï¼Œé»˜è®¤ä¸º50
     /// </summary>
     [SerializeField] private int m_Volume = 50;
     /// <summary>
-    /// ÓïÒô¸ß£¬¿ÉÑ¡Öµ£º[0-100]£¬Ä¬ÈÏÎª50
+    /// è¯­éŸ³é«˜ï¼Œå¯é€‰å€¼ï¼š[0-100]ï¼Œé»˜è®¤ä¸º50
     /// </summary>
     [SerializeField] private int m_Pitch = 50;
     /// <summary>
-    /// ÓïËÙ£¬¿ÉÑ¡Öµ£º[0-100]£¬Ä¬ÈÏÎª50
+    /// è¯­é€Ÿï¼Œå¯é€‰å€¼ï¼š[0-100]ï¼Œé»˜è®¤ä¸º50
     /// </summary>
     [SerializeField] private int m_Speed = 50;
    
@@ -63,18 +63,18 @@ public class XunfeiTextToSpeech : TTS
 
 
     /// <summary>
-    /// µ±ÓÃ»§Ñ¡ÔñÁËĞÂµÄÉùÒôÊ±¸üĞÂ·¢ÒôÈË
+    /// å½“ç”¨æˆ·é€‰æ‹©äº†æ–°çš„å£°éŸ³æ—¶æ›´æ–°å‘éŸ³äºº
     /// </summary>
-    /// <param name="index">TMP_Dropdown µÄÑ¡ÖĞË÷Òı</param>
+    /// <param name="index">TMP_Dropdown çš„é€‰ä¸­ç´¢å¼•</param>
     private void OnSpeakerSelected(int index)
     {
-        m_Vcn = (Speaker)index; // ¸üĞÂµ±Ç°·¢ÒôÈË
-        Debug.Log("µ±Ç°Ñ¡ÔñµÄ·¢ÒôÈË£º" + m_Vcn);
+        m_Vcn = (Speaker)index; // æ›´æ–°å½“å‰å‘éŸ³äºº
+        Debug.Log("å½“å‰é€‰æ‹©çš„å‘éŸ³äººï¼š" + m_Vcn);
     }
 
 
     /// <summary>
-    /// ÓïÒôºÏ³É£¬·µ»ØºÏ³ÉÎÄ±¾
+    /// è¯­éŸ³åˆæˆï¼Œè¿”å›åˆæˆæ–‡æœ¬
     /// </summary>
     /// <param name="_msg"></param>
     /// <param name="_callback"></param>
@@ -89,25 +89,25 @@ public class XunfeiTextToSpeech : TTS
     private ClientWebSocket m_WebSocket;
     private CancellationToken m_CancellationToken;
 
-    #region »ñÈ¡¼øÈ¨Url
+    #region è·å–é‰´æƒUrl
 
     /// <summary>
-    /// »ñÈ¡¼øÈ¨url
+    /// è·å–é‰´æƒurl
     /// </summary>
     /// <returns></returns>
     private string GetUrl()
     {
-        //»ñÈ¡Ê±¼ä´Á
+        //è·å–æ—¶é—´æˆ³
         string date = DateTime.Now.ToString("r");
-        //Æ´½ÓÔ­Ê¼µÄsignature
+        //æ‹¼æ¥åŸå§‹çš„signature
         string signature_origin = string.Format("host: " + m_HostUrl + "\ndate: " + date + "\nGET /v2/tts HTTP/1.1");
-        //hmac-sha256Ëã·¨-Ç©Ãû£¬²¢×ª»»Îªbase64±àÂë
+        //hmac-sha256ç®—æ³•-ç­¾åï¼Œå¹¶è½¬æ¢ä¸ºbase64ç¼–ç 
         string signature = Convert.ToBase64String(new HMACSHA256(Encoding.UTF8.GetBytes(m_XunfeiSettings.m_APISecret)).ComputeHash(Encoding.UTF8.GetBytes(signature_origin)));
-        //Æ´½ÓÔ­Ê¼µÄauthorization
+        //æ‹¼æ¥åŸå§‹çš„authorization
         string authorization_origin = string.Format("api_key=\"{0}\",algorithm=\"hmac-sha256\",headers=\"host date request-line\",signature=\"{1}\"", m_XunfeiSettings.m_APIKey, signature);
-        //×ª»»Îªbase64±àÂë
+        //è½¬æ¢ä¸ºbase64ç¼–ç 
         string authorization = Convert.ToBase64String(Encoding.UTF8.GetBytes(authorization_origin));
-        //Æ´½Ó¼øÈ¨µÄurl
+        //æ‹¼æ¥é‰´æƒçš„url
         string url = string.Format("{0}?authorization={1}&date={2}&host={3}", m_PostURL, authorization, date, m_HostUrl);
 
         return url;
@@ -115,21 +115,21 @@ public class XunfeiTextToSpeech : TTS
 
     #endregion
 
-    #region ÓïÒôºÏ³É
+    #region è¯­éŸ³åˆæˆ
 
     /// <summary>
-    /// ÒôÆµ³¤¶È
+    /// éŸ³é¢‘é•¿åº¦
     /// </summary>
     private int m_AudioLenth;
     /// <summary>
-    /// Êı¾İ¶ÓÁĞ
+    /// æ•°æ®é˜Ÿåˆ—
     /// </summary>
     private readonly List<float> m_AudioBuffer = new List<float>(16000);
     private bool m_IsSynthesisCompleted;
     private bool m_HasSynthesisError;
 
     /// <summary>
-    /// »ñÈ¡ÓïÒôºÏ³É
+    /// è·å–è¯­éŸ³åˆæˆ
     /// </summary>
     /// <param name="_text"></param>
     /// <param name="_callback"></param>
@@ -179,12 +179,12 @@ public class XunfeiTextToSpeech : TTS
         _callback(_audioClip, _text);
 
         stopwatch.Stop();
-        UnityEngine.Debug.Log("Ñ¶·ÉÓïÒôºÏ³ÉºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        UnityEngine.Debug.Log("è®¯é£è¯­éŸ³åˆæˆè€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
     }
 
 
     /// <summary>
-    /// Á¬½Ó·şÎñÆ÷£¬ºÏ³ÉÓïÒô
+    /// è¿æ¥æœåŠ¡å™¨ï¼Œåˆæˆè¯­éŸ³
     /// </summary>
     private async Task ConnectHost(string text)
     {
@@ -195,46 +195,46 @@ public class XunfeiTextToSpeech : TTS
             Uri uri = new Uri(GetUrl());
             await m_WebSocket.ConnectAsync(uri, m_CancellationToken);
             text = Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
-            //·¢ËÍµÄÊı¾İ
+            //å‘é€çš„æ•°æ®
             PostData _postData = new PostData()
             {
                 common = new CommonTag(m_XunfeiSettings.m_AppID),
                 business = new BusinessTag(m_Aue, GetVoice(m_Vcn), m_Volume, m_Pitch, m_Speed),
                 data = new DataTag(2, text)
             };
-            //×ª³Éjson¸ñÊ½
+            //è½¬æˆjsonæ ¼å¼
             string _jsonData = JsonUtility.ToJson(_postData);
-            await m_WebSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(_jsonData)), WebSocketMessageType.Binary, true, m_CancellationToken); //·¢ËÍÊı¾İ
+            await m_WebSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(_jsonData)), WebSocketMessageType.Binary, true, m_CancellationToken); //å‘é€æ•°æ®
             StringBuilder sb = new StringBuilder();
-            //²¥·Å¶ÓÁĞ.Clear();
+            //æ’­æ”¾é˜Ÿåˆ—.Clear();
             while (m_WebSocket.State == WebSocketState.Open)
             {
                 var result = new byte[4096];
-                await m_WebSocket.ReceiveAsync(new ArraySegment<byte>(result), m_CancellationToken);//½ÓÊÜÊı¾İ
-                List<byte> list = new List<byte>(result); while (list[list.Count - 1] == 0x00) list.RemoveAt(list.Count - 1);//È¥³ı¿Õ×Ö½Ú  
+                await m_WebSocket.ReceiveAsync(new ArraySegment<byte>(result), m_CancellationToken);//æ¥å—æ•°æ®
+                List<byte> list = new List<byte>(result); while (list[list.Count - 1] == 0x00) list.RemoveAt(list.Count - 1);//å»é™¤ç©ºå­—èŠ‚  
                 var str = Encoding.UTF8.GetString(list.ToArray());
                 sb.Append(str);
                 if (str.EndsWith("}"))
                 {
-                    //»ñÈ¡·µ»ØµÄÊı¾İ
+                    //è·å–è¿”å›çš„æ•°æ®
                     ResponseData _responseData = JsonUtility.FromJson<ResponseData>(sb.ToString());
                     sb.Clear();
 
                     if (_responseData.code != 0)
                     {
-                        //·µ»Ø´íÎó
+                        //è¿”å›é”™è¯¯
                         PrintErrorLog(_responseData.code);
                         m_WebSocket.Abort();
                         break;
                     }
-                    //Èç¹ûÃ»Êı¾İ£¬Ö±½Ó½áÊø
+                    //å¦‚æœæ²¡æ•°æ®ï¼Œç›´æ¥ç»“æŸ
                     if (_responseData.data == null)
                     {
-                        Debug.LogError("·µ»ØµÄÒôÆµÊı¾İÎª¿Õ");
+                        Debug.LogError("è¿”å›çš„éŸ³é¢‘æ•°æ®ä¸ºç©º");
                         m_WebSocket.Abort();
                         break;
                     }
-                    //ÄÃµ½ÒôÆµÊı¾İ
+                    //æ‹¿åˆ°éŸ³é¢‘æ•°æ®
                     float[] fs = BytesToFloat(Convert.FromBase64String(_responseData.data.audio));
                     m_AudioLenth += fs.Length;
                     m_AudioBuffer.AddRange(fs);
@@ -252,7 +252,7 @@ public class XunfeiTextToSpeech : TTS
         catch (Exception ex)
         {
             m_HasSynthesisError = true;
-            Debug.LogError("±¨´íĞÅÏ¢: " + ex.Message);
+            Debug.LogError("æŠ¥é”™ä¿¡æ¯: " + ex.Message);
         }
         finally
         {
@@ -270,97 +270,97 @@ public class XunfeiTextToSpeech : TTS
 
 
 
-    #region ¹¤¾ß·½·¨
+    #region å·¥å…·æ–¹æ³•
     /// <summary>
-    /// ´òÓ¡´íÎóÈÕÖ¾
+    /// æ‰“å°é”™è¯¯æ—¥å¿—
     /// </summary>
     /// <param name="status"></param>
     private void PrintErrorLog(int status)
     {
         if (status == 10005)
         {
-            Debug.LogError("appidÊÚÈ¨Ê§°Ü");
+            Debug.LogError("appidæˆæƒå¤±è´¥");
             return;
         }
         if (status == 10006)
         {
-            Debug.LogError("ÇëÇóÈ±Ê§±ØÒª²ÎÊı");
+            Debug.LogError("è¯·æ±‚ç¼ºå¤±å¿…è¦å‚æ•°");
             return;
         }
         if (status == 10007)
         {
-            Debug.LogError("ÇëÇóµÄ²ÎÊıÖµÎŞĞ§");
+            Debug.LogError("è¯·æ±‚çš„å‚æ•°å€¼æ— æ•ˆ");
             return;
         }
         if (status == 10010)
         {
-            Debug.LogError("ÒıÇæÊÚÈ¨²»×ã");
+            Debug.LogError("å¼•æ“æˆæƒä¸è¶³");
             return;
         }
         if (status == 10109)
         {
-            Debug.LogError("ÇëÇóÎÄ±¾³¤¶È·Ç·¨");
+            Debug.LogError("è¯·æ±‚æ–‡æœ¬é•¿åº¦éæ³•");
             return;
         }
         if (status == 10019)
         {
-            Debug.LogError("session³¬Ê±");
+            Debug.LogError("sessionè¶…æ—¶");
             return;
         }
         if (status == 10101)
         {
-            Debug.LogError("ÒıÇæ»á»°ÒÑ½áÊø");
+            Debug.LogError("å¼•æ“ä¼šè¯å·²ç»“æŸ");
             return;
         }
         if (status == 10313)
         {
-            Debug.LogError("appid²»ÄÜÎª¿Õ");
+            Debug.LogError("appidä¸èƒ½ä¸ºç©º");
             return;
         }
         if (status == 10317)
         {
-            Debug.LogError("°æ±¾·Ç·¨");
+            Debug.LogError("ç‰ˆæœ¬éæ³•");
             return;
         }
         if (status == 11200)
         {
-            Debug.LogError("Ã»ÓĞÈ¨ÏŞ");
+            Debug.LogError("æ²¡æœ‰æƒé™");
             return;
         }
         if (status == 11201)
         {
-            Debug.LogError("ÈÕÁ÷¿Ø³¬ÏŞ");
+            Debug.LogError("æ—¥æµæ§è¶…é™");
             return;
         }
         if (status == 10160)
         {
-            Debug.LogError("ÇëÇóÊı¾İ¸ñÊ½·Ç·¨");
+            Debug.LogError("è¯·æ±‚æ•°æ®æ ¼å¼éæ³•");
             return;
         }
         if (status == 10161)
         {
-            Debug.LogError("base64½âÂëÊ§°Ü");
+            Debug.LogError("base64è§£ç å¤±è´¥");
             return;
         }
         if (status == 10163)
         {
-            Debug.LogError("È±ÉÙ±Ø´«²ÎÊı£¬»òÕß²ÎÊı²»ºÏ·¨£¬¾ßÌåÔ­Òò¼ûÏêÏ¸µÄÃèÊö");
+            Debug.LogError("ç¼ºå°‘å¿…ä¼ å‚æ•°ï¼Œæˆ–è€…å‚æ•°ä¸åˆæ³•ï¼Œå…·ä½“åŸå› è§è¯¦ç»†çš„æè¿°");
             return;
         }
         if (status == 10200)
         {
-            Debug.LogError("¶ÁÈ¡Êı¾İ³¬Ê±");
+            Debug.LogError("è¯»å–æ•°æ®è¶…æ—¶");
             return;
         }
         if (status == 10222)
         {
-            Debug.LogError("ÍøÂçÒì³£");
+            Debug.LogError("ç½‘ç»œå¼‚å¸¸");
             return;
         }
     }
 
     /// <summary>
-    /// byte[]Êı×é×ª»¯ÎªAudioClip¿É¶ÁÈ¡µÄfloat[]ÀàĞÍ
+    /// byte[]æ•°ç»„è½¬åŒ–ä¸ºAudioClipå¯è¯»å–çš„float[]ç±»å‹
     /// </summary>
     /// <param name="byteArray"></param>
     /// <returns></returns>
@@ -376,7 +376,7 @@ public class XunfeiTextToSpeech : TTS
 
     private float BytesToFloat(byte firstByte, byte secondByte)
     {
-        //Ğ¡¶ËºÍ´ó¶ËË³ĞòÒªµ÷Õû
+        //å°ç«¯å’Œå¤§ç«¯é¡ºåºè¦è°ƒæ•´
         short s;
         if (BitConverter.IsLittleEndian)
             s = (short)((secondByte << 8) | firstByte);
@@ -390,9 +390,9 @@ public class XunfeiTextToSpeech : TTS
     #endregion
 
 
-    #region Êı¾İ¶¨Òå
+    #region æ•°æ®å®šä¹‰
     /// <summary>
-    /// ·¢ËÍµÄÊı¾İ
+    /// å‘é€çš„æ•°æ®
     /// </summary>
     [Serializable]
     public class PostData
@@ -461,41 +461,46 @@ public class XunfeiTextToSpeech : TTS
 
     #endregion
 
-    #region ÉèÖÃÏî
+    #region è®¾ç½®é¡¹
     public enum Speaker
     {
-        Ñ¶·ÉĞ¡Ñà,
-        Ñ¶·ÉĞí¾Ã,
-        Ñ¶·ÉĞ¡Æ¼,
-        Ñ¶·ÉĞ¡æº,
-        Ñ¶·ÉĞíĞ¡±¦
+        è®¯é£å°ç‡•,
+        è®¯é£è®¸ä¹…,
+        è®¯é£å°è,
+        è®¯é£å°å©§,
+        è®¯é£è®¸å°å®,
+        christiane
     }
     /// <summary>
-    /// ÉèÖÃÉùÒô
+    /// è®¾ç½®å£°éŸ³
     /// </summary>
     /// <param name="_speeker"></param>
     /// <returns></returns>
     private string GetVoice(Speaker _speeker)
     {
-        if (_speeker == Speaker.Ñ¶·ÉĞ¡Ñà)
+        if (_speeker == Speaker.è®¯é£å°ç‡•)
         {
             return "xiaoyan";
         }
-        if (_speeker == Speaker.Ñ¶·ÉĞí¾Ã)
+        if (_speeker == Speaker.è®¯é£è®¸ä¹…)
         {
             return "aisjiuxu";
         }
-        if (_speeker == Speaker.Ñ¶·ÉĞ¡Æ¼)
+        if (_speeker == Speaker.è®¯é£å°è)
         {
             return "aisxping";
         }
-        if (_speeker == Speaker.Ñ¶·ÉĞ¡æº)
+        if (_speeker == Speaker.è®¯é£å°å©§)
         {
             return "aisjinger";
         }
-        if (_speeker == Speaker.Ñ¶·ÉĞíĞ¡±¦)
+        if (_speeker == Speaker.è®¯é£è®¸å°å®)
         {
             return "aisbabyxu";
+        }
+        if (_speeker == Speaker.christiane)
+        {
+            return "x2_DeDe_Christiane";
         }
 
         return "xiaoyan";
