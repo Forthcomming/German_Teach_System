@@ -28,6 +28,14 @@ namespace UI
         [Header("显示时长（秒）")]
         [Tooltip("提示 UI 显示的持续时间，单位：秒")]
         [SerializeField] private float promptDuration = 1f;
+        [Header("提示音（可选）")]
+        [Tooltip("答对时播放的提示音（AudioClip）")]
+        [SerializeField] private AudioClip correctPromptClip;
+        [Tooltip("答错时播放的提示音（AudioClip）")]
+        [SerializeField] private AudioClip wrongPromptClip;
+        [Tooltip("提示音音量，范围 0~1")]
+        [Range(0f, 1f)]
+        [SerializeField] private float promptSfxVolume = 1f;
         [Header("答题结果事件通知")]
         [Tooltip("玩家答对时触发")]
         [SerializeField] private UnityEvent onAnsweredCorrect;
@@ -35,6 +43,7 @@ namespace UI
         [SerializeField] private UnityEvent onAnsweredWrong;
         private Button button;
         private Coroutine promptCoroutine;
+        private AudioSource promptAudioSource;
         private void Awake()
         {
             button = GetComponent<Button>();
@@ -46,6 +55,7 @@ namespace UI
             // 确保提示初始为隐藏；即使场景里忘记关，这里也会统一重置一次。
             SetPromptActive(correctPrompt, false);
             SetPromptActive(wrongPrompt, false);
+            EnsurePromptAudioSource();
         }
         private void OnEnable()
         {
@@ -70,16 +80,16 @@ namespace UI
         {
             if (isCorrectAnswer)
             {
-                ShowPrompt(correctPrompt, wrongPrompt, switchToNextQuestionAfterPrompt: true);
+                ShowPrompt(correctPrompt, wrongPrompt, correctPromptClip, switchToNextQuestionAfterPrompt: true);
                 onAnsweredCorrect?.Invoke();
             }
             else
             {
-                ShowPrompt(wrongPrompt, correctPrompt, switchToNextQuestionAfterPrompt: false);
+                ShowPrompt(wrongPrompt, correctPrompt, wrongPromptClip, switchToNextQuestionAfterPrompt: false);
                 onAnsweredWrong?.Invoke();
             }
         }
-        private void ShowPrompt(GameObject toShow, GameObject toHide, bool switchToNextQuestionAfterPrompt)
+        private void ShowPrompt(GameObject toShow, GameObject toHide, AudioClip promptClip, bool switchToNextQuestionAfterPrompt)
         {
             if (promptCoroutine != null)
             {
@@ -88,6 +98,7 @@ namespace UI
             }
             // 先隐藏相反提示
             SetPromptActive(toHide, false);
+            PlayPromptClip(promptClip);
             // 显示当前提示并启动定时隐藏协程
             promptCoroutine = StartCoroutine(ShowPromptTemporarily(toShow, switchToNextQuestionAfterPrompt));
         }
@@ -131,6 +142,34 @@ namespace UI
             {
                 go.SetActive(active);
             }
+        }
+        private void EnsurePromptAudioSource()
+        {
+            if (promptAudioSource == null)
+            {
+                promptAudioSource = GetComponent<AudioSource>();
+                if (promptAudioSource == null)
+                {
+                    promptAudioSource = gameObject.AddComponent<AudioSource>();
+                }
+            }
+            promptAudioSource.playOnAwake = false;
+            promptAudioSource.loop = false;
+            promptAudioSource.spatialBlend = 0f;
+        }
+        private void PlayPromptClip(AudioClip clip)
+        {
+            if (clip == null)
+            {
+                return;
+            }
+            EnsurePromptAudioSource();
+            if (promptAudioSource == null)
+            {
+                return;
+            }
+            float volume = Mathf.Clamp01(promptSfxVolume);
+            promptAudioSource.PlayOneShot(clip, volume);
         }
         /// <summary>
         /// 运行时动态设置是否为正确答案（可选）。
