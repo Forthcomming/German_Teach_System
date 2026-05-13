@@ -1,0 +1,39 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# Visual Studio / Rider
+.vs/
+*.csproj.user
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (often locked by tools)
+*.log
+
+# TextMeshPro 生成字体资源常 >100MB，GitHub 拒绝；保留在本地即可
+Assets/Fonts/DINGTALK JINBUTI SDF.asset
+Assets/Fonts/DINGTALK JINBUTI SDF.asset.meta
+Assets/DINGTALK JINBUTI SDF.asset
+Assets/DINGTALK JINBUTI SDF.asset.meta
